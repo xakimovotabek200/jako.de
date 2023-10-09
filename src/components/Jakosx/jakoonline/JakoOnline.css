@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.onH1 {
+    text-align: center;
+    color: #5b5b5b;
+    font-size: 35px;
+}
+
+.lets {
+    color: #5b5b5b;
+    margin: 10px;
+    font-size: 15px;
+    line-height: 30px;
+}
