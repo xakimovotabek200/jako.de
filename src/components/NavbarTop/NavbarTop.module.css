@@ -7,7 +7,7 @@
 .navbar_top_logo {
   display: flex;
   align-items: center;
-  width: 45%;
+  width: 46%;
   justify-content: space-evenly;
   height: 60px;
 }
@@ -63,7 +63,7 @@
   background-color: #fff;
   display: none;
   list-style: none;
-  width: 100%;
+  width: 1000px;
   height: 300px;
   border: 1px solid #ccc;
 }
