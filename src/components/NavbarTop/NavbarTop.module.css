@@ -1,18 +1,16 @@
 .navbar_top {
   width: 100%;
-  height: 60px;
   border-bottom: 1px solid #bfbfbf;
 }
 
 .navbar_top_logo {
   display: flex;
   align-items: center;
-  width: 45%;
-  justify-content: space-evenly;
 }
 
 .logo_img {
   width: 140px;
+  height: 40px;
   margin-left: 40px;
 }
 
@@ -34,7 +32,7 @@
   padding: 5px 0px;
   position: relative;
   line-height: 60px;
-  letter-spacing: 0.18px;
+  letter-spacing: .18px;
 }
 
 .navbar_top_item_a {
@@ -54,14 +52,16 @@
   background-color: #5b5b5b;
   transition: all 2s ease-in-out;
 }
+
 .dropdown {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 70%;
+  left: 10px;
   background-color: #fff;
   display: none;
   list-style: none;
-  width: 100%;
+  width: 2000px;
+  height: 300px;
   border: 1px solid #ccc;
 }
 
