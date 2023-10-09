@@ -1,7 +1,11 @@
-import React from "react";
+
 import Jakos from "../../components/Jakosx/Jakos";
-import Navbar from "../../components/Navbar/Navbar";
-import NavbarTop from "../../components/NavbarTop/NavbarTop";
+
+import React from 'react'
+import Navbar from '../../components/Navbar/Navbar'
+import NavbarTop from '../../components/NavbarTop/NavbarTop'
+import Banner from '../../components/HomeBanner/Banner'
+
 
 const Home = () => {
   return (
@@ -9,7 +13,11 @@ const Home = () => {
       <Navbar />
       <NavbarTop />
 
+
       <Jakos />
+
+      <Banner />
+
     </div>
   );
 };
