@@ -63,7 +63,8 @@
   background-color: #fff;
   display: none;
   list-style: none;
-  padding: 10px;
+  width: 100%;
+  height: 300px;
   border: 1px solid #ccc;
 }
 
@@ -71,11 +72,6 @@
   display: block;
 }
 
-.dropdown li {
+.dropdown_li {
   margin: 5px 0;
-}
-
-.dropdown a {
-  text-decoration: none;
-  color: #333;
 }
