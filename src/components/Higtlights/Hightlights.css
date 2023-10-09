@@ -1,0 +1,80 @@
+.text_hight {
+  text-align: center;
+  margin-bottom: 2pc;
+  margin-top: 2pc;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: #5b5b5b;
+}
+.box {
+  width: 360px;
+  height: 480px;
+  padding: 10px;
+}
+.box_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 2%;
+}
+
+.box:hover {
+  border: 1px solid #5b5b5b;
+  transition: all 0.5s;
+}
+
+del,
+ins {
+  position: relative;
+  display: inline-block; /* don't wrap to multiple lines */
+  text-decoration: none; /* replacing default del and ins */
+}
+
+del:after {
+  content: ""; /* required property */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(50%); /* strikethrough line height */
+  border-top: 5px solid red;
+  transform: rotateZ(-5deg); /* rotate strikethrough */
+  animation: del 0.5s ease-in;
+}
+
+ins:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: ins 1s ease-out; /* ins animation */
+  animation-delay: 0.75s; /* delay until del animation is done */
+  animation-fill-mode: forwards; /*keep animation */
+}
+
+@keyframes del {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ins animation */
+@keyframes ins {
+  0% {
+    width: 0;
+    background: rgb(255, 255, 0);
+    z-index: -1;
+  }
+  100% {
+    width: 100%;
+    background: rgb(255, 255, 0);
+    z-index: -1;
+  }
+}

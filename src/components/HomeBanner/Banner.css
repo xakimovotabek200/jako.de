@@ -2,19 +2,23 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .banner-image {
   background-image: url("https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Main_Cold_Days_1820x640px_neu.jpg");
   width: 100%;
   height: 512px;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: flex-end;
 }
+
 .text {
   padding-top: 8pc;
   color: white;
   font-weight: 800;
 }
+
 .text h3 {
   font-size: 30px;
 }
@@ -44,6 +48,7 @@
   border-radius: 10px;
   margin-left: 5pc;
 }
+
 .btn:hover {
   background-color: #008ac9;
   color: #fff;
