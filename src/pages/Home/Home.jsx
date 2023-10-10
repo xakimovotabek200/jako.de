@@ -10,13 +10,13 @@ import NavbarTop from '../../components/NavbarTop/NavbarTop';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <NavbarTop />
       <Banner />
       <HightLights />
       <Jakos />
-    </div>
+    </>
   );
 };
 
