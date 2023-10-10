@@ -7,6 +7,7 @@ const NavbarTop = () => {
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+  // salom
   return (
     <div className={styles.navbar_top}>
       <div className={styles.navbar_top_logo}>
