@@ -2,4 +2,154 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.Just_One {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    text-align: center;
+}
+
+.JustFlex {
+    display: flex;
+}
+
+.Js {
+    height: 300px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    gap: 50px;
+}
+
+.bs {
+    color: #008ac9;
+    font-size: 17px;
+}
+
+.ai {
+    color: #008ac9;
+    font-size: 19.5px;
+
+}
+
+.icon {
+    text-align: center;
+    display: flex;
+    margin: 20px;
+}
+
+.p {
+    color: #5b5b5b;
+}
+
+.now {
+    margin-top: 15px;
+    padding: 20px 20px;
+    cursor: pointer;
+    background: #5b5b5b;
+    font-size: 18px;
+    border: none;
+    color: #FFFFFFFF;
+
+}
+
+.now:hover {
+    background: #008ac9;
+}
+
+.one>h1 {
+    color: #5b5b5b;
+    font-size: 20px;
+
+}
+
+.one>p {
+    color: #5b5b5b;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.one h1:hover {
+    color: #337ab7;
+    cursor: pointer;
+}
+
+.one p:hover {
+    color: #337ab7;
+    cursor: pointer;
+}
+
+.one {
+    text-align: start;
+}
+
+.left {
+    border: 1px solid #337ab7;
+}
+
+.Mno h1 {
+    color: #008ac9;
+    text-align: left;
+    font-size: 40px;
+}
+
+.Mno h4 {
+    color: #5b5b5b;
+    text-align: left;
+    width: 500px;
+}
+
+.flexONe {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.flexONe h1 {
+    color: #337ab7;
+}
+
+.ico {
+    display: flex;
+    text-align: center;
+}
+
+.i {
+    font-size: 20px;
+    margin: 10px;
+    color: #575555;
+}
+
+.i:hover {
+    color: #008ac9;
+    cursor: pointer;
+}
+
+ul {
+    margin: 5px;
+    display: flex;
+}
+
+ul li a {
+    color: #5b5b5b;
+    padding: 10px;
+}
+
+ul li a:hover {
+    color: #008ac9;
+}
+
+.year p {
+    color: #575555;
 }
