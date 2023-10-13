@@ -1,15 +1,14 @@
 import React from "react";
 import "./Our.css";
-
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
 import { MenData } from "./MenData";
 
 function Our() {
   return (
-    <div>
+    <div className="container">
       <div className="text_hight">
-        <h1>OUR BESTSELLER FOR MEN</h1>
+        <h1>OUR BESTSELLER FOR MENS</h1>
       </div>
       <Carousel
         withIndicators
@@ -35,7 +34,7 @@ function Our() {
                     <h2 className="text-center">
                       <del>€{item.costDel2}</del>
                     </h2>
-                    <p className="text_diskpunt">-{item.discount}% Diskount</p>
+                    <p className="text_diskpunt">-{item.discount}%Diskount</p>
                   </div>
                 </div>
               </div>
