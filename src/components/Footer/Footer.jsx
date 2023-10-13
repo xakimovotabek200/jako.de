@@ -13,7 +13,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div>
+    <div className="container">
       <section className="HrOne">
         <hr />
         <div className="Just_One">

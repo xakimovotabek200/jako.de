@@ -1,20 +1,17 @@
-.centered-container {
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  width: 1240px;
+  margin: 0 auto;
 }
 
 .banner-image {
-  background-image: url("https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Main_Cold_Days_1820x640px_neu.jpg");
-  width: 100%;
+  background-image: url("https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Main_Teamline-Sale_1820x640px.jpg");
   height: 512px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: flex-end;
+  object-fit: cover;
 }
 
 .text {
   padding-top: 8pc;
+  padding-left: 5pc;
   color: white;
   font-weight: 800;
 }

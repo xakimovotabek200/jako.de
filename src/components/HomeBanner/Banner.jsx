@@ -4,7 +4,7 @@ import "./Banner.css"
 
 function Banner() {
     return (
-        <div className='centered-container'>
+        <div className='container'>
             <div className='banner-image'>
                 <div className='text'>
                     <h3 >30% OFF SELECTED AUTUMN ARTICLES <br /></h3>

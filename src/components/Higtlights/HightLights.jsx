@@ -7,7 +7,7 @@ import '@mantine/carousel/styles.css';
 
 function HightLights() {
     return (
-        <div>
+        <div className='container'>
             <div className='text_hight'>
                 <h1>HightLights</h1>
             </div>
