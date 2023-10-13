@@ -1,5 +1,4 @@
 import Jakos from "../../components/Jakosx/Jakos";
-
 import React from "react";
 import HightLights from "../../components/Higtlights/HightLights";
 import Banner from "../../components/HomeBanner/Banner";
@@ -15,7 +14,7 @@ const Home = () => {
       <Banner />
       <HightLights />
       <Jakos />
-      <Footer/>
+      <Footer />
     </>
   );
 };

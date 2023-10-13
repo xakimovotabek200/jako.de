@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./Hightlights.css";
-import { data } from './data';
-import { Carousel } from '@mantine/carousel';
-import '@mantine/carousel/styles.css';
-
+import { data } from "./data";
+import { Carousel } from "@mantine/carousel";
+import "@mantine/carousel/styles.css";
 
 function HightLights() {
     return (
@@ -52,7 +51,4 @@ function HightLights() {
     )
 }
 
-export default HightLights
-
-
-
+export default HightLights;
