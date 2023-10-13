@@ -123,6 +123,7 @@ ins:after {
   transition: all 0.5s ease-in-out;
   border: none;
 }
+
 @media screen and (max-width: 900px) {
   .btns {
     margin-left: 20pc;
