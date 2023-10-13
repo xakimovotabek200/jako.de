@@ -6,6 +6,7 @@ import Banner from "../../components/HomeBanner/Banner";
 import Navbar from "../../components/Navbar/Navbar";
 import NavbarTop from "../../components/NavbarTop/NavbarTop";
 import Footer from "../../components/Footer/Footer";
+import Mens from "../mens/Mens";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       <Banner />
       <HightLights />
       <Jakos />
-      <Footer/>
+      <Footer />
     </>
   );
 };

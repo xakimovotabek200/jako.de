@@ -1,14 +1,15 @@
 import React from "react";
-import "./Hightlights.css";
-import { data } from "./data";
+import "./Our.css";
+
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
+import { MenData } from "./MenData";
 
-function HightLights() {
+function Our() {
   return (
     <div>
       <div className="text_hight">
-        <h1>HightLights</h1>
+        <h1>OUR BESTSELLER FOR MEN</h1>
       </div>
       <Carousel
         withIndicators
@@ -19,7 +20,7 @@ function HightLights() {
         controlSize={50}
         align="start"
       >
-        {data.map((item) => {
+        {MenData.map((item) => {
           return (
             <Carousel.Slide key={item.id}>
               <div className="box">
@@ -49,4 +50,4 @@ function HightLights() {
   );
 }
 
-export default HightLights;
+export default Our;
