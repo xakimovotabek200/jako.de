@@ -4,7 +4,7 @@ import JakoOnline from "./jakoonline/JakoOnline";
 
 function Jakos() {
   return (
-    <div>
+    <div className="container">
       <JoinDAnPAsti />
       <JakoOnline />
     </div>

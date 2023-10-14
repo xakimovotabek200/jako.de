@@ -7,18 +7,19 @@ import fan3 from "./fan3.jpg";
 import { Link } from "react-router-dom";
 const NavbarTop = () => {
   return (
+    <div className="container">
       <div className="navbar-top">
         <div className="navbar-top-logo">
-        <Link to="/"><img
-          className="logo-img"
-          src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg"
-          alt=""
-        /></Link>
+          <Link to="/"><img
+            className="logo-img"
+            src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg"
+            alt=""
+          /></Link>
           <ul className="navbar-top-ul-collection">
             <li className="navbar-top-item">
               <a className="navbar-top-item-a" href="#">
                 <details>
-                <summary><Link to="/mens">Men</Link></summary>
+                  <summary><Link to="/mens">Men</Link></summary>
                   <div className="dropdown">
                     <div className="dropdown_1">
                       <h4 className="dropdown-header">HIGHLIGHTS</h4>
@@ -308,7 +309,6 @@ const NavbarTop = () => {
                       <div className="fanshop">
                         <img src={fan2} alt="" />
                       </div>
-                      ``
                       <h4 className="dropdown-headers">BALLS</h4>
                       <hr className="dropdown-lines" />
                     </div>
@@ -363,6 +363,7 @@ const NavbarTop = () => {
           </ul>
         </div>
         <div className="icons"></div>
+      </div>
       </div>
   );
 };

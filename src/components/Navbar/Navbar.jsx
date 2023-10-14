@@ -3,6 +3,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
+    <div className="container">
       <div className='navbar'>
         <div className="logo">
           <ul className="collection_logo">
@@ -18,6 +19,7 @@ const Navbar = () => {
           <div className='line_navbar'></div>
           <li className="item">Log in</li>
         </ul>
+      </div>
       </div>
   )
 }
