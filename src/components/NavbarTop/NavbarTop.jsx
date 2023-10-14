@@ -240,7 +240,7 @@ const NavbarTop = () => {
             <li className="navbar-top-item">
               <a className="navbar-top-item-a" href="#">
                 <details>
-                  <summary>Equipment</summary>
+                  <summary><Link to="/equitment">Equipment</Link></summary>
                   <div className="dropdown">
                     <div className="dropdown_1">
                       <h4 className="dropdown-header">HIGHLIGHTS</h4>

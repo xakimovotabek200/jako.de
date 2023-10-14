@@ -76,3 +76,36 @@ export const data = [
     costDel2: '€19.99',
   },
 ];
+
+
+export const equitment = [
+  {
+    id: 1,
+    image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/1850_01.jpg",
+    title: "JAKO Backpack Classico",
+    costDel2: '€19.99',
+  },
+  {
+    id: 2,
+    image:
+      "https://cdn.jako.de/userdata/dcshop/images/thumb_4/2050_01.jpg",
+    title: "JAKO Sport bag Classico with base compartment",
+    costDel2: '€34.99',
+  },
+  {
+    id: 3,
+    image:
+      "https://cdn.jako.de/userdata/dcshop/images/thumb_4/1816_01_Rucksack%20Striker.jpg",
+    title: "JAKO Backpack Striker",
+    costDel2: '€24.99',
+  },
+  {
+    id: 4,
+    image:
+      "https://cdn.jako.de/userdata/dcshop/images/thumb_4/2147_02_EQ.jpg",
+    title: "JAKO Water bottle",
+    cost1: '€ 3.49',
+    costDel2: '€5.99',
+    discount: '-41 % Discount',
+  },
+];
