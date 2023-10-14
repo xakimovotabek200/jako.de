@@ -4,7 +4,6 @@ import "./Banner.css"
 
 function Banner() {
     return (
-        <div className='container'>
             <div className='banner-image'>
                 <div className='text'>
                     <h3 >30% OFF SELECTED AUTUMN ARTICLES <br /></h3>
@@ -12,8 +11,6 @@ function Banner() {
                     <button className='btn'>Buy Now</button>
                 </div>
             </div>
-
-        </div>
     )
 }
 

@@ -6,7 +6,8 @@
 .banner-image {
   background-image: url("https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Main_Teamline-Sale_1820x640px.jpg");
   height: 512px;
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
 }
 
 .text {

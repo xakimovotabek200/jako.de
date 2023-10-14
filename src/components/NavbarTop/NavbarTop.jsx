@@ -9,16 +9,16 @@ const NavbarTop = () => {
   return (
       <div className="navbar-top">
         <div className="navbar-top-logo">
-          <img
-            className="logo-img"
-            src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg"
-            alt=""
-          />
+        <Link to="/"><img
+          className="logo-img"
+          src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg"
+          alt=""
+        /></Link>
           <ul className="navbar-top-ul-collection">
             <li className="navbar-top-item">
               <a className="navbar-top-item-a" href="#">
                 <details>
-                  <summary>Men</summary>
+                <summary><Link to="/mens">Men</Link></summary>
                   <div className="dropdown">
                     <div className="dropdown_1">
                       <h4 className="dropdown-header">HIGHLIGHTS</h4>
