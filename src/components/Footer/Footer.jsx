@@ -28,7 +28,7 @@ function Footer() {
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <BsStarHalf className="bs" />
-              <p className="p"> (4,52/5) Trusted Shops</p>
+              <p className="p"> (4,52/5) Trusted Shop</p>
             </div>
           </div>
         </div>
