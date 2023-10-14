@@ -7,6 +7,7 @@ import NavbarTop from './components/NavbarTop/NavbarTop';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Kids from './components/Kids/Kids'
+import Sale from './pages/sale/Sale';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/kids" element={<Kids/>} />
+          <Route path="/sale" element={<Sale/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>
