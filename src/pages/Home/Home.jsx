@@ -9,12 +9,9 @@ import NavbarTop from "../../components/NavbarTop/NavbarTop";
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <NavbarTop />
       <Banner />
       <HightLights />
       <Jakos />
-      <Footer />
     </>
   );
 };
