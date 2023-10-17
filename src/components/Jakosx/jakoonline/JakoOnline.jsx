@@ -2,7 +2,7 @@ import React from "react";
 import "./JakoOnline.css"
 function JakoOnline() {
   return (
-    <div className="container">
+    <div className="">
       <div className="online">
         <h1 className="onH1">JAKO ONLINESHOP</h1>
         <p className="lets">

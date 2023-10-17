@@ -13,7 +13,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="container">
+    <div className="">
       <section className="HrOne">
         <hr />
         <div className="Just_One">
@@ -28,7 +28,7 @@ function Footer() {
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <BsStarHalf className="bs" />
-              <p className="p"> (4,52/5) Trusted Shops</p>
+              <p className="p"> (4,52/5) Trusted Shop</p>
             </div>
           </div>
         </div>

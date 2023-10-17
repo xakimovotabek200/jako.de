@@ -6,7 +6,7 @@ import { MenData } from "./MenData";
 
 function Our() {
   return (
-    <div className="container">
+    <div className="">
       <div className="text_hight">
         <h1>OUR BESTSELLER FOR MENS</h1>
       </div>

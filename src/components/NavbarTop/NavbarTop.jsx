@@ -4,9 +4,9 @@ import fan from "./fan.jpg";
 import fan1 from "./fan4.jpg";
 import fan2 from "./fan2.jpg";
 import fan3 from "./fan3.jpg";
+import { Link } from "react-router-dom";
 const NavbarTop = () => {
   return (
-    <div className="container">
       <div className="navbar-top">
         <div className="navbar-top-logo">
           <img
@@ -168,7 +168,7 @@ const NavbarTop = () => {
             <li className="navbar-top-item">
               <a className="navbar-top-item-a" href="#">
                 <details>
-                  <summary>Kids</summary>
+                  <summary> <Link to="/kids">Kids</Link></summary>
                   <div className="dropdown">
                     <div className="dropdown_1">
                       <h4 className="dropdown-header">HIGHLIGHTS</h4>
@@ -364,7 +364,6 @@ const NavbarTop = () => {
         </div>
         <div className="icons"></div>
       </div>
-    </div>
   );
 };
 
