@@ -10,22 +10,21 @@ import Home from "./pages/Home/Home";
 import Sale from "./pages/sale/Sale";
 
 import "@mantine/core/styles.css";
+import HightLightsId from "./components/Higtlights/HigtlightsId";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <NavbarTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/kids" element={<Kids />} />
-          <Route path="/sale" element={<Sale />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <NavbarTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/higtlightsId/:id" element={<HightLightsId />} />
+        <Route path="/kids" element={<Kids />} />
+        <Route path="/sale" element={<Sale />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
-
 export default App;
