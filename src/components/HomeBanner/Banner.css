@@ -42,9 +42,8 @@
   font-weight: 400;
   background-color: #fff;
   color: #5b5b5b;
-  border-color: #fff;
-  border-radius: 10px;
   margin-left: 5pc;
+  border: none;
 }
 
 .btn:hover {
