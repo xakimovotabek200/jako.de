@@ -53,8 +53,8 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;
-  /* position: relative; */
 }
+
 
 .dropdown {
   position: absolute;
