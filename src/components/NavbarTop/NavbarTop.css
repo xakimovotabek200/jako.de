@@ -54,13 +54,13 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;
-  /* position: relative; */
 }
+
 
 .dropdown {
   position: absolute;
   background-color: #ffffff;
-  height: 570px;
+  height: 610px;
   width: 1690px;
   display: flex;
   z-index: 1;
