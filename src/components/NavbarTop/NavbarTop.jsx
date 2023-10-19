@@ -23,7 +23,7 @@ const links = [
     ],
   },
   {
-    linka: '/',
+    linka: '#2',
     label: 'Women',
     links: [
       {link: '/docs', label: 'HIGHLIGHTS' },
@@ -135,7 +135,7 @@ export default function NavbarTop() {
     <header className={classes.header}>
       <Container size="md">
         <div className={classes.inner}>
-          <img className={classes.images} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" />
+          <Link to="/"><img className={classes.images} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
           <Group gap={30} visibleFrom="sm">
             {items}
           </Group>
