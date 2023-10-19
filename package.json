@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@mantine/carousel": "^7.1.2",
     "@mantine/core": "^7.1.2",
     "@mantine/hooks": "^7.1.2",
