@@ -11,6 +11,8 @@ const Home = () => {
     <>
       <Banner />
       <HightLights />
+      {/* <Route path="/hightLights/" element={<HightLights />} /> */}
+
       <Jakos />
     </>
   );
