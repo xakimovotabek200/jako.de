@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    margin: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+}
+
+.cards {
+    width: 480px;
+    height: 400px;
+    object-fit: contain;
+    background-image: url('https://cdn.jako.de/userdata/dcshop/category_icon/160368_2032_sale_600x459px_herren.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards1 {
+    width: 480px;
+    height: 400px;
+    object-fit: contain;
+    background-image: url('https://cdn.jako.de/userdata/dcshop/category_icon/39853_2032_sale_600x459px_damen.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards2 {
+    width: 480px;
+    height: 400px;
+    object-fit: contain;
+    background-image: url('https://cdn.jako.de/userdata/dcshop/category_icon/192322_2032_sale_600x459px_kinder.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cards4 {
+    width: 480px;
+    background-color: black;
+
+    height: 400px;
+    object-fit: contain;
+    background-image: url('https://cdn.jako.de/userdata/dcshop/category_icon/781028_2032_sale_600x459px_equipment.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards:hover {
+    cursor: pointer;
+    opacity: .7;
+    background-color: transparent;
+}
+
+.cards1:hover {
+    cursor: pointer;
+    opacity: .7;
+    background-color: transparent;
+}
+
+.cards2:hover {
+    cursor: pointer;
+    opacity: .7;
+    background-color: transparent;
+}
+
+.cards4:hover {
+    cursor: pointer;
+    opacity: .7;
+    background-color: transparent;
+}
+
+.aws {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: aliceblue;
+}
+
+li {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        margin: 20px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: auto;
+    }
+    .cards1{
+        width: 350px;
+    
+    }
+    .cards2 {
+        width: 350px;
+    
+    }
+    .cards4 {
+        width: 350px;
+    
+    }
+    .cards {
+        width: 350px;
+    
+    }
+}

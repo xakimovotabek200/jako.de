@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Libre+Franklin&family=Nunito+Sans:ital,wght@0,200;1,800&family=REM:ital,wght@0,400;1,300&display=swap");
 body {
   margin: 0;
@@ -14,6 +18,6 @@ code {
 }
 
 .container {
-  width: 1600px;
+  width: 1500px;
   margin: 0 auto;
 }

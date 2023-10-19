@@ -1,9 +1,13 @@
+.container {
+  width: 1500px;
+  margin: 0 auto;
+}
+
 .banner-image {
-  background-image: url("https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Main_Teamline-Sale_1820x640px.jpg");
-  height: 512px;
-  object-fit: cover;
   width: 100%;
-  margin-top: 30px;
+  height: 550px;
+  object-fit: cover;
+  background-image: url("https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Main_Teamline-Sale_1820x640px.jpg");
 }
 
 .text {

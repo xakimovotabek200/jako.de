@@ -8,11 +8,12 @@
   border-bottom: 1px solid #BFBFBF;
 }
 
-.navbar-top-logo{
+.navbar-top-logo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .navbar-top-logo img {
   width: 140px;
   margin-left: 30px;
@@ -67,12 +68,12 @@
   left: 0px;
 }
 
-.dropdown_1{
+.dropdown_1 {
   margin-left: 110px;
   margin-top: 70px;
 }
 
-.dropdown_2{
+.dropdown_2 {
   margin-left: 40px;
   margin-top: 70px;
 }
@@ -85,13 +86,16 @@
   cursor: pointer;
   font-family: 'Libre Franklin', sans-serif;
 }
-.dropdown_1:hover .dropdown-header{
+
+.dropdown_1:hover .dropdown-header {
   color: #008ac9;
 }
-.dropdown_2:hover .dropdown-header{
+
+.dropdown_2:hover .dropdown-header {
   color: #008ac9;
 }
-.dropdown-items li:hover{
+
+.dropdown-items li:hover {
   color: #008ac9;
 }
 
@@ -119,11 +123,11 @@
   cursor: pointer;
 }
 
-.fanshop{
+.fanshop {
   background-color: #fff;
 }
 
-.fanshop img{
+.fanshop img {
   margin-left: 0;
   width: 220px;
   height: 170px;
@@ -149,4 +153,26 @@
   margin: 8px 0;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-top-item-a {
+    padding: 8px 10px;
+    /* O'zgartirish sizning talablarizga qarab amalga oshirilishi mumkin */
+  }
 }

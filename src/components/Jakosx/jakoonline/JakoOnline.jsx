@@ -1,7 +1,9 @@
 import React from "react";
 import "./JakoOnline.css"
+
 function JakoOnline() {
   return (
+    <div className="">
       <div className="online">
         <h1 className="onH1">JAKO ONLINESHOP</h1>
         <p className="lets">
@@ -32,6 +34,7 @@ function JakoOnline() {
           jersey, everything is available in the JAKO jersey collection and the
           online shop.
         </p>
+      </div>
       </div>
   );
 }

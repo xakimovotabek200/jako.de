@@ -13,7 +13,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="container">
+    <div className="">
       <section className="HrOne">
         <hr />
         <div className="Just_One">
@@ -21,14 +21,14 @@ function Footer() {
             <img src={Footer_Image} alt="" />
             <img src={Just_Photo} alt="" />
           </div>
-          <div className="JustFlex">
+          <div className="JustFlex1">
             <div className="icon">
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <BsStarHalf className="bs" />
-              <p className="p"> (4,52/5) Trusted Shops</p>
+              <p className="p"> (4,52/5) Trusted Shop</p>
             </div>
           </div>
         </div>
@@ -77,32 +77,34 @@ function Footer() {
       <hr />
       <div className="hammasi">
         <div className="flexONe">
-          <h1>WE ARE TEAM</h1>
-          <div className="ico">
-            <BsFacebook className="i" />
-            <BsInstagram className="i" />
-            <BsYoutube className="i" />
-            <BsTwitter className="i" />
-          </div>
-          <div className="year">
-            <ul>
-              <li>
-                <a href="/">Data protection</a>
-              </li>
-              <li>
-                <a href="/">Whistleblower system</a>
-              </li>
-              <li>
-                <a href="/">Instructions on cancellation</a>
-              </li>
-              <li>
-                <a href="/">General terms & conditions</a>
-              </li>
-              <li>
-                <a href="/">Legal notice</a>
-              </li>
-              <p>© 2023 JAKO AG, All rights reserved</p>
-            </ul>
+          <div className="med">
+            <h1>WE ARE TEAM</h1>
+            <div className="ico">
+              <BsFacebook className="i" />
+              <BsInstagram className="i" />
+              <BsYoutube className="i" />
+              <BsTwitter className="i" />
+            </div>
+            <div className="year">
+              <ul>
+                <li>
+                  <a href="/">Data protection</a>
+                </li>
+                <li>
+                  <a href="/">Whistleblower system</a>
+                </li>
+                <li>
+                  <a href="/">Instructions on cancellation</a>
+                </li>
+                <li>
+                  <a href="/">General terms & conditions</a>
+                </li>
+                <li>
+                  <a href="/">Legal notice</a>
+                </li>
+                <p>© 2023 JAKO AG, All rights reserved</p>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

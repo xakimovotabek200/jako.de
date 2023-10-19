@@ -21,22 +21,22 @@
 .Harf {
     margin: 40px;
     text-align: center;
+
 }
 
 .club {
     color: #FFFFFF;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .wait {
     color: #FFF;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .all {
     width: 1520px;
     background-image: url('../../../img/JoinImg.jpg');
-    height: 400px;
     background-repeat: no-repeat;
 }
 
@@ -45,10 +45,15 @@
     padding: 20px 20px;
     cursor: pointer;
     background: #5b5b5b;
-    font-size:18px;
+    font-size: 18px;
     border: none;
     color: #FFFFFFFF;
 }
+
 .become:hover {
     background: #008ac9;
+}
+
+@media only screen and (max-width: 600px) {
+    
 }
