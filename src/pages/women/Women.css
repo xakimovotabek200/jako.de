@@ -2,18 +2,18 @@
   width: 1600px;
   margin: 0 auto;
 }
-.kids {
+.women {
   width: 100%;
   height: 180vh;
 }
 
-.kids_title {
+.women_title {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.h1_kids_title {
+.h1_women_title {
   font-size: 38px;
   line-height: 1;
   margin-bottom: 40px;
@@ -25,13 +25,12 @@
   margin-top: 50px;
 }
 
-.three_div_img {
+.three_div_womens {
   width: 100%;
   height: 425px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-
+  justify-content: space-between;
 }
 
 .carousel_img_around{
@@ -90,7 +89,6 @@
   color: red;
   font-weight: 700;
 }
-.docks{}
 @keyframes del {
   0% {
     width: 0;
@@ -115,23 +113,23 @@
   }
 }
 
-.three_div_imga {
+.three_div_women{
   width: 100%;
   height: 425px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 80px;
 }
-.img_div{
+.img_div_women{
   text-align: center;
 }
-.img_kis1_2 {
+.women_kis1_2 {
   width: 476px;
-  height: 380px;
+  height: 350px;
 }
 
-.kids_sport1 {
+.women_sport1 {
   cursor: pointer;
   color: #5b5b5b;
   font-size: 30px;
