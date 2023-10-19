@@ -1,37 +1,38 @@
 import React from "react";
 import "./Sale.css";
+import { Link } from "react-router-dom";
+
 function Sale() {
   return (
     <div>
       <div className="card">
         <div className="cards">
           <li>
-            <a className="aw" href="/">
+            <Link className="aws" to="/">
               Men
-            </a>
+            </Link>
           </li>
         </div>
         <div className="cards1">
-          <img className="img" alt="" />
           <li>
-            <a className="aw" href="/">
-              Women
-            </a>
+            <Link className="aws" to="/">
+              Woomen
+            </Link>
           </li>
         </div>
         <div className="cards2">
           <li>
-            <a className="aw" href="/">
-             Kids
-            </a>
+            <Link className="aws" to="/">
+              Kids
+            </Link>
           </li>
         </div>
 
         <div className="cards4">
           <li>
-            <a className="aw" href="/">
+            <Link className="aws" to="/">
               Equipment
-            </a>
+            </Link>
           </li>
         </div>
       </div>
