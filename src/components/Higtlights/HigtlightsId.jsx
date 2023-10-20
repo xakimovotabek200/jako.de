@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Carousel } from '@mantine/carousel'; import { Pagination } from '@mantine/core';
 import { productData } from './data';
 import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react';
+import ContiuneHightleht from './ContiuneHightleht';
 
 function HightLightsId() {
     const [opened, { open, close }] = useDisclosure(false);
@@ -22,7 +23,7 @@ function HightLightsId() {
         <div className='container mx-auto w-[95%] md:flex justify-around'>
             <div className='right_side'>
                 <HoverCard shadow="md" closeDelay={200}>
-                    <Modal size="calc(100vw - 3rem)" opened={opened} onClose={close}>
+                    <Modal size="calc(50vw - 3rem)" opened={opened} onClose={close}>
                         <HoverCard.Target>
                             <img style={{ width: "80%", objectFit: "contain ", height: "500px" }} src={selectedImageIndex} alt="" />
                         </HoverCard.Target>
@@ -78,7 +79,7 @@ function HightLightsId() {
                         {
                             highlight.size.map((item) => {
                                 return (
-                                    <div className='border-2 p-3 cursor-pointer hover:bg-[#5b5b5b] hover:text-white duration-300'>
+                                    <div className=' border-2 p-3 cursor-pointer hover:bg-[#5b5b5b] hover:text-white duration-300'>
                                         <p>{item}</p>
                                     </div>
                                 )
@@ -87,9 +88,10 @@ function HightLightsId() {
                     </div>
                 </div>
 
+            <ContiuneHightleht highlight={highlight} />
             </div>
         </div>
     );
 }
 
-export default HightLightsId;
+export default HightLightsId;   
