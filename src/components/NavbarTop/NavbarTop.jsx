@@ -1,9 +1,8 @@
-import { Menu, Group, Center, Burger, Container } from '@mantine/core';
+import { Burger, Center, Container, Group, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
-import fan1 from "./fan4.jpg"
-import classes from './NavbarTop.module.css';
 import { Link } from 'react-router-dom';
+import classes from './NavbarTop.module.css';
 
 const links = [
   {
@@ -26,8 +25,8 @@ const links = [
     linka: '/women',
     label: 'Women',
     links: [
-      {link: '/docs', label: 'HIGHLIGHTS' },
-      {link: '/resources', label: 'New hits' },
+      { link: '/docs', label: 'HIGHLIGHTS' },
+      { link: '/resources', label: 'New hits' },
       { link: '/community', label: 'Bestseller' },
       { link: '/blog', label: 'Blog' },
     ],
@@ -105,7 +104,7 @@ export default function NavbarTop() {
       return (
         <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
           <Menu.Target>
-            <a
+            <Link
               className={classes.link}
               onClick={(event) => event.preventDefault()}
             >
@@ -113,21 +112,23 @@ export default function NavbarTop() {
                 <Link to={link.linka}> <span className={classes.linkLabel}>{link.label}</span></Link>
                 <IconChevronDown size="0.9rem" stroke={1.5} />
               </Center>
-            </a>
+            </Link>
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+
         </Menu>
+
       );
     }
 
     return (
-        <a
-          key={link.label}
-          className={classes.link}
-          onClick={(event) => event.preventDefault()}
-        >
+      <Link
+        key={link.label}
+        className={classes.link}
+        onClick={(event) => event.preventDefault()}
+      >
         <Link to={link.linka}>{link.label}</Link>
-        </a>
+      </Link>
     );
   });
 
@@ -140,6 +141,16 @@ export default function NavbarTop() {
             {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+          <Link to={"/cart"}>
+            <div className='cursor-pointer'>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M17 17h-11v-14h-2"></path>
+                <path d="M6 5l14 1l-1 7h-13"></path>
+              </svg>
+            </div></Link>
         </div>
       </Container>
     </header>

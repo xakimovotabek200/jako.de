@@ -8,10 +8,11 @@ import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react';
 import ContiuneHightleht from './ContiuneHightleht';
 
 function HightLightsId() {
-    const [opened, { open, close }] = useDisclosure(false);
     const { id } = useParams();
     const highlight = productData.find(item => item.id === parseInt(id));
     const [selectedImageIndex, setSelectedImageIndex] = useState(highlight.image);
+    const [active, setActive] = useState(highlight.size[0]);
+    const [opened, { open, close }] = useDisclosure(false);
 
 
     if (!highlight) {
@@ -35,6 +36,7 @@ function HightLightsId() {
                         title='Open modal'
                         style={{ cursor: "pointer" }}
                     />
+                    
                     <HoverCard.Dropdown>
                         <Text size="sm">{highlight.name}</Text>
                     </HoverCard.Dropdown>
@@ -76,19 +78,22 @@ function HightLightsId() {
                         </Carousel>
                     </div>
                     <div className='flex mr-7'>
-                        {
-                            highlight.size.map((item) => {
-                                return (
-                                    <div className=' border-2 p-3 cursor-pointer hover:bg-[#5b5b5b] hover:text-white duration-300'>
-                                        <p>{item}</p>
-                                    </div>
-                                )
-                            })
-                        }
+                        {highlight.size.map((item) => (
+                            <div
+                                key={item}
+                                data-active={active === item || undefined}
+                                onClick={() => setActive(item)}
+                                className={`border-2 p-3 cursor-pointer hover:bg-[#5b5b5b] hover:text-white duration-300 ${active === item ? 'bg-[#008ac9] text-white' : ''}`}
+                            >
+                                <p>{item}</p>
+                            </div>
+                        ))}
+
                     </div>
+
                 </div>
 
-            <ContiuneHightleht highlight={highlight} />
+                <ContiuneHightleht highlight={highlight} />
             </div>
         </div>
     );
