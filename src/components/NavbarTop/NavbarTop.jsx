@@ -23,7 +23,7 @@ const links = [
     ],
   },
   {
-    linka: '#2',
+    linka: '/women',
     label: 'Women',
     links: [
       {link: '/docs', label: 'HIGHLIGHTS' },
@@ -80,7 +80,7 @@ const links = [
     ],
   },
   {
-    linka: '#6',
+    linka: '/sale',
     label: 'Sale',
     links: [
       { link: '/faq', label: 'FAQ' },

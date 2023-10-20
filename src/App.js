@@ -12,6 +12,7 @@ import Mens from "./pages/mens/Mens"
 
 import "@mantine/core/styles.css";
 import HightLightsId from "./components/Higtlights/HigtlightsId";
+import Women from "./pages/women/Women";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/higtlightsId/:id" element={<HightLightsId />} />
         <Route path="/men" element={<Mens />} />
         <Route path="/kids" element={<Kids />} />
+        <Route path="/women" element={<Women />} />
         <Route path="/sale" element={<Sale />} />
       </Routes>
       <Footer />
