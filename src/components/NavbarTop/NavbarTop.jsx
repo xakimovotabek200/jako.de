@@ -3,6 +3,8 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import classes from './NavbarTop.module.css';
+import Modalsearch from './Modalsearch';
+
 
 const links = [
   {
@@ -91,7 +93,6 @@ const links = [
 
 export default function NavbarTop() {
   const [opened, { toggle }] = useDisclosure(false);
-
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
       <Menu.Item key={item.link}>{item.label}</Menu.Item>
@@ -131,10 +132,10 @@ export default function NavbarTop() {
       </Link>
     );
   });
-
+  
   return (
     <header className={classes.header}>
-      <Container size="md">
+      <div className="container">
         <div className={classes.inner}>
           <Link to="/"><img className={classes.images} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
           <Group gap={30} visibleFrom="sm">
@@ -150,9 +151,11 @@ export default function NavbarTop() {
                 <path d="M17 17h-11v-14h-2"></path>
                 <path d="M6 5l14 1l-1 7h-13"></path>
               </svg>
-            </div></Link>
+            </div>
+          </Link>
+          <Modalsearch/>
         </div>
-      </Container>
+      </div>
     </header>
   );
 }
