@@ -2,6 +2,7 @@ export const productData = [
   {
     id: 1,
     name: " Cap function",
+    color: "blue",
     name2: "JAKO Presentation suit Champ 2.0 with hood",
     cost1: 41.99,
     costDel2: 59.99,
@@ -25,11 +26,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 2,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-
+    color: "red",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -54,10 +56,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 3,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
+    color: "gray",
 
     name: " Cap function",
     cost1: 41.99,
@@ -83,11 +87,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 4,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-
+    color: "orange",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -112,11 +117,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 5,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-
+    color: "white",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -141,11 +147,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 6,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-
+    color: "shaptoli-rang",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -170,11 +177,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 7,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-
+    color: "blue",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -199,11 +207,12 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
   {
     id: 8,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-
+    color: "white-blue",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -228,5 +237,6 @@ export const productData = [
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
+    quantity: 1,
   },
 ];

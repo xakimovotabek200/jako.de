@@ -1,7 +1,3 @@
-.container {
-  width: 1600px;
-  margin: 0 auto;
-}
 .women {
   width: 100%;
   height: 180vh;
@@ -33,14 +29,14 @@
   justify-content: space-between;
 }
 
-.carousel_img_around{
+.carousel_img_around {
   width: 90%;
   margin-left: 80px;
   height: 500px;
   margin-top: 80px;
 }
 
-.kids_carousel_text{
+.kids_carousel_text {
   margin-left: 50px;
   color: #5b5b5b;
 }
@@ -50,7 +46,7 @@
   height: 401px;
 }
 
-.map_img{
+.map_img {
   width: 244px;
   height: 244px;
 }
@@ -62,7 +58,7 @@
   padding: 0px 2%;
 }
 
-.docks{
+.docks {
   display: flex;
   gap: 10px;
 }
@@ -72,7 +68,7 @@
   transition: all 0.5s;
   cursor: pointer;
 }
-.text-centers{
+.text-centers {
   font-size: 16px;
   font-weight: 700;
   font-family: sans-serif;
@@ -113,7 +109,7 @@
   }
 }
 
-.three_div_women{
+.three_div_women {
   width: 100%;
   height: 425px;
   display: flex;
@@ -121,7 +117,7 @@
   justify-content: space-between;
   margin-top: 80px;
 }
-.img_div_women{
+.img_div_women {
   text-align: center;
 }
 .women_kis1_2 {

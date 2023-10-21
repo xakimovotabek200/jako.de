@@ -1,59 +1,56 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .nom {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .JoinIMG {
-    width: 100%;
-    object-fit: cover;
-    height: 300px;
-
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
 }
 
 .Harf {
-    margin: 40px;
-    text-align: center;
-
+  margin: 40px;
+  text-align: center;
 }
 
 .club {
-    color: #FFFFFF;
-    font-size: 30px;
+  color: #ffffff;
+  font-size: 30px;
 }
 
 .wait {
-    color: #FFF;
-    font-size: 25px;
+  color: #fff;
+  font-size: 25px;
 }
 
 .all {
-    width: 1520px;
-    background-image: url('../../../img/JoinImg.jpg');
-    background-repeat: no-repeat;
+  width: 1520px;
+  background-image: url("../../../img/JoinImg.jpg");
+  background-repeat: no-repeat;
 }
 
 .become {
-    margin: 20px;
-    padding: 20px 20px;
-    cursor: pointer;
-    background: #5b5b5b;
-    font-size: 18px;
-    border: none;
-    color: #FFFFFFFF;
+  margin: 20px;
+  padding: 20px 20px;
+  cursor: pointer;
+  background: #5b5b5b;
+  font-size: 18px;
+  border: none;
+  color: #ffffffff;
 }
 
 .become:hover {
-    background: #008ac9;
+  background: #008ac9;
 }
 
 @media only screen and (max-width: 600px) {
-    
 }
