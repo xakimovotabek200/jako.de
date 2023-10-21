@@ -12,7 +12,7 @@ export default function Example() {
     <div className=" flex gap-4 flex-col border-none">
       <Menu
         as="div"
-        className="md:hidden sm:block w-80 relative !bg-none inline-block text-left !border-none"
+        className="md:hidden sm:block w-full relative !bg-none inline-block text-left !border-none"
       >
         <div>
           <Menu.Button className="border-none bg-none inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset">

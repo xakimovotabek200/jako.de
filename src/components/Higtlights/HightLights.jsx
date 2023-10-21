@@ -1,9 +1,9 @@
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
+import { HoverCard, Text } from '@mantine/core';
 import React from "react";
 import { Link, } from "react-router-dom";
 import "./Hightlights.css";
-import { HoverCard, Button, Text, Group } from '@mantine/core';
 
 import { productData } from "./data";
 
@@ -20,7 +20,7 @@ function HightLights() {
                 slideGap={{ base: 0, sm: 'md' }}
                 loop
                 controlSize={50}
-                align="start"
+                align="center"
             >
                 {productData.map((item) => {
                     return (
@@ -33,7 +33,7 @@ function HightLights() {
                                         </HoverCard.Target>
                                         <hr />
                                         <div className='box_text'>
-                                            <h4>{item.title}</h4>
+                                            <h4>Jako{item.name}</h4>
                                             <div className="box_flex">
                                                 <span className='price'>from €{item.cost1}</span>
                                                 <h2 className="text-center">
