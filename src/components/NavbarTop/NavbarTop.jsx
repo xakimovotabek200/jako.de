@@ -4,6 +4,7 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import classes from './NavbarTop.module.css';
 import Modalsearch from './Modalsearch';
+import { LanguagePicker } from './Languages/Language';
 
 
 const links = [
@@ -90,7 +91,6 @@ const links = [
     ],
   },
 ];
-
 export default function NavbarTop() {
   const [opened, { toggle }] = useDisclosure(false);
   const items = links.map((link) => {
@@ -100,7 +100,6 @@ export default function NavbarTop() {
     const menuItemss = link.linkss?.map((item) => (
       <Menu.Item key={item.link}>{item.labels}</Menu.Item>
     ));
-
     if (menuItems) {
       return (
         <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
@@ -153,7 +152,8 @@ export default function NavbarTop() {
               </svg>
             </div>
           </Link>
-          <Modalsearch/>
+          <Modalsearch />
+          <LanguagePicker/>
         </div>
       </div>
     </header>
