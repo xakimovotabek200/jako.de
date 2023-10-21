@@ -1,7 +1,3 @@
-.container {
-  width: 1650px;
-  margin: 0 auto;
-}
 .women {
   width: 100%;
   height: 170vh;
@@ -33,14 +29,14 @@
   justify-content: space-between;
 }
 
-.carousel_img_around{
+.carousel_img_around {
   width: 90%;
   margin-left: 80px;
   height: 500px;
   margin-top: 80px;
 }
 
-.kids_carousel_text{
+.kids_carousel_text {
   margin-left: 50px;
   color: #5b5b5b;
 }
@@ -50,7 +46,7 @@
   height: 401px;
 }
 
-.map_img{
+.map_img {
   width: 244px;
   height: 244px;
   margin-left: 20px;
@@ -64,7 +60,7 @@
   padding: 0px 2%;
 }
 
-.docks{
+.docks {
   display: flex;
   gap: 10px;
 }
@@ -73,7 +69,7 @@
   border: 1px solid #5b5b5b;
   cursor: pointer;
 }
-.text-centers{
+.text-centers {
   font-size: 16px;
   font-weight: 700;
   font-family: sans-serif;
@@ -115,7 +111,7 @@
   }
 }
 
-.three_div_women{
+.three_div_women {
   width: 100%;
   height: 425px;
   display: flex;
@@ -123,7 +119,7 @@
   justify-content: space-between;
   margin-top: 10px;
 }
-.img_div_women{
+.img_div_women {
   text-align: center;
 }
 .women_kis1_2 {
@@ -136,31 +132,4 @@
   color: #5b5b5b;
   font-size: 30px;
   font-weight: 900;
-}
-
-.womens_carousel_text{
-  font-size: 30px;
-  font-weight: 900;
-}
-
-@media only screen and (max-width: 768px) {
-    .three_div_women {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: auto;
-    }
-    .three_div_womens {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: auto;
-    }
-    .women_kis1_2 {
-        width: 300px;
-        height: 240px;
-    }
-}   
-
-.women_hr{
-  width: 90%;
-  margin: 20px auto;
 }
