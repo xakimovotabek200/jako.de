@@ -1,5 +1,6 @@
 import React from "react";
 import "./JakoOnline.css"
+
 function JakoOnline() {
   return (
     <div className="">
@@ -34,7 +35,7 @@ function JakoOnline() {
           online shop.
         </p>
       </div>
-    </div>
+      </div>
   );
 }
 

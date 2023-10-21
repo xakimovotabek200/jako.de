@@ -1,15 +1,18 @@
 import React from "react";
-import Footer_Image from "../../img/Footer_Images.jpg";
-import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
+import { AiFillStar } from "react-icons/ai";
 import {
-  BsStarHalf,
   BsFacebook,
   BsInstagram,
-  BsYoutube,
+  BsStarHalf,
   BsTwitter,
+  BsYoutube,
 } from "react-icons/bs";
-import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import Footer_Image from "../../img/Footer_Images.jpg";
+import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
 import "./Footer.css";
+import Example from "./Example";
+
 
 function Footer() {
   return (
@@ -37,32 +40,111 @@ function Footer() {
       <div className="Js">
         <div className="section">
           <div className="one">
-            <h1 className="">ABOUT JAKO</h1>
-            <p>Company</p>
-            <p>Career</p>
-            <p>Sustainability</p>
-            <p>Teams</p>
-            <p>Newsblog</p>
-            <p>Media</p>
+            <h1 className="h1">ABOUT JAKO</h1>
+            <div className="link">
+              <Link className="" to="/">
+                {" "}
+                Company
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Career{" "}
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Sustainability
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Teams
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Newsblog
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Media
+              </Link>
+            </div>
           </div>
           <div className="one">
-            <h1>JAKO COMMUNITY</h1>
-            <p>JAKO for clubs</p>
-            <p>JAKO for companies</p>
-            <p>JAKO for retailers</p>
-            <p>Find retailers</p>
-            <p>Open a teamshop</p>
+            <h1 className="h1">ABOUT JAKO</h1>
+            <div className="link">
+              <Link className="" to="/">
+                {" "}
+                Company
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Career{" "}
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Sustainability
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Teams
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Newsblog
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Media
+              </Link>
+            </div>
           </div>
           <div className="one">
-            <h1>SERVICE</h1>
-            <p>Customer information</p>
-            <p>Material information</p>
-            <p>Size chart</p>
-            <p>Shipping</p>
-            <p>Returns & complaints</p>
-            <p>Catalogues & Downloads</p>
-            <p>Contact</p>
+            <h1 className="h1">ABOUT JAKO</h1>
+            <div className="link">
+              <Link className="" to="/">
+                Company
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Career
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Sustainability
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Teams
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Newsblog
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Media
+              </Link>
+            </div>
           </div>
+          <Example/>
         </div>
         <div className="left"></div>
         <div className="Mno">

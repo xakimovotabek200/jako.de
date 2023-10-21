@@ -308,7 +308,7 @@ const NavbarTop = () => {
                       <div className="fanshop">
                         <img src={fan2} alt="" />
                       </div>
-                      
+                      ``
                       <h4 className="dropdown-headers">BALLS</h4>
                       <hr className="dropdown-lines" />
                     </div>

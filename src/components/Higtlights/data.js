@@ -14,11 +14,10 @@ export const productData = [
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
-      // Boshqa rasmlar
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -43,7 +42,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -68,7 +67,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -93,7 +92,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -118,7 +117,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -143,7 +142,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -168,7 +167,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
@@ -193,7 +192,7 @@ export const productData = [
     ],
     description:
       "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
-    size: [1, 1, 0, 1, 0],
+    size: ["S","M","L","XL","XXL","3XXL"],
     isAccessory: false,
     brand: "United Colors of Benetton",
     price: 2599,
