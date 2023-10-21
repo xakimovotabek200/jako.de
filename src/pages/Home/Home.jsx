@@ -5,6 +5,7 @@ import Banner from "../../components/HomeBanner/Banner";
 import Jakos from "../../components/Jakosx/Jakos";
 import Navbar from "../../components/Navbar/Navbar";
 import NavbarTop from "../../components/NavbarTop/NavbarTop";
+import Shop from "../Shop/Shop";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner />
       <HightLights />
       <Jakos />
+      <Shop/>
     </>
   );
 };
