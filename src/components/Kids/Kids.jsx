@@ -3,6 +3,9 @@ import './Kids.css'
 import kids from './kids.jpg'
 import kids2 from './kids2.jpg'
 import kids3 from './kids3.jpg'
+import kids4 from './JAKOkids4.jpg'
+import kids5 from './JAKOkids5.jpg'
+import kids6 from './JAKOkids6.jpg'
 import { data } from "./kidscarouseldata";
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
@@ -30,10 +33,9 @@ const Kids = () => {
         </div>
         <div className="carousel_img_around">
           <div className='kids_carousel_text'>
-            <h1>HightLights</h1>
+            <h1 clasName='kids_carous_text'>OUR TOP SELLERS FOR KIDS</h1>
           </div>
           <Carousel
-            withIndicators
             height={590}
             slideSize={{ base: '190%', sm: '50%', md: '20.333333%' }}
             slideGap={{ base: 0, sm: 'md' }}
@@ -74,15 +76,15 @@ const Kids = () => {
         </div>
         <div className="three_div_imga">
           <div className="img_div">
-            <img className='img_kis1_2' src={kids3} alt="" />
+            <img className='img_kis1_2' src={kids4} alt="" />
             <h1 className='kids_sport1'>Kids training jackets</h1>
           </div>
           <div className="img_div">
-            <img className='img_kis1_2' src={kids} alt="" />
+            <img className='img_kis1_2' src={kids5} alt="" />
             <h1 className='kids_sport1'>Kids t-shirts</h1>
           </div>
           <div className="img_div">
-            <img className='img_kis1_2' src={kids2} alt="" />
+            <img className='img_kis1_2' src={kids6} alt="" />
             <h1 className='kids_sport1'>Kids shorts</h1>
           </div>
         </div>

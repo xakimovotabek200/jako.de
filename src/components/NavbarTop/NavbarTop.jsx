@@ -133,15 +133,15 @@ export default function NavbarTop() {
 
   return (
     <header className={classes.header}>
-      <Container size="md">
+      <div className="container">
         <div className={classes.inner}>
-          <Link to="/"><img className={classes.images} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
-          <Group gap={30} visibleFrom="sm">
-            {items}
-          </Group>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-        </div>
-      </Container>
+        <Link to="/"><img className={classes.images} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
+        <Group gap={30} visibleFrom="sm">
+          {items}
+        </Group>
+        <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+      </div>
+      </div>
     </header>
   );
 }
