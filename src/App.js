@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Kids from "./components/Kids/Kids";
-import Navbar from "./components/Navbar/Navbar";
 import NavbarTop from "./components/NavbarTop/NavbarTop";
 import Home from "./pages/Home/Home";
 import Sale from "./pages/sale/Sale";
@@ -18,7 +17,6 @@ import Cart from "./components/Cart/Cart";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <NavbarTop />
       <Routes>
         <Route path="/" element={<Home />} />

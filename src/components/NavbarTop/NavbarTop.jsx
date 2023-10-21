@@ -1,9 +1,11 @@
-import { Burger, Center, Container, Group, Menu } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { IconChevronDown } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
-import classes from "./NavbarTop.css";
-import Modalsearch from "./Modalsearch";
+import { Burger, Center, Container, Group, Menu } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { IconChevronDown } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
+import classes from './NavbarTop.module.css';
+import Modalsearch from './Modalsearch';
+import { LanguagePicker } from './Languages/Language';
+
 
 const links = [
   {
@@ -89,7 +91,6 @@ const links = [
     ],
   },
 ];
-
 export default function NavbarTop() {
   const [opened, { toggle }] = useDisclosure(false);
   const items = links.map((link) => {
@@ -99,7 +100,6 @@ export default function NavbarTop() {
     const menuItemss = link.linkss?.map((item) => (
       <Menu.Item key={item.link}>{item.labels}</Menu.Item>
     ));
-
     if (menuItems) {
       return (
         <Menu
@@ -174,6 +174,7 @@ export default function NavbarTop() {
             </div>
           </Link>
           <Modalsearch />
+          <LanguagePicker/>
         </div>
       </div>
     </header>
