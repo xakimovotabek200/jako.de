@@ -149,10 +149,12 @@ function Footer() {
         <div className="left"></div>
         <div className="Mno">
           <h1>SAVE 30% ON YOUR FIRST ORDER</h1>
+          <br />
           <h4>
             Excluded for fan articles, organic and doubletex articles and
             already reduced articles
           </h4>
+          <br />
           <button className="now">BECOME A CLUB MEMBER NOW</button>
         </div>
       </div>
@@ -160,7 +162,7 @@ function Footer() {
       <div className="hammasi">
         <div className="flexONe">
           <div className="med">
-            <h1>WE ARE TEAM</h1>
+            <h1 className="we">WE ARE TEAM</h1>
             <div className="ico">
               <BsFacebook className="i" />
               <BsInstagram className="i" />

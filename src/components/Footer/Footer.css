@@ -27,7 +27,7 @@
     height: 300px;
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 20px;
 }
 
@@ -120,14 +120,27 @@
     color: #008ac9;
     text-align: left;
     font-size: 40px;
+    font-weight: bold;
 }
-
+.we{
+    color: #008ac9;
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;   
+}
+.Mno{
+    margin-right: 100px;
+}
 .Mno h4 {
     color: #5b5b5b;
     text-align: left;
     width: 500px;
 }
-
+.med{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
 .flexONe {
     display: flex;
     justify-content: space-around;
@@ -188,6 +201,7 @@ ul li a:hover {
         grid-template-columns: auto;
         justify-content: space-between;
         margin: 20px;
+      
     }
 
     .dropdown {
