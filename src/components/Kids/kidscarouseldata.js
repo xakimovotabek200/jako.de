@@ -10,7 +10,7 @@ export const data = [
     image:
       "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8620_01.jpg",
     title: "JAKO Zip top Champ 2.0",
-    cost1: 'from € 31.49',
+    cost1: '€ 31.49',
     costDel2: '€49.99',
     discount: '-30 % Discount',
   },
@@ -57,7 +57,7 @@ export const data = [
       "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8819_11.jpg",
 
     title: "JAKO Sweater Striker 2.0",
-    cost1: 'from € 17.99',
+    cost1: '€ 17.99',
     costDel2: '€34.99',
     discount: '-48 % Discount',
   },
