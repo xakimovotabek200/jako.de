@@ -11,9 +11,19 @@ import {
 
 function Cart() {
   const dispatch = useDispatch();
+
   const { products } = useSelector((state) => state.orebiReducer);
   const [opened, { open, close }] = useDisclosure(false);
   const [selectedProductImage, setSelectedProductImage] = useState(null);
+
+  function calculateTotal(products) {
+    return products.reduce((total, product) => {
+      const productCost = parseFloat(product.cost1);
+      return total + productCost * product.quantity;
+    }, 0);
+  }
+
+  const totalSum = calculateTotal(products);
 
   return (
     <div>
@@ -167,7 +177,7 @@ function Cart() {
             <div className="flex flex-row justify-between">
               <p className="text-gray-600">Total</p>
               <div>
-                <p className="text-end font-bold">$103.88</p>
+                <p className="text-end font-bold">${totalSum.toFixed(2)}</p>
               </div>
             </div>
             <div className="flex gap-2">
