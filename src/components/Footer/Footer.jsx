@@ -11,8 +11,6 @@ import { Link } from "react-router-dom";
 import Footer_Image from "../../img/Footer_Images.jpg";
 import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
 import "./Footer.css";
-import Example from "./Example";
-
 
 function Footer() {
   return (
@@ -144,7 +142,6 @@ function Footer() {
               </Link>
             </div>
           </div>
-          <Example/>
         </div>
         <div className="left"></div>
         <div className="Mno">

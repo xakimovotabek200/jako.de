@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./example.css"
 function Example() {
   const [isochil, setisOchil] = useState(false);
   return (
