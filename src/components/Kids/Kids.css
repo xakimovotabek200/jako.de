@@ -139,3 +139,21 @@
   font-size: 30px;
   font-weight: 900;
 }
+@media only screen and (max-width: 600px) {
+    .three_div_img {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: auto;
+    }
+    .three_div_imga {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: auto;
+    }
+
+    .img_kis1_2 {
+        width: 350px;
+        height: 240px;
+    }
+}   
+
