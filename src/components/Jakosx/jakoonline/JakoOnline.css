@@ -16,3 +16,9 @@
     font-size: 15px;
     line-height: 30px;
 }
+@media only screen and (max-width: 600px) {
+    .lets{
+        width:370px;
+        line-height: 25px;
+    }
+}

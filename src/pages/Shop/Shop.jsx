@@ -1,4 +1,4 @@
-import { Carousel } from "@mantine/carousel";
+
 import "@mantine/carousel/styles.css";
 import { HoverCard, Text } from '@mantine/core';
 import React from "react";
