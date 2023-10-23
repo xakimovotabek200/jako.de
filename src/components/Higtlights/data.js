@@ -8,8 +8,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -37,8 +35,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -68,8 +64,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -98,8 +92,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -128,8 +120,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -158,8 +148,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -188,8 +176,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",
@@ -218,8 +204,6 @@ export const productData = [
     costDel2: 59.99,
     discount: 30,
     image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-    preview:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
     photos: [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
       "https://cdn.jako.de/userdata/dcshop/images/thumb_2/6120_01.jpg",

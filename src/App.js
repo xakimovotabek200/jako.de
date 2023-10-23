@@ -19,14 +19,15 @@ function App() {
     <BrowserRouter>
       <NavbarTop />
       <Routes>
+
         <Route path="/" element={<Home />} />
-        <Route path="/higtlightsId/:id" element={<HightLightsId />} />
+        <Route path="/higtlightsId/:id  " element={<HightLightsId />} />
         <Route path="/men" element={<Mens />} />
         <Route path="/kids" element={<Kids />} />
         <Route path="/women" element={<Women />} />
         <Route path="/sale" element={<Sale />} />
         <Route path="/cart" element={<Cart />} />
-  
+
       </Routes>
       <Footer />
     </BrowserRouter>

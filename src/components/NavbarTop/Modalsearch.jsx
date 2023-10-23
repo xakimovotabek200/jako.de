@@ -11,6 +11,7 @@ function Modalsearch() {
         onClose={close}
         fullScreen
         radius={0}
+        zIndex={9999}
         transitionProps={{ transition: 'fade', duration: 200 }}
       >
         <Space h="md" />

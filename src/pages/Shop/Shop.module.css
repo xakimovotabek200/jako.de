@@ -1,0 +1,142 @@
+.text_hight {
+  text-align: center;
+  margin-bottom: 2pc;
+  margin-top: 2pc;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: #5b5b5b;
+}
+
+.box {
+  width: 360px;
+  height: 480px;
+  padding: 10px;
+}
+
+.box_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 2%;
+}
+
+.box:hover {
+  border: 1px solid #5b5b5b;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+del,
+ins {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+del {
+  color: #5b5b5b;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+del:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(50%);
+  border-top: 2px solid red;
+  transform: rotateZ(-5deg);
+  animation: del 0.5s ease-in;
+}
+
+ins:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: ins 1s ease-out;
+  animation-delay: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.text_diskpunt {
+  color: rgba(217, 7, 7, 0.934);
+}
+
+.box_text {
+  margin-top: 3pc;
+  color: #5b5b5b;
+  padding: 10px;
+}
+
+.price {
+  color: red;
+  font-weight: 700;
+}
+
+@keyframes del {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes ins {
+  0% {
+    width: 0;
+    background: rgb(255, 255, 0);
+    z-indZZZex: -1;
+  }
+
+  100% {
+    width: 100%;
+    background: rgb(255, 255, 0);
+    z-index: -1;
+  }
+}
+
+.btns {
+  width: 200px;
+  height: 50px;
+  padding: 10px 20px 12px 20px;
+  font-size: 18px;
+  min-width: 200px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  background-color: #5b5b5b;
+  border-color: #fff;
+  border-radius: 10px;
+  margin-left: 40pc;
+  margin-bottom: 2pc;
+}
+
+.btns:hover {
+  background-color: #008ac9;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  border: none;
+}
+
+@media screen and (max-width: 900px) {
+  .btns {
+    margin-left: 20pc;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .btns {
+    margin-left: 5pc;
+  }
+}

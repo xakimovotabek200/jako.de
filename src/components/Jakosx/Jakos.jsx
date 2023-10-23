@@ -1,14 +1,12 @@
 import React from "react";
-import JoinDAnPAsti from "./joindanPasti/JoinDAnPAsti";
 import JakoOnline from "./jakoonline/JakoOnline";
-import Example from "../Footer/Example";
+import JoinDAnPAsti from "./joindanPasti/JoinDAnPAsti";
 
 function Jakos() {
   return (
     <div className="container">
       <JoinDAnPAsti />
       <JakoOnline />
-      <Example/>
     </div>
   );
 }
