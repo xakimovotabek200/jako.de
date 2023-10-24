@@ -3,7 +3,7 @@
   margin-bottom: rem(120px);
   background-color: var(--mantine-color-body);
   border-bottom: rem(1px) solid light-dark(var(--mantine-color-body), var(--mantine-color-body));
-  position: fixed;
+  position: sticky;
   width: 100%;
   left: 0;
   top: 0;

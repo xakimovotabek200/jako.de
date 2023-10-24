@@ -13,6 +13,7 @@ import "@mantine/core/styles.css";
 import HightLightsId from "./components/Higtlights/HigtlightsId";
 import Women from "./pages/women/Women";
 import Cart from "./components/Cart/Cart";
+import Offer from "./components/Offer/Offer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/women" element={<Women />} />
         <Route path="/sale" element={<Sale />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/offer" element={<Offer />} />
       </Routes>
       <Footer />
     </BrowserRouter>
