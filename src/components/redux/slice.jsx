@@ -4,6 +4,7 @@ const initialState = {
     userInfo: [],
     products: [],
     selectedSize: "",
+    selectedImage: "",
 };
 
 export const Slice = createSlice({
@@ -18,6 +19,9 @@ export const Slice = createSlice({
         },
         setSize: (state, action) => {
             state.selectedSize = action.payload
+        },
+        setImage: (state, action) => {
+            state.selectedImage = action.payload
         },
         increaseQuantity: (state, action) => {
             const item = state.products.find(
@@ -38,9 +42,11 @@ export const Slice = createSlice({
             }
         },
         deleteItem: (state, action) => {
-            state.products = state.products.filter(
-                (item) => item._id !== action.payload
-            );
+            for (let i = 0; i < state.products.length; i++) {
+                if (state.products[i].uuid === action.payload) {
+                    state.products.splice(i, 1)
+                }
+            }
         },
         resetCart: (state) => {
             state.products = [];
@@ -51,6 +57,7 @@ export const Slice = createSlice({
 export const {
     addToCart,
     setSize,
+    setImage,
     increaseQuantity,
     drecreaseQuantity,
     deleteItem,

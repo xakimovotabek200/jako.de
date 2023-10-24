@@ -8,7 +8,7 @@ import ContiuneHightleht from "./ContiuneHightleht";
 import { productData } from "./data";
 import classes from './indicator.css';
 import { useDispatch } from "react-redux";
-import { setSize } from "../redux/slice";
+import { setImage, setSize } from "../redux/slice";
 
 function HightLightsId() {
     const { id } = useParams();
@@ -18,7 +18,7 @@ function HightLightsId() {
     const [opened, { open, close }] = useDisclosure(false);
 
     const dispatch = useDispatch()
-    
+
     if (!highlight) {
         return <div className="">data not found</div>;
     }
@@ -27,25 +27,29 @@ function HightLightsId() {
         setActive(item)
         return dispatch(setSize(item))
     }
+    function selectImage(item) {
+        setSelectedImageIndex(item)
+        return dispatch(setImage(item))
+    }
 
     return (
         <div className="container mx-auto w-[95%] md:flex justify-around">
             <div className="right_side">
                 <HoverCard shadow="md" closeDelay={200}>
-                    <Modal size="calc(50vw - 3rem)" opened={opened} onClose={close}>
-                        <HoverCard.Target>
-                            <img
-                                style={{ width: "80%", objectFit: "contain ", height: "500px" }}
-                                src={selectedImageIndex}
-                                alt=""
-                            />
-                        </HoverCard.Target>
-                    </Modal>
+                        <Modal size="calc(50vw - 3rem)" opened={opened} onClose={close}>
+                            <HoverCard.Target>
+                                <img
+                                    style={{ width: "80%", objectFit: "contain ", height: "500px" }}
+                                    src={selectedImageIndex}
+                                    alt=""
+                                />
+                            </HoverCard.Target>
+                        </Modal>
                     <img
                         className="w-[500px] object-contain h-[500px]"
                         src={selectedImageIndex}
                         onClick={open}
-                        title="Open modal"
+                        title={highlight.image}
                         style={{ cursor: "pointer" }}
                     />
                     <HoverCard.Dropdown>
@@ -88,10 +92,10 @@ function HightLightsId() {
                                         <img
                                             className="cursor-pointer w-[560] h-[60px] object-contain"
                                             src={item}
+                                            onClick={
+                                                () => selectImage(item)}
                                             alt=""
-                                            onClick={() => {
-                                                setSelectedImageIndex(item);
-                                            }}
+
                                         />
                                     </Carousel.Slide>
                                 </div>

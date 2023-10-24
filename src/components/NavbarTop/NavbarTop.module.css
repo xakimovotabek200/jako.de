@@ -3,11 +3,6 @@
   margin-bottom: rem(120px);
   background-color: var(--mantine-color-body);
   border-bottom: 1px solid #BFBFBF;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 9999;
 }
 
 .inner {
@@ -44,4 +39,9 @@
 .images {
   width: 150px;
   height: 50px;
+}
+
+.flex_div{
+  display: flex;
+  align-items: center;justify-content: space-between;
 }
