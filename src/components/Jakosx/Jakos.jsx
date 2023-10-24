@@ -1,6 +1,6 @@
 import React from "react";
-import JoinDAnPAsti from "./joindanPasti/JoinDAnPAsti";
 import JakoOnline from "./jakoonline/JakoOnline";
+import JoinDAnPAsti from "./joindanPasti/JoinDAnPAsti";
 
 function Jakos() {
   return (
