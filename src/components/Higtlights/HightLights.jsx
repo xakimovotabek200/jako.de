@@ -4,7 +4,6 @@ import { HoverCard, Text } from '@mantine/core';
 import React from "react";
 import { Link, } from "react-router-dom";
 import "./Hightlights.css";
-
 import { productData } from "./data";
 
 function HightLights() {

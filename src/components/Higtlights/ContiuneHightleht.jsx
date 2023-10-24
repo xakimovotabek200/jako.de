@@ -15,7 +15,7 @@ function ContiuneHightleht({ highlight }) {
     function handleAddToCart(data) {
         let newData = Object.assign({}, data)
         newData.uuid = crypto.randomUUID();
-        newData.quantity=quantity;
+        newData.quantity = quantity;
         newData.size = selectedSize;
         newData.image = selectedImage ? selectedImage : newData.image;
         return dispatch(addToCart(newData))
@@ -39,7 +39,7 @@ function ContiuneHightleht({ highlight }) {
                     <div>
                         <button onClick={() => setQuantity(quantity++)} className='w-[20px] border-2 border-solid border-[#5b5b5b] hover:bg-[#008ac9] hover:text-white'>+</button>
                         <br />
-                        <button onClick={() => quantity ? setQuantity(quantity--) :setQuantity(0) } className='w-[20px] h-[32px] border-2 border-solid border-[#5b5b5b] hover:bg-[#008ac9] hover:text-white'>-</button>
+                        <button onClick={() => quantity ? setQuantity(quantity--) : setQuantity(0)} className='w-[20px] h-[32px] border-2 border-solid border-[#5b5b5b] hover:bg-[#008ac9] hover:text-white'>-</button>
                     </div>
                 </div>
                 <Button onClick={() => handleAddToCart(highlight)} variant="filled" style={{ width: "200px", height: "65px" }} >Add to cart</Button>

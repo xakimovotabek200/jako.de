@@ -34,13 +34,11 @@ ins {
   display: inline-block;
   text-decoration: none;
 }
-
 del {
   color: #5b5b5b;
   font-weight: 400;
   font-size: 20px;
 }
-
 del:after {
   content: "";
   position: absolute;
@@ -64,17 +62,14 @@ ins:after {
   animation-delay: 0.75s;
   animation-fill-mode: forwards;
 }
-
 .text_diskpunt {
   color: rgba(217, 7, 7, 0.934);
 }
-
 .box_text {
   margin-top: 3pc;
   color: #5b5b5b;
   padding: 10px;
 }
-
 .price {
   color: red;
   font-weight: 700;
@@ -94,7 +89,7 @@ ins:after {
   0% {
     width: 0;
     background: rgb(255, 255, 0);
-    z-indZZZex: -1;
+    z-index: -1;
   }
 
   100% {

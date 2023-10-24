@@ -1,25 +1,42 @@
-
 import "@mantine/carousel/styles.css";
 import { HoverCard, Text } from '@mantine/core';
-import React from "react";
-import { Link, } from "react-router-dom";
-import "./Shop.module.css";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Offer.module.css";
 import { productData } from "../../components/Higtlights/data";
 
-function Shop() {
+function Offer() {
+    const [selectedColor, setSelectedColor] = useState("");
+    const filteredProducts = productData.filter(item => {
+        return selectedColor === "" || item.color === selectedColor;
+    });
+
+    const handleColorChange = (e) => {
+        setSelectedColor(e.target.value);
+    };
+
     return (
-        <div className='container'>
+        <div className='container mx-auto'>
             <div className='text_hight'>
-                <h1>Shop</h1>
+                <h1>Offer</h1>
+            </div>
+            <div>
+                <select name="Color" className="outline-none text-center" id="" onChange={handleColorChange}>
+                    <option value="">Color</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="grey">Grey</option>
+                    <option value="orange">Orange</option>
+                </select>
+                <div className="w-[300px] h-[1px] bg-black" />
             </div>
 
             <div className="md:flex flex-wrap items-center ">
-                {productData.map((item) => {
+                {filteredProducts.map((item) => {
                     return (
-                        <Link key={item.id} to={`/HigtlightsId/${item.id}`} >
+                        <Link key={item.id} to={`/HigtlightsId/${item.id}`}>
                             <HoverCard shadow="md" closeDelay={300}>
-                                <div className="box" >
+                                <div className="box">
                                     <HoverCard.Target>
                                         <img src={item.image} alt="" />
                                     </HoverCard.Target>
@@ -48,8 +65,8 @@ function Shop() {
                     Show All
                 </button>
             </div>
-        </div >
+        </div>
     )
 }
 
-export default Shop;
+export default Offer;
