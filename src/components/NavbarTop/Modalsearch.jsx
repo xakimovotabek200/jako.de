@@ -14,7 +14,7 @@ function Modalsearch() {
         zIndex={9999}
         transitionProps={{ transition: 'fade', duration: 200 }}
       >
-        <Space h="md" />
+        <Space fullScreen />
         <Flex direction={{ base: "column", sm: "row" }} gap="sm" align="center">
           <Input
             icon={<IconSearch size={18} />}
@@ -23,7 +23,7 @@ function Modalsearch() {
           />
         </Flex>
       </Modal>
-      <Button onClick={open}>Open Modal</Button>
+      <IconSearch onClick={open} />
     </>
   );
 }
