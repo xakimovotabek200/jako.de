@@ -36,15 +36,15 @@ function HightLightsId() {
         <div className="container mx-auto w-[95%] md:flex justify-around">
             <div className="right_side">
                 <HoverCard shadow="md" closeDelay={200}>
-                        <Modal size="calc(50vw - 3rem)" opened={opened} onClose={close}>
-                            <HoverCard.Target>
-                                <img
-                                    style={{ width: "80%", objectFit: "contain ", height: "500px" }}
-                                    src={selectedImageIndex}
-                                    alt=""
-                                />
-                            </HoverCard.Target>
-                        </Modal>
+                    <Modal size="calc(50vw - 3rem)" opened={opened} onClose={close}>
+                        <HoverCard.Target>
+                            <img
+                                style={{ width: "80%", objectFit: "contain ", height: "500px" }}
+                                src={selectedImageIndex}
+                                alt=""
+                            />
+                        </HoverCard.Target>
+                    </Modal>
                     <img
                         className="w-[500px] object-contain h-[500px]"
                         src={selectedImageIndex}

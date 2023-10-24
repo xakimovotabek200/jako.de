@@ -91,6 +91,7 @@ const links = [
     ],
   },
 ];
+
 export default function NavbarTop() {
   const [opened, { toggle }] = useDisclosure(false);
   const items = links.map((link) => {
@@ -174,7 +175,7 @@ export default function NavbarTop() {
             </div>
           </Link>
           <Modalsearch />
-          <LanguagePicker/>
+          <LanguagePicker />
         </div>
       </div>
     </header>
