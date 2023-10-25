@@ -25,7 +25,7 @@ export function LanguagePicker() {
       onClick={() => setSelected(item)}
       key={item.label}
     >
-      {item.label}
+      <span className={classes.label}>{item.label}</span>
     </Menu.Item>
   ));
 

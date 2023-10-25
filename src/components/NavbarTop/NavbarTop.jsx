@@ -13,6 +13,7 @@ import {
   IconChevronDown,
 } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 const mockdata = [
   {
     icon: IconCode,
@@ -319,11 +320,10 @@ function NavbarTop() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box pb={20}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <img style={{ width: "160px", height: "50px" }} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" />
-
+          <Link to="/"><img style={{ width: "160px", height: "50px" }} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
@@ -625,10 +625,6 @@ function NavbarTop() {
               </div>
             </Link>
           </div>
-          <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
         </Group>
