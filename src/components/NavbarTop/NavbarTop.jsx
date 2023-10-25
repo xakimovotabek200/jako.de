@@ -236,7 +236,7 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+          <item.icon style={{ width: rem(22), height: rem(10) }} color={theme.colors.blue[6]} />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
