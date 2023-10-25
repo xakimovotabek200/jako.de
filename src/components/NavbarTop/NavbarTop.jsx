@@ -324,6 +324,7 @@ function NavbarTop() {
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Link to="/"><img style={{ width: "160px", height: "50px" }} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
+          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
@@ -626,7 +627,6 @@ function NavbarTop() {
             </Link>
           </div>
 
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
         </Group>
       </header>
 
