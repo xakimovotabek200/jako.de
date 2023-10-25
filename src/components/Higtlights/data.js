@@ -29,7 +29,7 @@ export const productData = [
   {
     id: 2,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "red",
+    color: "blue",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -57,8 +57,7 @@ export const productData = [
   {
     id: 3,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "gray",
-
+    color: "red",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -86,7 +85,7 @@ export const productData = [
   {
     id: 4,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "orange",
+    color: "red",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -114,7 +113,7 @@ export const productData = [
   {
     id: 5,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "white",
+    color: "grey",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -142,7 +141,7 @@ export const productData = [
   {
     id: 6,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "shaptoli-rang",
+    color: "grey",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -170,7 +169,7 @@ export const productData = [
   {
     id: 7,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "blue",
+    color: "orange",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -198,7 +197,7 @@ export const productData = [
   {
     id: 8,
     name2: "JAKO Presentation suit Champ 2.0 with hood",
-    color: "white-blue",
+    color: "orange",
     name: " Cap function",
     cost1: 41.99,
     costDel2: 59.99,
@@ -222,5 +221,23 @@ export const productData = [
     brand: "United Colors of Benetton",
     price: 2599,
     quantity: 1,
+  },
+];
+
+export const groceries = [
+  {
+    value: "Description",
+    description:
+      "Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.",
+  },
+  {
+    value: "Details",
+    description:
+      "Naturally sweet and potassium-rich fruit. Bananas are a popular choice for their energy-boosting properties and can be enjoyed as a quick snack, added to smoothies, or used in baking.",
+  },
+  {
+    value: "Material",
+    description:
+      "Nutrient-packed green vegetable. Broccoli is packed with vitamins, minerals, and fiber. It has a distinct flavor and can be enjoyed steamed, roasted, or added to stir-fries.",
   },
 ];
