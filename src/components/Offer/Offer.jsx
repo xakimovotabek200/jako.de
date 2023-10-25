@@ -60,11 +60,7 @@ function Offer() {
                     )
                 })}
             </div>
-            <div>
-                <button className='btns'>
-                    Show All
-                </button>
-            </div>
+
         </div>
     )
 }

@@ -8,12 +8,13 @@ import NavbarTop from "./components/NavbarTop/NavbarTop";
 import Home from "./pages/Home/Home";
 import Mens from "./pages/mens/Mens";
 import Sale from "./pages/sale/Sale";
-import Equitment from './components/Equitment/Equitment'
+import Equitment from "./components/Equitment/Equitment";
 import "@mantine/core/styles.css";
 import Cart from "./components/Cart/Cart";
 import HightLightsId from "./components/Higtlights/HigtlightsId";
 import Women from "./pages/women/Women";
 import Offer from "./components/Offer/Offer";
+import Wishes from "./components/Wishes/Wishes";
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
         <Route path="/sale" element={<Sale />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/offer" element={<Offer />} />
-        <Route path="/equitment" element={<Equitment/>} />
+        <Route path="/equitment" element={<Equitment />} />
+        <Route path="/wishes" element={<Wishes />} />
       </Routes>
       <Footer />
     </BrowserRouter>

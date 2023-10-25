@@ -54,9 +54,11 @@ function HightLights() {
                 </Carousel >
             </div>
             <div>
-                <button className='btns'>
-                    Show All
-                </button>
+                <Link to={"/offer"}>
+                    <button className='btns'>
+                        Show All
+                    </button>
+                </Link>
             </div>
         </div >
     )
