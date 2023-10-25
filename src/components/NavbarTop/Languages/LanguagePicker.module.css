@@ -8,7 +8,6 @@
   border: 1px solid gray;
   transition: background-color 150ms ease;
   background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
-
   &[data-expanded] {
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
   }
@@ -42,4 +41,17 @@
   width: 25px;
   height: 25px;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 390px){
+  .control{
+    width: 70px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .label{
+    display: none;
+  }
 }
