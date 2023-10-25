@@ -156,41 +156,40 @@ function Footer() {
         </div>
       </div>
       <hr />
-      <div className="hammasi">
-        <div className="flexONe">
-          <div className="med">
-            <h1 className="we">WE ARE TEAM</h1>
-            <div className="ico">
-              <BsFacebook className="i" />
-              <BsInstagram className="i" />
-              <BsYoutube className="i" />
-              <BsTwitter className="i" />
-            </div>
-            <div className="year">
-              <ul>
-                <li>
-                  <a href="/">Data protection</a>
-                </li>
-                <li>
-                  <a href="/">Whistleblower system</a>
-                </li>
-                <li>
-                  <a href="/">Instructions on cancellation</a>
-                </li>
-                <li>
-                  <a href="/">General terms & conditions</a>
-                </li>
-                <li>
-                  <a href="/">Legal notice</a>
-                </li>
-                <p>© 2023 JAKO AG, All rights reserved</p>
-              </ul>
-            </div>
-          </div>
+      <div className="Quit">
+        <div className="exit_one">
+          <h1>WE ARE TEAM</h1>
+          <BsFacebook className="i" />
+          <BsInstagram className="i" />
+          <BsYoutube className="i" />
+          <BsTwitter className="i" />
+        </div>
+        <div className="exit_two">
+          <ul>
+            <li>
+              <Link to="/">Protection des données</Link>
+            </li>
+            <li>
+              <Link to="/">Système d'Alerte Professionnelle</Link>
+            </li>
+            <li>
+              <Link to="/">Droit de rétractation</Link>
+            </li>
+            <li>
+              <Link to="/">Conditions générales</Link>
+            </li>
+            <li>
+              <Link to="/">Mentions légales</Link>
+            </li>
+            <li>
+              <p className="link">© 2023 JAKO AG, Tous droits réservés</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   );
 }
-
+{
+}
 export default Footer;
