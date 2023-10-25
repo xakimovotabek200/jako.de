@@ -114,6 +114,7 @@
 
 .left {
     border: 1px solid #337ab7;
+    width: auto;
 }
 
 .Mno h1 {
@@ -122,77 +123,30 @@
     font-size: 40px;
     font-weight: bold;
 }
-.we{
+
+.we {
     color: #008ac9;
     text-align: left;
     font-size: 30px;
-    font-weight: bold;   
+    font-weight: bold;
 }
-.Mno{
+
+.Mno {
     margin-right: 100px;
 }
+
 .Mno h4 {
     color: #5b5b5b;
     text-align: left;
     width: 500px;
 }
-.med{
+
+.med {
     display: flex;
     gap: 5px;
     align-items: center;
 }
-.flexONe {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
 
-.flexONe h1 {
-    color: #337ab7;
-}
-
-.ico {
-    display: flex;
-    text-align: center;
-}
-
-.i {
-    font-size: 20px;
-    margin: 10px;
-    color: #575555;
-}
-
-.i:hover {
-    color: #008ac9;
-    cursor: pointer;
-}
-
-ul {
-    margin: 5px;
-    display: flex;
-}
-
-ul li a {
-    color: #5b5b5b;
-    padding: 10px;
-}
-
-.link {
-    color: #5b5b5b;
-
-}
-
-ul li a:hover {
-    color: #008ac9;
-}
-
-.year p {
-    color: #575555;
-}
-
-.year .link {
-    color: #575555;
-}
 
 @media only screen and (max-width: 600px) {
     .Js {
@@ -201,7 +155,7 @@ ul li a:hover {
         grid-template-columns: auto;
         justify-content: space-between;
         margin: 20px;
-      
+
     }
 
     .dropdown {
@@ -219,8 +173,28 @@ ul li a:hover {
         gap: 50px;
     }
 
+    .left {
+        display: none;
+    }
+
     .JustFlex {
         display: none;
+    }
+
+
+    .Mno h1 {
+        color: #008ac9;
+        font-size: 22px;
+        width: 370px;
+    }
+
+    .Mno h4 {
+        width: 370px;
+    }
+
+    .Js {
+        display: grid;
+        grid-template-columns: auto;
     }
 
     .JustFlex1 {
@@ -229,26 +203,53 @@ ul li a:hover {
 
     }
 
+    .flexONe {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .Quit {
+        flex-wrap: wrap-reverse;
+    }
+
+    .exit_two>ul {
+        flex-wrap: wrap;
+    }
+   
 }
 
-.dropdown {
-    position: relative;
-    display: none;
+.Quit {
+    display: flex;
+    margin: 20px;
+
+    justify-content: space-between;
 }
 
-.menu {
-    position: absolute;
-    z-index: 9;
-    list-style-type: none;
-    margin: 5px 0;
-    padding: 0;
-    width: 150px;
+.exit_one {
+    display: flex;
+    gap: 5px;
 }
-.menu>.link {
+
+.exit_one h1 {
+    color: #008ac9;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.i {
     color: #5b5b5b;
-    font-size: 15px;
-    line-height: 30px;
+    margin: 10px;
+    font-size: 20px;
 }
-.menu > h1{
-    width: 100%;
+
+.i:hover {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+.exit_two>ul {
+    gap: 8px;
+    display: flex;
+    margin: 5px;
+    color: #5b5b5b;
 }
