@@ -1,0 +1,14 @@
+@media only screen and (max-width: 390px) {
+  .search {
+    display: none;
+  }
+  .media_search {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 391px) {
+  .media_search {
+    display: none;
+  }
+}
