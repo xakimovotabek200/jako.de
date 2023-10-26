@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Sale() {
   return (
-    <div>
+    <div className="me">
       <div className="card">
         <div className="cards">
           <li>

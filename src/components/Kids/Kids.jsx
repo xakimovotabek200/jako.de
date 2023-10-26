@@ -1,96 +1,83 @@
-import React from 'react'
-import './Kids.css'
-import kids from './kids.jpg'
-import kids2 from './kids2.jpg'
-import kids3 from './kids3.jpg'
-import kids4 from './JAKOkids4.jpg'
-import kids5 from './JAKOkids5.jpg'
-import kids6 from './JAKOkids6.jpg'
-import { data } from "./kidscarouseldata";
-import { Carousel } from "@mantine/carousel";
-import "@mantine/carousel/styles.css";
-
-const Kids = () => {
+import React from "react";
+import { Link } from "react-router-dom";
+import HightLights from "../../components/Higtlights/HightLights";
+import Men1 from "../../img/men1.jpg";
+import Men2 from "../../img/men2.jpg";
+import Men3 from "../../img/men3.jpg";
+import "./Kids.css";
+function Mens() {
   return (
-    <div className="container">
-      <div className='kids'>
-        <div className="kids_title">
-          <h1 className='h1_kids_title'>SPORTSWEAR KIDS</h1>
-        </div>
-        <div className="three_div_img">
-          <div className="img_div">
-            <img className='img_kis1_2' src={kids3} alt="" />
-            <h1 className='kids_sport1'>Kids sportswear</h1>
+    <div>
+      <div className="Men">
+      <h1 className="men">Woomen</h1>
+        <div className="card">
+          <div className="cardla">
+            <img className="img" src={Men2} alt="" />
+            <li>
+              <Link className="aw" to="/">
+                Men sportswear
+              </Link>
+            </li>
           </div>
-          <div className="img_div">
-            <img className='img_kis1_2' src={kids} alt="" />
-            <h1 className='kids_sport1'>Kids training suits</h1>
+          <div className="cardla">
+            <img className="img" src={Men1} alt="" />
+            <li>
+              <Link className="aw" to="/">
+                Men sportswear
+              </Link>
+            </li>
           </div>
-          <div className="img_div">
-            <img className='img_kis1_2' src={kids2} alt="" />
-            <h1 className='kids_sport1'>Kids jerseys</h1>
-          </div>
-        </div>
-        <div className="carousel_img_around">
-          <div className='kids_carousel_text'>
-            <h1 clasName='kids_carous_text'>OUR TOP SELLERS FOR KIDS</h1>
-          </div>
-          <Carousel
-            height={590}
-            slideSize={{ base: '190%', sm: '50%', md: '20.333333%' }}
-            slideGap={{ base: 0, sm: 'md' }}
-            loop
-            controlSize={50}
-            aria-controls='flex'
-            align="start"
-            mt={20}
-            ml={20}
-          >
-            {data.map((item) => (
-              <Carousel.Slide key={item.id}>
-                <div className="boxes">
-                  <div>
-                    <img className="map_img" src={item.image} alt="" />
-                  </div>
-                  <hr />
-                  <div className="box_texts">
-                    <h4>{item.title}</h4>
-                    <div className="docks">
-                      {item.cost1 && item.discount ? (
-                        <span className="price">{item.cost1}</span>
-                      ) : (
-                        ""
-                      )}
-                      <h2 className="text-centers">{item.costDel2}</h2>
-                      {item.discount && item.cost1 ? (
-                        <p className="text_diskpunt">{item.discount}</p>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Carousel.Slide>
-            ))}
-          </Carousel >
-        </div>
-        <div className="three_div_imga">
-          <div className="img_div">
-            <img className='img_kis1_2' src={kids4} alt="" />
-            <h1 className='kids_sport1'>Kids training jackets</h1>
-          </div>
-          <div className="img_div">
-            <img className='img_kis1_2' src={kids5} alt="" />
-            <h1 className='kids_sport1'>Kids t-shirts</h1>
-          </div>
-          <div className="img_div">
-            <img className='img_kis1_2' src={kids6} alt="" />
-            <h1 className='kids_sport1'>Kids shorts</h1>
+          <div className="cardla">
+            <img className="img" src={Men3} alt="" />
+            <li>
+              <Link className="aw" to="/">
+                Men sportswear
+              </Link>
+            </li>
           </div>
         </div>
       </div>
+      <HightLights/>
+      <div className="card">
+        <div className="cardla">
+          <img
+            className="img"
+            src="https://cdn.jako.de/userdata/images/Einkaufswelten/Herren/JAKO_2023_Bildzuschnitte_Homepage_900x674px_Herren%20T-Shirts.jpg"
+            alt=""
+          />
+          <li>
+            <Link className="aw" to="/">
+              Men sportswear
+            </Link>
+          </li>
+        </div>
+        <div className="cardla">
+          <img
+            className="img"
+            src="https://cdn.jako.de/userdata/images/Einkaufswelten/Herren/JAKO_2023_Bildzuschnitte_Homepage_900x674px_Herren%20Trainingsjacken.jpg"
+            alt=""
+          />
+          <li>
+            <Link className="aw" to="/">
+              Men sportswear
+            </Link>
+          </li>
+        </div>
+        <div className="cardla">
+          <img
+            className="img"
+            src="https://cdn.jako.de/userdata/images/Einkaufswelten/Herren/JAKO_2023_Bildzuschnitte_Homepage_900x674px_Herren%20Sporthosen.jpg"
+            alt=""
+          />
+          <li>
+            <Link className="aw" to="/">
+              Men sportswear
+            </Link>
+          </li>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Kids
+export default Mens;
