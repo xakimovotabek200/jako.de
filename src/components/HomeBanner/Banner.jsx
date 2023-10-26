@@ -1,16 +1,19 @@
 import React from "react";
 import "./Banner.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 
 function Banner() {
+  const { t } = useTranslation();
+
   return (
     <div className="container mx-auto">
       <div className="banner-image">
         <div className="text">
-          <h3>
-            30% OFF SELECTED AUTUMN ARTICLES <br />
+          <h3 className="w-[600px]">
+            {t("Home_banne_text")} <br />
           </h3>
-          <h3>READY FOR COLD DAYS</h3>
           <Link to={"/offer"}>
             <button className="btn">Buy Now</button>
           </Link>

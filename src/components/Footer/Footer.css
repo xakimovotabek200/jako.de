@@ -52,7 +52,7 @@
 .icon {
     text-align: center;
     display: flex;
-    margin: 20px;
+    align-items: center;
 }
 
 .p {
