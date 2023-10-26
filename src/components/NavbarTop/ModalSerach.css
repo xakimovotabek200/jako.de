@@ -10,5 +10,6 @@
 @media only screen and (max-width: 600px) {
   .media_search {
     display: none;
+    display: none;
   }
 }
