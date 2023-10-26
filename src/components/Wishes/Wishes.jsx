@@ -12,7 +12,7 @@ function Wishes() {
 
     return (
         <div className='container mx-auto'>
-            <p className="text-blue-900 text-3xl font-extrabold">COLLECTION</p>
+            <p className="text-blue-900 text-3xl mt-16 text-center font-extrabold">COLLECTION</p>
             <div>
                 <div className='flex justify-center items-center'>
                     {products.length > 0 ? (

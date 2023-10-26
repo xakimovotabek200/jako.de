@@ -45,7 +45,8 @@
 
 @media only screen and (max-width: 600px){
   .control{
-    width: 100px;
+    width: 80px;
+  border: none;
     height: 40px;
     display: flex;
     align-items: center;
