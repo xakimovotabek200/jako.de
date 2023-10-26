@@ -236,6 +236,7 @@ function NavbarTop() {
   const [linksOpened4, { toggle: toggleLinks4 }] = useDisclosure(false);
   const theme = useMantineTheme();
 
+  const { t } = useTranslation();
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
@@ -644,7 +645,7 @@ function NavbarTop() {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        <Link to="/sale">Sale</Link>
+                        <Link to="/offer">{t("Navbar_links_fan_sale")}</Link>
                       </Box>
                       <IconChevronDown
                         style={{ width: rem(16), height: rem(16) }}
@@ -656,7 +657,7 @@ function NavbarTop() {
 
                 <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
-                    <Text fw={500}>Sale</Text>
+                    <Text fw={500}>{t("Navbar_links_fan_sale")}</Text>
                     <Anchor href="#" fz="xs">
                       View all
                     </Anchor>
@@ -775,7 +776,7 @@ function NavbarTop() {
           <UnstyledButton className={classes.link} onClick={toggleLinks4}>
             <Center inline>
               <Box component="span" mr={5}>
-                <Link to="/sale">Sale</Link>
+                <Link to="/sale">{t("Navbar_links_fan_sale")}</Link>
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}
