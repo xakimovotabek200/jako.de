@@ -31,6 +31,7 @@ import { Link } from "react-router-dom";
 import { LanguagePicker } from "./Languages/Language";
 import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
+import { useTranslation } from "react-i18next";
 const mockdata = [
   {
     icon: IconCode,
@@ -233,7 +234,8 @@ function NavbarTop() {
   const [linksOpened3, { toggle: toggleLinks3 }] = useDisclosure(false);
   const [linksOpened4, { toggle: toggleLinks4 }] = useDisclosure(false);
   const theme = useMantineTheme();
-
+  const { t } = useTranslation()
+  console.log(t("Navbar_links_men"));
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
@@ -384,7 +386,7 @@ function NavbarTop() {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        <Link to="/men">MEN</Link>
+                        <Link to="/men">{t("Navbar_links_men")}</Link>
                       </Box>
                       <IconChevronDown
                         style={{ width: rem(16), height: rem(16) }}
@@ -396,7 +398,7 @@ function NavbarTop() {
 
                 <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
-                    <Text fw={500}>Men</Text>
+                    <Text fw={500}>{t("Navbar_links_men")}</Text>
                     <Anchor href="#" fz="xs">
                       View all
                     </Anchor>
@@ -435,7 +437,7 @@ function NavbarTop() {
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      <Link to="/women">WOMEN</Link>
+                      <Link to="/women">{t("Navbar_links_women")}</Link>
                     </Box>
                     <IconChevronDown
                       style={{ width: rem(16), height: rem(16) }}
@@ -743,7 +745,7 @@ function NavbarTop() {
           <UnstyledButton className={classes.link} onClick={toggleLinksa}>
             <Center inline>
               <Box component="span" mr={5}>
-                <Link to="/men">Men</Link>
+                <Link to="/men">{t("Navbar_links_men")}</Link>
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}
@@ -755,7 +757,7 @@ function NavbarTop() {
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                <Link to="/women">Women</Link>
+                <Link to="/women">{t("Navbar_links_women")}</Link>
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}

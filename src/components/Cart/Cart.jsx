@@ -145,7 +145,7 @@ function Cart() {
             >
               <div>
                 <img
-                  className="w-80 rounded-lg p-4 mx-auto"
+                  className="w-[800px] h-[500px] object-cover rounded-lg p-4 mx-auto"
                   src={Empty}
                   alt="emptyCart"
                 />
@@ -160,7 +160,7 @@ function Cart() {
                   xursand qiling.
                 </p>
                 <Link to="/offer">
-                  <button className="bg-primeColor rounded-md cursor-pointer hover:bg-black active:bg-gray-900 px-8 py-2 font-titleFont font-semibold text-lg text-gray-200 hover:text-white duration-300">
+                  <button className="bg-primeColor rounded-md cursor-pointer  hover:bg-blue-600 active:bg-gray-900 px-8 py-2 font-titleFont font-semibold text-lg text-black border-2 border-solid border-black hover:text-white duration-300">
                     Xarid qilishda davom eting
                   </button>
                 </Link>
