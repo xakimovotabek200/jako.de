@@ -11,8 +11,12 @@ import { Link } from "react-router-dom";
 import Footer_Image from "../../img/Footer_Images.jpg";
 import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
 import "./Footer.css";
+import { useTranslation } from "react-i18next";
+
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className="br">
       <section className="HrOne">
@@ -38,121 +42,121 @@ function Footer() {
       <div className="Js">
         <div className="section">
           <div className="one">
-            <h1 className="h1">ABOUT JAKO</h1>
+            <h1 className="h1">{t("Footer_title1")}</h1>
             <div className="link">
               <Link className="" to="/">
                 {" "}
-                Company
+                {t("Footer_item1")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Career{" "}
-              </Link>
-            </div>
-            <div className="link">
-              {" "}
-              <Link className="" to="/">
-                Sustainability
-              </Link>
-            </div>
-            <div className="link">
-              <Link className="" to="/">
-                Teams
+                {t("Footer_item2")}
               </Link>
             </div>
             <div className="link">
               {" "}
               <Link className="" to="/">
-                Newsblog
+                {t("Footer_item3")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Media
+                {t("Footer_item4")}
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                {t("Footer_item5")}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item6")}
               </Link>
             </div>
           </div>
           <div className="one">
-            <h1 className="h1">ABOUT JAKO</h1>
+            <h1 className="h1">{t("Footer_title2")}</h1>
             <div className="link">
               <Link className="" to="/">
                 {" "}
-                Company
+                {t("Footer_title7")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Career{" "}
-              </Link>
-            </div>
-            <div className="link">
-              {" "}
-              <Link className="" to="/">
-                Sustainability
-              </Link>
-            </div>
-            <div className="link">
-              <Link className="" to="/">
-                Teams
+                {t("Footer_item8")}{" "}
               </Link>
             </div>
             <div className="link">
               {" "}
               <Link className="" to="/">
-                Newsblog
+                {t("Footer_item9")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Media
+                {t("Footer_item10")}
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                {t("Footer_title11")}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_title12")}
               </Link>
             </div>
           </div>
           <div className="one">
-            <h1 className="h1">ABOUT JAKO</h1>
+            <h1 className="h1">{t("Footer_title3")}</h1>
             <div className="link">
               <Link className="" to="/">
-                Company
+                {t("Footer_title11")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Career
+                {t("Footer_title12")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Sustainability
+
+                {t("Footer_item13")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Teams
+                {t("Footer_item14")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Newsblog
+                {t("Footer_item15")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                Media
+                {t("Footer_item16")}
               </Link>
             </div>
           </div>
         </div>
         <div className="left"></div>
         <div className="Mno">
-          <h1>SAVE 30% ON YOUR FIRST ORDER</h1>
+          <h1>{t("Footer_right")}</h1>
           <br />
           <h4>
-            Excluded for fan articles, organic and doubletex articles and
-            already reduced articles
+            {t("Footer_right2")}
           </h4>
           <br />
-          <button className="now">Start shopping now</button>
+          <button className="now">{t("Footer_button")}</button>
         </div>
       </div>
       <hr className="s" />
