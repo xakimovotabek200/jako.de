@@ -1,213 +1,231 @@
-import classes from './NavbarTop.module.css';
-import Modalsearch from './Modalsearch';
-import { LanguagePicker } from './Languages/Language';
-import { HoverCard, Group, Button, UnstyledButton, Text, SimpleGrid, ThemeIcon, Anchor, Divider, Center, Box, Burger, Drawer, Collapse, ScrollArea, rem, useMantineTheme, } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import {
-  IconNotification,
-  IconCode,
+  Anchor,
+  Box,
+  Burger,
+  Button,
+  Center,
+  Collapse,
+  Divider,
+  Drawer,
+  Group,
+  HoverCard,
+  ScrollArea,
+  SimpleGrid,
+  Text,
+  ThemeIcon,
+  UnstyledButton,
+  rem,
+  useMantineTheme,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import {
   IconBook,
   IconChartPie3,
-  IconFingerprint,
-  IconCoin,
   IconChevronDown,
-} from '@tabler/icons-react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+  IconCode,
+  IconCoin,
+  IconFingerprint,
+  IconNotification,
+} from "@tabler/icons-react";
+import { Link } from "react-router-dom";
+import { LanguagePicker } from "./Languages/Language";
+import Modalsearch from "./Modalsearch";
+import classes from "./NavbarTop.module.css";
 const mockdata = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 const mockdatas = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 const mockdata1 = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 const mockdata2 = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 const mockdata3 = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 const mockdata4 = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
   },
   {
     icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
   },
   {
     icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
   },
   {
     icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
   },
   {
     icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
   },
 ];
 function NavbarTop() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    useDisclosure(false);
   const [linksOpeneda, { toggle: toggleLinksa }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const [linksOpened1, { toggle: toggleLinks1 }] = useDisclosure(false);
@@ -220,7 +238,10 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+          <item.icon
+            style={{ width: rem(22), height: rem(22) }}
+            color={theme.colors.blue[6]}
+          />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
@@ -237,7 +258,10 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(10) }} color={theme.colors.blue[6]} />
+          <item.icon
+            style={{ width: rem(22), height: rem(10) }}
+            color={theme.colors.blue[6]}
+          />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
@@ -254,7 +278,10 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+          <item.icon
+            style={{ width: rem(22), height: rem(22) }}
+            color={theme.colors.blue[6]}
+          />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
@@ -271,7 +298,10 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+          <item.icon
+            style={{ width: rem(22), height: rem(22) }}
+            color={theme.colors.blue[6]}
+          />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
@@ -288,7 +318,10 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+          <item.icon
+            style={{ width: rem(22), height: rem(22) }}
+            color={theme.colors.blue[6]}
+          />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
@@ -305,7 +338,10 @@ function NavbarTop() {
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+          <item.icon
+            style={{ width: rem(22), height: rem(22) }}
+            color={theme.colors.blue[6]}
+          />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
@@ -321,13 +357,29 @@ function NavbarTop() {
 
   return (
     <Box pb={20}>
-      <header className={classes.header}>
+      <header className={classes.header} >
         <Group justify="space-between" h="100%">
-          <Link to="/"><img style={{ width: "160px", height: "50px" }} src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg" alt="" /></Link>
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+          <Link to="/">
+            <img
+              style={{ width: "160px", height: "50px" }}
+              src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg"
+              alt=""
+            />
+          </Link>
+          <Burger
+            opened={drawerOpened}
+            onClick={toggleDrawer}
+            hiddenFrom="sm"
+          />
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <HoverCard
+                width={600}
+                position="bottom"
+                radius="md"
+                shadow="md"
+                withinPortal
+              >
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
                     <Center inline>
@@ -342,7 +394,7 @@ function NavbarTop() {
                   </a>
                 </HoverCard.Target>
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
                     <Text fw={500}>Men</Text>
                     <Anchor href="#" fz="xs">
@@ -372,7 +424,13 @@ function NavbarTop() {
                 </HoverCard.Dropdown>
               </HoverCard>
             </a>
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+            <HoverCard
+              width={600}
+              position="bottom"
+              radius="md"
+              shadow="md"
+              withinPortal
+            >
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
@@ -387,7 +445,7 @@ function NavbarTop() {
                 </a>
               </HoverCard.Target>
 
-              <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+              <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                 <Group justify="space-between" px="md">
                   <Text fw={500}>Features</Text>
                   <Anchor href="#" fz="xs">
@@ -417,7 +475,13 @@ function NavbarTop() {
               </HoverCard.Dropdown>
             </HoverCard>
             <a href="#" className={classes.link}>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <HoverCard
+                width={600}
+                position="bottom"
+                radius="md"
+                shadow="md"
+                withinPortal
+              >
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
                     <Center inline>
@@ -432,7 +496,7 @@ function NavbarTop() {
                   </a>
                 </HoverCard.Target>
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
                     <Text fw={500}>KIDS</Text>
                     <Anchor href="#" fz="xs">
@@ -463,7 +527,13 @@ function NavbarTop() {
               </HoverCard>
             </a>
             <a href="#" className={classes.link}>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <HoverCard
+                width={600}
+                position="bottom"
+                radius="md"
+                shadow="md"
+                withinPortal
+              >
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
                     <Center inline>
@@ -478,7 +548,7 @@ function NavbarTop() {
                   </a>
                 </HoverCard.Target>
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
                     <Text fw={500}>KIDS</Text>
                     <Anchor href="#" fz="xs">
@@ -509,7 +579,13 @@ function NavbarTop() {
               </HoverCard>
             </a>
             <a href="#" className={classes.link}>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <HoverCard
+                width={600}
+                position="bottom"
+                radius="md"
+                shadow="md"
+                withinPortal
+              >
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
                     <Center inline>
@@ -524,7 +600,7 @@ function NavbarTop() {
                   </a>
                 </HoverCard.Target>
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
                     <Text fw={500}>Fan shops</Text>
                     <Anchor href="#" fz="xs">
@@ -555,7 +631,13 @@ function NavbarTop() {
               </HoverCard>
             </a>
             <a href="#" className={classes.link}>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <HoverCard
+                width={600}
+                position="bottom"
+                radius="md"
+                shadow="md"
+                withinPortal
+              >
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
                     <Center inline>
@@ -570,7 +652,7 @@ function NavbarTop() {
                   </a>
                 </HoverCard.Target>
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
                     <Text fw={500}>Sale</Text>
                     <Anchor href="#" fz="xs">
@@ -625,8 +707,24 @@ function NavbarTop() {
                 </svg>
               </div>
             </Link>
+            <Link to={"/wishes"}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-heart"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#00abfb"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+              </svg>
+            </Link>
           </div>
-
         </Group>
       </header>
 
@@ -723,6 +821,6 @@ function NavbarTop() {
         </ScrollArea>
       </Drawer>
     </Box>
-  )
+  );
 }
-export default NavbarTop
+export default NavbarTop;

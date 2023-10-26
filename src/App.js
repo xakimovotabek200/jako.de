@@ -15,10 +15,14 @@ import HightLightsId from "./components/Higtlights/HigtlightsId";
 import Women from "./pages/women/Women";
 import Offer from "./components/Offer/Offer";
 import Wishes from "./components/Wishes/Wishes";
+import Order from "./components/order/Order";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <NavbarTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,6 +35,7 @@ function App() {
         <Route path="/offer" element={<Offer />} />
         <Route path="/equitment" element={<Equitment />} />
         <Route path="/wishes" element={<Wishes />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
       <Footer />
     </BrowserRouter>

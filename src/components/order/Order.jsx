@@ -1,0 +1,125 @@
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import localStorage from "redux-persist/es/storage";
+import { useForm } from "./useForm";
+import { toast } from "react-toastify";
+
+function Order() {
+    const [items, setItems] = useState([]);
+    const [selectedItemsLength, setSelectedItemsLength] = useState([]);
+    let selectedProducts = useSelector((state) => state.orebiReducer.products);
+    const navigate = useNavigate();
+
+    const objectApp = {
+        name: "",
+        phone: "",
+        location: "",
+        product: String(
+            selectedProducts.map((item) => ` ${item.name} - ${item.quantity}`)
+        ),
+    };
+    const [value, pocketInfo] = useForm(objectApp);
+    useEffect(() => {
+        if (items) {
+            setItems(items);
+        }
+    }, []);
+    useEffect(() => { }, []);
+    useEffect(() => {
+        let count = 0;
+        for (let index = 0; index < selectedProducts.length; index++) {
+            count += selectedProducts[index].quantity;
+        }
+        setSelectedItemsLength(count);
+    }, []);
+
+    const HandelArea = (e) => {
+        e.preventDefault();
+    };
+
+    const addApplication = async () => {
+        let headersList = {
+            Accept: "*/*",
+            "Content-Type": "application/json",
+        };
+
+        let bodyContent = JSON.stringify(value);
+
+        const response = await fetch(
+            "https://komiljonovdev.uz/Bobur/legend-api/api/addApplication",
+            {
+                method: "POST",
+                body: bodyContent,
+                headers: headersList,
+            }
+        )
+            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) {
+                    localStorage.removeItem("persist:root");
+                    navigate("/");
+                    window.location.reload();
+                }
+            });
+        toast(
+            "Sizning So'rovingiz yuborildi adminlar tominidan ko'rib chiqiladi Va siz bilan bog'lanamiz!!!", { type: "success" }
+        );
+    };
+
+    return (
+        <form onSubmit={HandelArea} className="my-3">
+            <input
+                className="w-full py-1 my-3 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                type="text"
+                placeholder="Ismingiz"
+                onChange={pocketInfo}
+                name="name"
+                value={value.name}
+                required
+            />
+            <br />
+            <input
+                className="w-full py-1 my-3 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                type="text"
+                placeholder="Manzil"
+                onChange={pocketInfo}
+                name="location"
+                value={value.location}
+                required
+            />
+            <br />
+            <input
+                className="w-full py-1 my-3 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                type="phone"
+                placeholder="Telefon raqam"
+                onChange={pocketInfo}
+                name="phone"
+                value={value.phone}
+                required
+            />
+            <br />
+            <input
+                className="w-full py-1 my-3 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                type="text"
+                placeholder="Mahsulot"
+                name="product"
+                onChange={pocketInfo}
+                value={selectedProducts.map(
+                    (item) => `${item.name} - ${item.quantity} - ${item.price}`
+                )}
+                required
+            />
+            <br />
+            <button
+                onClick={addApplication}
+                className="w-52 h-10 bg-[blue] text-white text-lg mt-4  duration-300 my-3"
+                type="submit"
+            >
+                Arizani jonatish
+            </button>
+        </form>
+    );
+}
+
+export default Order;

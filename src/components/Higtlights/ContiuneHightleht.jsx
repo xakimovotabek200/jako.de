@@ -31,6 +31,16 @@ function ContiuneHightleht({ highlight }) {
         );
     }
 
+    function handleAddToCart2(data) {
+        let newData = Object.assign({}, data);
+        newData.uuid = crypto.randomUUID();
+        newData.quantity = quantity;
+        newData.size = selectedSize;
+        newData.image = selectedImage ? selectedImage : newData.image;
+        return (
+            dispatch(addWishes(newData))
+        );
+    }
     const items = groceries.map((item) => (
         <Accordion.Item key={item.value} value={item.value}>
             <Accordion.Control icon={item.emoji}>{item.value}</Accordion.Control>
@@ -86,7 +96,7 @@ function ContiuneHightleht({ highlight }) {
                     Add
                     <div onClick={handleHeartClick}>
                         <button
-                            onClick={() => handleAddToCart(highlight)}
+                            onClick={() => handleAddToCart2(highlight)}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
