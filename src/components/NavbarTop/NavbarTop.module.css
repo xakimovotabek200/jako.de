@@ -45,6 +45,12 @@
   border-top: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
 }
 
+.otani_basharasi {
+  margin-left: 5pc;
+  top: 5pc;
+  height: 50pc;
+}
+
 .navbartop_language {
   display: flex;
   align-items: center;

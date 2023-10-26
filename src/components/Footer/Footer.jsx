@@ -32,7 +32,6 @@ function Footer() {
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
-              <BsStarHalf className="bs" />
               <p className="p"> (4,52/5) Trusted Shop</p>
             </div>
           </div>
@@ -126,33 +125,35 @@ function Footer() {
               </Link>
             </div>
             <div className="link">
+              {" "}
               <Link className="" to="/">
-
-                {t("Footer_item13")}
+                Sustainability
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item14")}
+                Teams
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Newsblog
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item15")}
-              </Link>
-            </div>
-            <div className="link">
-              <Link className="" to="/">
-                {t("Footer_item16")}
+                Media
               </Link>
             </div>
           </div>
+   
         </div>
         <div className="left"></div>
         <div className="Mno">
-          <h1>{t("Footer_right")}</h1>
+          <h1 className="sa">{t("Footer_right")}</h1>
           <br />
-          <h4>
+          <h4 className="sd">
             {t("Footer_right2")}
           </h4>
           <br />
