@@ -16,7 +16,7 @@ function Footer() {
   return (
     <div className="">
       <section className="HrOne">
-        <hr />
+        <hr className="s" />
         <div className="Just_One">
           <div className="JustFlex">
             <img src={Footer_Image} alt="" />
@@ -33,7 +33,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <hr />
+        <hr className="s" />
       </section>
       <div className="Js">
         <div className="section">
@@ -155,7 +155,7 @@ function Footer() {
           <button className="now">BECOME A CLUB MEMBER NOW</button>
         </div>
       </div>
-      <hr />
+      <hr className="s" />
       <div className="Quit">
         <div className="exit_one">
           <h1>WE ARE TEAM</h1>

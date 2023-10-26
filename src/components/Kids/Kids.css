@@ -1,159 +1,50 @@
-.container {
-  width: 1600px;
-  margin: 0 auto;
-}
-.kids {
-  width: 100%;
-  height: 180vh;
-}
-
-.kids_title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
-.h1_kids_title {
-  font-size: 38px;
-  line-height: 1;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 0.6px;
+.men {
   color: #5b5b5b;
-  font-family: sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.img {
+  width: 450px;
+  height: 340px;
+}
+.Men{
   margin-top: 50px;
 }
-
-.three_div_img {
-  width: 100%;
-  height: 425px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-}
-
-.carousel_img_around{
-  width: 90%;
-  margin-left: 80px;
-  height: 500px;
-  margin-top: 80px;
-}
-
-.kids_carousel_text{
-  margin-left: 50px;
+.aw {
+  text-align: center;
   color: #5b5b5b;
-  font-size: 30px;
-  font-weight: 900;
+  font-size: 20px;
+  text-decoration: underline;
 }
 
-.boxes {
-  width: 288px;
-  height: 401px;
-}
-
-.map_img{
-  width: 244px;
-  height: 244px;
-}
-
-.box_flexes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 2%;
-}
-
-.docks{
-  display: flex;
-  gap: 10px;
-}
-
-.boxes:hover {
-  border: 1px solid #5b5b5b;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-.text-centers{
-  font-size: 16px;
-  font-weight: 700;
-  font-family: sans-serif;
-  text-align: start;
-}
-.text_diskpunt {
-  color: rgba(217, 7, 7, 0.934);
-}
-.box_texts {
-  margin-top: 1pc;
-  color: #5b5b5b;
-}
-.price {
-  color: red;
-  font-weight: 700;
-}
-.docks{}
-@keyframes del {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes ins {
-  0% {
-    width: 0;
-    background: rgb(255, 255, 0);
-    z-index: -1;
-  }
-
-  100% {
-    width: 100%;
-    background: rgb(255, 255, 0);
-    z-index: -1;
-  }
-}
-
-.three_div_imga {
-  width: 100%;
-  height: 425px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 80px;
-}
-.img_div{
+li {
   text-align: center;
 }
-.img_kis1_2 {
-  width: 476px;
-  height: 380px;
-}
 
-.kids_sport1 {
-  cursor: pointer;
-  color: #5b5b5b;
-  font-size: 30px;
-  font-weight: 900;
-}
 @media only screen and (max-width: 600px) {
-    .three_div_img {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: auto;
-    }
-    .three_div_imga {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: auto;
-    }
+  .card {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto;
+  }
 
-    .img_kis1_2 {
-        width: 350px;
-        height: 240px;
-    }
-}   
-
+  .img {
+    width: 350px;
+    height: 240px;
+  }
+} 

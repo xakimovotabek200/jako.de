@@ -10,7 +10,9 @@
     gap: 20px;
     grid-template-columns: auto auto auto;
 }
-
+.me{
+    margin-top: 80px;
+}
 .cards {
     width: 480px;
     height: 400px;
