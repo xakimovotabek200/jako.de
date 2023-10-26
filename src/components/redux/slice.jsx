@@ -17,6 +17,12 @@ export const Slice = createSlice({
                 products: [...state.products, action.payload],
             };
         },
+        addWishes: (state, action) => {
+            return {
+                ...state,
+                products: [...state.products, action.payload],
+            };
+        },
         setSize: (state, action) => {
             state.selectedSize = action.payload
         },
@@ -62,5 +68,6 @@ export const {
     drecreaseQuantity,
     deleteItem,
     resetCart,
+    addWishes,
 } = Slice.actions;
 export default Slice.reducer;
