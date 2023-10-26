@@ -169,6 +169,7 @@ const mockdata3 = [
   {
     icon: IconCoin,
     title: "Free for everyone",
+
     description: "The fluid of Smeargle’s tail secretions changes",
   },
   {
@@ -234,7 +235,7 @@ function NavbarTop() {
   const [linksOpened3, { toggle: toggleLinks3 }] = useDisclosure(false);
   const [linksOpened4, { toggle: toggleLinks4 }] = useDisclosure(false);
   const theme = useMantineTheme();
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   console.log(t("Navbar_links_men"));
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -359,7 +360,7 @@ function NavbarTop() {
 
   return (
     <Box pb={20}>
-      <header className={classes.header} >
+      <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Link to="/">
             <img
@@ -488,7 +489,7 @@ function NavbarTop() {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        <Link to="/women">KIDS</Link>
+                        <Link to="/kids">{t("Navbar_links_kids")}</Link>
                       </Box>
                       <IconChevronDown
                         style={{ width: rem(16), height: rem(16) }}
@@ -500,7 +501,7 @@ function NavbarTop() {
 
                 <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
-                    <Text fw={500}>KIDS</Text>
+                    <Text fw={500}>{t("Navbar_links_kids")}</Text>
                     <Anchor href="#" fz="xs">
                       View all
                     </Anchor>
@@ -540,7 +541,9 @@ function NavbarTop() {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        <Link to="/equitment">EQUIPMENT</Link>
+                        <Link to="/equitment">
+                          {t("Navbar_links_equipment")}
+                        </Link>
                       </Box>
                       <IconChevronDown
                         style={{ width: rem(16), height: rem(16) }}
@@ -552,7 +555,7 @@ function NavbarTop() {
 
                 <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
-                    <Text fw={500}>KIDS</Text>
+                    <Text fw={500}>{t("Navbar_links_kids")}</Text>
                     <Anchor href="#" fz="xs">
                       View all
                     </Anchor>
@@ -588,20 +591,6 @@ function NavbarTop() {
                 shadow="md"
                 withinPortal
               >
-                <HoverCard.Target>
-                  <a href="#" className={classes.link}>
-                    <Center inline>
-                      <Box component="span" mr={5}>
-                        <Link to="/equitment">FAN SHOPS</Link>
-                      </Box>
-                      <IconChevronDown
-                        style={{ width: rem(16), height: rem(16) }}
-                        color={theme.colors.blue[6]}
-                      />
-                    </Center>
-                  </a>
-                </HoverCard.Target>
-
                 <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                   <Group justify="space-between" px="md">
                     <Text fw={500}>Fan shops</Text>
@@ -769,7 +758,7 @@ function NavbarTop() {
           <UnstyledButton className={classes.link} onClick={toggleLinks1}>
             <Center inline>
               <Box component="span" mr={5}>
-                <Link to="/kids">Kids</Link>
+                <Link to="/kids">{t("Navbar_links_kids")}</Link>
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}
@@ -781,7 +770,7 @@ function NavbarTop() {
           <UnstyledButton className={classes.link} onClick={toggleLinks2}>
             <Center inline>
               <Box component="span" mr={5}>
-                <Link to="/equitment">Equitment</Link>
+                <Link to="/equitment">{t("Navbar_links_equipment")}</Link>
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}
