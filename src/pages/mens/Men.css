@@ -23,9 +23,6 @@
     height: 340px;
 }
 
-.Men {
-    margin-top: 50px;
-}
 
 .aw {
     text-align: center;
@@ -49,4 +46,8 @@ li {
         width: 350px;
         height: 240px;
     }
+    .men {
+        padding-top: 50px;
+    }
+    
 }
