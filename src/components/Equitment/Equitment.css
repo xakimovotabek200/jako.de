@@ -1,20 +1,21 @@
 .equitment {
   width: 95%;
-  height: 270vh;
-  /* margin-top: 50px; */
+
   margin: 0 auto;
 }
+
 .eqiutment_heading {
   width: 100%;
-  height: 730px;
+
   text-align: center;
 }
+
 .eqiutment_headings {
   width: 100%;
-  height: 730px;
   text-align: center;
   margin-top: 50px;
 }
+
 .heading_text {
   font-size: 38px;
   line-height: 1;
@@ -24,6 +25,7 @@
   letter-spacing: 0.6px;
   color: #5b5b5b;
 }
+
 .image_divs {
   display: flex;
   align-items: center;
@@ -34,9 +36,11 @@
   width: 780px;
   height: 584px;
 }
+
 .imgas_equitment {
   cursor: pointer;
 }
+
 .equitment_bags {
   cursor: pointer;
   font-size: 26px;
@@ -46,6 +50,7 @@
   line-height: 1;
   margin-top: 10px;
 }
+
 .equitment_bag {
   cursor: pointer;
   font-size: 26px;
@@ -55,6 +60,7 @@
   line-height: 1;
   margin-top: 10px;
 }
+
 .equitment_bagd {
   cursor: pointer;
   font-size: 26px;
@@ -67,7 +73,6 @@
 
 .equitmen_text_form {
   width: 100%;
-  height: 492px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,61 +80,65 @@
 
 .text_form_s {
   width: 1275px;
-  height: 492px;
   text-align: center;
 }
 
 .opensans {
-  line-height: 120%;
   font-size: 12pt;
   font-weight: 400;
   font-family: sans-serif;
   color: #5b5b5b;
 }
-.football{
+
+.football {
   margin-top: 30px;
   color: #5B5B5B;
 }
 
-@media only screen and (max-width: 1000px){
-  .image_divs{
+@media only screen and (max-width: 1000px) {
+  .image_divs {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .img_eqit{
+
+  .img_eqit {
     width: 415px;
     height: 348px;
   }
-  .carusels_nima{
+
+  .carusels_nima {
     margin-top: -100px;
   }
 }
-@media only screen and (max-width: 893px){
-  .image_divs{
+
+@media only screen and (max-width: 893px) {
+  .image_divs {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .img_eqit{
+
+  .img_eqit {
     width: 365px;
     height: 348px;
   }
 }
-@media only screen and (max-width: 768px){
-  .image_divs{
+
+@media only screen and (max-width: 768px) {
+  .image_divs {
     flex-wrap: wrap;
   }
-  .equitment{
-    height: 390vh;
+
+  .eqiutment_heading {
+    margin-top: 90px;
   }
-  .equitmen_text_form{
-    margin-top: 560px;
-  }
-  .football{
+
+  .football {
     font-weight: 800;
   }
-  .opensans{
+
+  .opensans {
     font-weight: 600;
   }
 }

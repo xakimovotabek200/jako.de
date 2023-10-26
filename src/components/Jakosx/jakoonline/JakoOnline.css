@@ -23,7 +23,10 @@
 }
 @media only screen and (max-width: 600px) {
     .lets{
+        margin-top: 20px;
         width:370px;
         line-height: 25px;
+        text-align: center;
     }
+   
 }

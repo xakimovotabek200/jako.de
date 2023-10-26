@@ -10,9 +10,17 @@
     gap: 20px;
     grid-template-columns: auto auto auto;
 }
-.me{
+
+.men {
+    color: #5b5b5b;
+    text-align: center;
+    font-weight: 700;
+}
+
+.me {
     margin-top: 80px;
 }
+
 .cards {
     width: 480px;
     height: 400px;
@@ -103,20 +111,24 @@ li {
         gap: 20px;
         grid-template-columns: auto;
     }
-    .cards1{
+
+    .cards1 {
         width: 350px;
-    
+
     }
+
     .cards2 {
         width: 350px;
-    
+
     }
+
     .cards4 {
         width: 350px;
-    
+
     }
+
     .cards {
         width: 350px;
-    
+
     }
 }

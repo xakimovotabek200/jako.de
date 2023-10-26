@@ -134,9 +134,10 @@
 .Mno {
     margin-right: 100px;
 }
-;ul
-yk
-.Mno h4 {
+
+;
+
+ul yk .Mno h4 {
     color: #5b5b5b;
     text-align: left;
     width: 500px;
@@ -158,7 +159,7 @@ yk
         margin: 20px;
 
     }
-   
+
     .dropdown {
         display: block !important;
     }
@@ -167,12 +168,6 @@ yk
         display: none;
     }
 
-    .section {
-        display: grid;
-        grid-template-columns: auto;
-        justify-content: start;
-        gap: 50px;
-    }
 
     .left {
         display: none;
@@ -186,11 +181,15 @@ yk
     .Mno h1 {
         color: #008ac9;
         font-size: 22px;
-        width: 370px;
+        width: 350px;
+    }
+
+    .section {
+        display: none;
     }
 
     .Mno h4 {
-        width: 370px;
+        width: 350px;
     }
 
     .Js {
@@ -202,6 +201,10 @@ yk
         text-align: center;
         display: flex;
 
+    }
+
+    .icon {
+        display: none;
     }
 
     .flexONe {
@@ -216,7 +219,7 @@ yk
     .exit_two>ul {
         flex-wrap: wrap;
     }
-   
+
 }
 
 .Quit {

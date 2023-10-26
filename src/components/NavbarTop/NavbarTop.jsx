@@ -169,6 +169,7 @@ const mockdata3 = [
   {
     icon: IconCoin,
     title: "Free for everyone",
+
     description: "The fluid of Smeargle’s tail secretions changes",
   },
   {

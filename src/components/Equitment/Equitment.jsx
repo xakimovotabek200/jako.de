@@ -3,6 +3,7 @@ import './Equitment.css'
 import { equitment } from "../Kids/kidscarouseldata";
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
+import HightLights from '../Higtlights/HightLights';
 
 const Equitment = () => {
   return (
@@ -24,44 +25,7 @@ const Equitment = () => {
         <div className='kids_carousel_text'>
           <h1>OUR EQUIPMENT TOP SELLERS</h1>
         </div>
-        <Carousel
-          withIndicators
-          height={590}
-          slideSize={{ base: '0%', sm: '0%', md: '20.333333%' }}
-          slideGap={{ base: 0, sm: 'md' }}
-          loop
-          aria-controls='flex'
-          align="start"
-          mt={40}
-          ml={20}
-        >
-          {equitment.map((item) => (
-            <Carousel.Slide key={item.id}>
-              <div className="boxes">
-                <div>
-                  <img className="map_img" src={item.image} alt="" />
-                </div>
-                <hr />
-                <div className="box_texts">
-                  <h4>{item.title}</h4>
-                  <div className="docks">
-                    {item.cost1 && item.discount ? (
-                      <span className="price">{item.cost1}</span>
-                    ) : (
-                      ""
-                    )}
-                    <h2 className="text-centers">{item.costDel2}</h2>
-                    {item.discount && item.cost1 ? (
-                      <p className="text_diskpunt">{item.discount}</p>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Carousel.Slide>
-          ))}
-        </Carousel >
+      <HightLights/>
       </div>
       <div className="eqiutment_headings">
         <div className="image_divs">

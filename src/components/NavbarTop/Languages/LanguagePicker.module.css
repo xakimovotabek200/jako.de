@@ -43,9 +43,9 @@
   object-fit: cover;
 }
 
-@media only screen and (max-width: 390px){
+@media only screen and (max-width: 600px){
   .control{
-    width: 70px;
+    width: 100px;
     height: 40px;
     display: flex;
     align-items: center;
