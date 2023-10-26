@@ -1,10 +1,10 @@
+import { MantineProvider, createTheme } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
 import { Provider } from "react-redux";
-import { MantineProvider, createTheme } from "@mantine/core";
+import App from "./App";
 import { store } from "./components/redux/store";
+import "./index.css";
 
 import "./components/i18n/i18n";
 

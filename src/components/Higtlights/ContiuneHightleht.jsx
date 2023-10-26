@@ -2,6 +2,7 @@ import { Accordion, Button } from "@mantine/core";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addWishes } from "../redux/slice";
+import { IconRotate360 } from "@tabler/icons-react";
 import "./Hightlights.css";
 import { groceries } from "./data";
 
@@ -43,8 +44,8 @@ function ContiuneHightleht({ highlight }) {
     }
     const items = groceries.map((item) => (
         <Accordion.Item key={item.value} value={item.value}>
-            <Accordion.Control icon={item.emoji}>{item.value}</Accordion.Control>
-            <Accordion.Panel className="w-[500px]">
+            <Accordion.Control icon={item.emoji} className="hover:text-[#008ac9] duration-300">{item.value}</Accordion.Control>
+            <Accordion.Panel className="w-[500px] ">
                 {item.description}
             </Accordion.Panel>
         </Accordion.Item>
@@ -63,7 +64,7 @@ function ContiuneHightleht({ highlight }) {
             <div className={`flex justify-between items-center`}>
                 <div className="flex items-center">
                     <div className="flex items-center">
-                        <button className="p-4 border-2 border-solid border-[#5b5b5b]">
+                        <button className="p-4 w-[60px] border-2 border-solid border-[#5b5b5b]">
                             {quantity}
                         </button>
                         <div className="m-1">
@@ -107,14 +108,22 @@ function ContiuneHightleht({ highlight }) {
                                 stroke-width="1.5"
                                 stroke="#D0D4CA"
                                 fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+
                             >
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" stroke-width="0" fill={active ? "red" : "#D0D4CA"} />
                             </svg>
                         </button>
                     </div>
+                </div>
+            </div>
+            <div className="flex items-center m-6">
+                <div>
+                    <IconRotate360 />
+                </div>
+                <div className="ml-5">
+                    <p className="font-semibold text-[18px] text-[#5b5b5b]">30 days right of return</p>
+                    <p className="text-[#5b5b5b]">Fast processing</p>
                 </div>
             </div>
             <div>

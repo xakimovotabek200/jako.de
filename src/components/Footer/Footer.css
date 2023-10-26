@@ -285,9 +285,11 @@ ul .Mno h4 {
     color: #337ab7;
 }
 
-.exit_two>ul {
+.exit_two{
+    border: 1px solid red;
     gap: 8px;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     margin: 5px;
     color: #5b5b5b;
 }

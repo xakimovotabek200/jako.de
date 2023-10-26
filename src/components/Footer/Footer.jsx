@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios"; // Import axios for making API requests
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AiFillStar } from "react-icons/ai";
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
@@ -6,11 +7,25 @@ import { Link } from "react-router-dom";
 import Footer_Image from "../../img/Footer_Images.jpg";
 import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
 import "./Footer.css";
-import Dropdown from "./Dropdown";
 
 function Footer() {
   const { t } = useTranslation();
+  const [data, setData] = useState([]);
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.abdullajonov.uz/legend-backend-api/api/privacy-policy/get"
+      );
+      const data = response.data.data;
+      setData(data);
+    } catch (error) {
+      console.error(error); // Properly handle and log the error
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className="br">
       <section className="HrOne">
@@ -161,26 +176,13 @@ function Footer() {
           <BsTwitter className="i" />
         </div>
         <div className="exit_two">
-          <ul>
-            <li>
-              <Link to="/">Protection des données</Link>
-            </li>
-            <li>
-              <Link to="/">Système d'Alerte Professionnelle</Link>
-            </li>
-            <li>
-              <Link to="/">Droit de rétractation</Link>
-            </li>
-            <li>
-              <Link to="/">Conditions générales</Link>
-            </li>
-            <li>
-              <Link to="/">Mentions légales</Link>
-            </li>
-            <li>
-              <p className="link">© 2023 JAKO AG, Tous droits réservés</p>
-            </li>
-          </ul>
+          {data.map((item, index) => (
+            <ul key={index} className="flex">
+              <li>
+                <p>{item.text}</p>
+              </li>
+            </ul>
+          ))}
         </div>
       </div>
     </div>

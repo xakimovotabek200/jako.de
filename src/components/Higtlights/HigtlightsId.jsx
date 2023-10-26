@@ -1,7 +1,7 @@
 import { Carousel } from "@mantine/carousel";
 import { HoverCard, Text, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconRotate360 } from "@tabler/icons-react";
 import { Image } from "antd";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,6 @@ import { Link, useParams } from "react-router-dom";
 import { setImage, setSize } from "../redux/slice";
 import ContiuneHightleht from "./ContiuneHightleht";
 import { productData } from "./data";
-import classes from './indicator.css';
 
 function HightLightsId() {
     const { id } = useParams();
@@ -66,14 +65,13 @@ function HightLightsId() {
                                 Become a member now
                             </Link>
                         </div>
-                        <div className="flex">
+                        <div className="flex ">
                             <Carousel
-                                classNames={classes}
+                                // classNames={classes}
                                 loop
-                                withIndicators
-                                height={100}
+                                height={80}
                                 nextControlIcon={
-                                    <IconArrowRight style={{ width: rem(16), height: rem(16) }} />
+                                    <IconArrowRight style={{ background: "rgba(255,255,255,.8)", width: rem(16), height: rem(16) }} />
                                 }
                                 previousControlIcon={
                                     <IconArrowLeft style={{ width: rem(16), height: rem(16) }} />
@@ -101,12 +99,14 @@ function HightLightsId() {
                                     key={item}
                                     data-active={active === item || undefined}
                                     onClick={() => selectSize(item)}
-                                    className={`border-2 p-3 cursor-pointer hover:bg-[#5b5b5b] hover:text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""
+                                    className={`border-2 h-[32px] w-[32px] text-center cursor-pointer hover:bg-[#5b5b5b] hover:text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""
                                         }`}
                                 >
                                     <p>{item}</p>
                                 </div>
                             ))}
+                        </div>
+                        <div>
                         </div>
                     </div>
 
