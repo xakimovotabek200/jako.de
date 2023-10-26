@@ -45,10 +45,15 @@
   border-top: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
 }
 
-.navbartop_language{
+.navbartop_language {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
+@media only screen and (max-width: 600px) {
+  .header{
+    width: 380px;
+  }
+}

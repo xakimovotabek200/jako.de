@@ -14,7 +14,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="">
+    <div className="br">
       <section className="HrOne">
         <hr className="s" />
         <div className="Just_One">
@@ -152,7 +152,7 @@ function Footer() {
             already reduced articles
           </h4>
           <br />
-          <button className="now">BECOME A CLUB MEMBER NOW</button>
+          <button className="now">Start shopping now</button>
         </div>
       </div>
       <hr className="s" />

@@ -54,11 +54,55 @@
   border: none;
 }
 
+.res_z {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .banner-image {
-    width: 380px;
-    object-fit: cover;
-    margin-top: 50px;
-    text-align: left;
+    display: none;
   }
+
+  .res_Zz {
+    margin-top: 20px;
+  }
+
+  .res_z {
+    display: block;
+    margin-top: 50px;
+  }
+
+  .g {
+    text-align: center;
+  }
+
+  .btnz {
+    margin-left: 100px;
+    margin-top: 10px;
+    text-align: center;
+    border: none;
+    padding: 10px 60px;
+    color: #fff;
+    background: #5b5b5b;
+  }
+
+  .btnz:hover {
+    background: #008ac9;
+  }
+}
+
+.h {
+  color: #5b5b5b;
+}
+
+.r {
+  font-weight: bold;
+  color: #353232;
+  margin-top: 5px;
+}
+
+.res_z>img {
+  width: 380px;
+
+  text-align: center;
 }

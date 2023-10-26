@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function Sale() {
   return (
     <div className="me">
+      <h1 className="men">MEN</h1>
       <div className="card">
         <div className="cards">
           <li>
