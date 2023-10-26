@@ -8,7 +8,7 @@ const Equitment = () => {
   return (
     <div className="equitment">
       <div className="eqiutment_heading">
-        <h1 className="heading_text">SPORT-EQUIPMENT</h1>
+        <h1 className="heading_text">SPORT-EQUIPMENTs</h1>
         <div className="image_divs">
           <div className="imgas_equitment">
             <img className='img_eqit' src="https://cdn.jako.de/userdata/images/Einkaufswelten/Equipment/JAKO_2023_Bildzuschnitte_Homepage_900x674px_Sporttasche.jpg" alt="" />
