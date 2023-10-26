@@ -18,6 +18,7 @@ import Wishes from "./components/Wishes/Wishes";
 import Order from "./components/order/Order";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NotFound from "./components/404/NotFound";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/equitment" element={<Equitment />} />
         <Route path="/wishes" element={<Wishes />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
