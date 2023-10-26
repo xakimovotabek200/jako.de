@@ -27,7 +27,7 @@
     height: 300px;
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 20px;
 }
 
@@ -61,7 +61,7 @@
 
 .now {
     margin-top: 15px;
-    padding: 20px 20px;
+    padding: 10px 20px;
     cursor: pointer;
     background: #5b5b5b;
     font-size: 18px;
@@ -92,6 +92,23 @@
     line-height: 30px;
 }
 
+.one>.h1>a {
+    color: #5b5b5b;
+    font-weight: 600;
+}
+
+.h1 {
+    font-weight: bolder;
+}
+
+.one:hover h1 {
+    color: #008ac9;
+}
+
+a:hover {
+    color: #008ac9;
+}
+
 .one>.p {
     color: #5b5b5b;
     font-size: 15px;
@@ -115,13 +132,22 @@
 .left {
     border: 1px solid #337ab7;
     width: auto;
+    margin-left: 150px;
 }
 
-.Mno h1 {
+.sa {
     color: #008ac9;
     text-align: left;
     font-size: 40px;
-    font-weight: bold;
+    line-height: 45px;
+    width: 600px;
+    font-weight: bolder;
+}
+
+.sd {
+    color: #5b5b5b;
+    font-weight: bolder;
+    width: 550px;
 }
 
 .we {
@@ -135,13 +161,13 @@
     margin-right: 100px;
 }
 
-;
-
-ul yk .Mno h4 {
+ul .Mno h4 {
     color: #5b5b5b;
     text-align: left;
     width: 500px;
 }
+
+
 
 .med {
     display: flex;
