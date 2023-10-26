@@ -145,7 +145,7 @@ function Footer() {
             already reduced articles
           </h4>
           <br />
-          <button className="now">Start shopping now</button>
+          <button className="now">Start Shopping Now</button>
         </div>
       </div>
       <hr className="s" />
