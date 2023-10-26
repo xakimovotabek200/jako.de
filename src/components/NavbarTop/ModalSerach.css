@@ -6,10 +6,11 @@
     display: block;
   }
 }
-
-@media only screen and (max-width: 600px) {
+.media_search{
+    display: none;  
+}
+@media only screen and (max-width:600px) {
   .media_search {
-    display: none;
     display: none;
   }
 }
