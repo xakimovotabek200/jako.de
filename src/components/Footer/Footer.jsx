@@ -28,7 +28,6 @@ function Footer() {
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
               <AiFillStar className="ai" />
-              <BsStarHalf className="bs" />
               <p className="p"> (4,52/5) Trusted Shop</p>
             </div>
           </div>
@@ -41,43 +40,6 @@ function Footer() {
             <h1 className="h1">ABOUT JAKO</h1>
             <div className="link">
               <Link className="" to="/">
-                {" "}
-                Company
-              </Link>
-            </div>
-            <div className="link">
-              <Link className="" to="/">
-                Career{" "}
-              </Link>
-            </div>
-            <div className="link">
-              {" "}
-              <Link className="" to="/">
-                Sustainability
-              </Link>
-            </div>
-            <div className="link">
-              <Link className="" to="/">
-                Teams
-              </Link>
-            </div>
-            <div className="link">
-              {" "}
-              <Link className="" to="/">
-                Newsblog
-              </Link>
-            </div>
-            <div className="link">
-              <Link className="" to="/">
-                Media
-              </Link>
-            </div>
-          </div>
-          <div className="one">
-            <h1 className="h1">ABOUT JAKO</h1>
-            <div className="link">
-              <Link className="" to="/">
-                {" "}
                 Company
               </Link>
             </div>
@@ -118,8 +80,39 @@ function Footer() {
             </div>
             <div className="link">
               <Link className="" to="/">
-                Career
+                Career{" "}
               </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Sustainability
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Teams
+              </Link>
+            </div>
+            <div className="link">
+              {" "}
+              <Link className="" to="/">
+                Newsblog
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                Media
+              </Link>
+            </div>
+          </div>
+          <div className="one">
+            <h1 className="h1">ABOUT JAKO</h1>
+            <div className="link">
+              <Link to="/">Company</Link>
+            </div>
+            <div className="link">
+              <Link to="/">Career</Link>
             </div>
             <div className="link">
               <Link className="" to="/">
@@ -145,9 +138,9 @@ function Footer() {
         </div>
         <div className="left"></div>
         <div className="Mno">
-          <h1>SAVE 30% ON YOUR FIRST ORDER</h1>
+          <h1 className="sa">SAVE 30% ON YOUR FIRST ORDER</h1>
           <br />
-          <h4>
+          <h4 className="sd">
             Excluded for fan articles, organic and doubletex articles and
             already reduced articles
           </h4>

@@ -18,7 +18,7 @@ i18n.use(initReactI18next).init({
         Home_button_shop: "BUY NOW",
         Home_button: "SHOW ALL",
         Home_join_pasti:
-          "JOIN THE JAKO CLUB! EXCLUSIVE DROPS AND SURPRISES AWAIT YOU.",
+          `JOIN THE JAKO CLUB! EXCLUSIVE DROPS AND SURPRISES AWAIT YOU.`,
         Home_join_button: "BECOME A CLUB MEMBER",
         Home_jako_onlineshop: "JAKO ONLINESHOP",
         Home_jako_onlineshop_text:

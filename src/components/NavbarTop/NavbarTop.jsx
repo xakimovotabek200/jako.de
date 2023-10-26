@@ -33,6 +33,8 @@ import { LanguagePicker } from "./Languages/Language";
 import Modalsearch from "./Modalsearch";
 import { IconHeart } from "@tabler/icons-react";
 import classes from "./NavbarTop.module.css";
+import { useTranslation } from "react-i18next";
+
 const mockdata = [
   {
     icon: IconCode,

@@ -100,8 +100,8 @@
   line-height: 26px;
   font-size: 18px;
   min-width: 200px;
-  border: 1px solid #5b5b5b;
   color: #5b5b5b;
+  border: none;
   cursor: pointer;
   background-color: #fff;
   text-align: center;
