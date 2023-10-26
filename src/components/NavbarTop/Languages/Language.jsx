@@ -3,14 +3,14 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import images1 from '../images/english.png';
-import images3 from '../images/german.png';
-import images4 from '../images/italian.png';
+import images2 from '../images/uzb.png';
+import images3 from '../images/rus.png';
 import classes from './LanguagePicker.module.css';
 
 const data = [
   { label: 'English', image: images1 },
+  { label: 'Uzbek', image: images2 },
   { label: 'Russian', image: images3 },
-  { label: 'Uzbek', image: images4 },
 ];
 
 export function LanguagePicker() {
@@ -19,12 +19,11 @@ export function LanguagePicker() {
   const [selected, setSelected] = useState(data[0]);
   const items = data.map((item) => (
     <Menu.Item
-      className='border-2 border-solid border-red-600'
       leftSection={<Image src={item.image} width={18} height={18} className={classes.languages_images} />}
       onClick={() => { setSelected(item); i18n.changeLanguage(item.label) }}
       key={item.label}
     >
-      <span className={classes.label} style={{ border: "1px solid red" }} >{item.label}</span>
+      <span className={classes.label}>{item.label}</span>
     </Menu.Item >
   ));
 

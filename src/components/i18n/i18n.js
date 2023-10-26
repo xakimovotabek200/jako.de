@@ -11,8 +11,8 @@ i18n.use(initReactI18next).init({
         Navbar_links_women: "Women",
         Navbar_links_kids: "Kids",
         Navbar_links_equipment: "Equipment",
-        Navbar_links_fan_shop: "Fan Shops",
         Navbar_links_fan_sale: "Sale",
+        
       },
     },
     Uzbek: {
@@ -21,7 +21,6 @@ i18n.use(initReactI18next).init({
         Navbar_links_women: "Ayollar",
         Navbar_links_kids: "Bolalar",
         Navbar_links_equipment: "Jihozlar",
-        Navbar_links_fan_shop: "Muxlislar do'konlari",
         Navbar_links_fan_sale: "savdo",
       },
     },

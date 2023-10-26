@@ -18,8 +18,8 @@ function Modalsearch() {
         <Space fullScreen />
         <Flex direction={{ base: "column", sm: "row" }} gap="sm" align="center">
           <Input
-            icon={<IconSearch size={18} style={{ cursor: 'pointer' }}/>}
-            placeholder="Search"  
+            icon={<IconSearch size={18} style={{ cursor: 'pointer' }} />}
+            placeholder="Search"
             radius="xl"
           />
         </Flex>
