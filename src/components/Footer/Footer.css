@@ -175,6 +175,9 @@ ul .Mno h4 {
     align-items: center;
 }
 
+.rf {
+    display: none;
+}
 
 @media only screen and (max-width: 600px) {
     .Js {
@@ -188,6 +191,10 @@ ul .Mno h4 {
 
     .dropdown {
         display: block !important;
+    }
+
+    .rf {
+        display: block;
     }
 
     .one {
@@ -209,6 +216,7 @@ ul .Mno h4 {
         font-size: 22px;
         width: 350px;
     }
+
 
     .section {
         display: none;

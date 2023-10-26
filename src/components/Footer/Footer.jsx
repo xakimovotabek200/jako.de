@@ -1,18 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { AiFillStar } from "react-icons/ai";
-import {
-  BsFacebook,
-  BsInstagram,
-  BsStarHalf,
-  BsTwitter,
-  BsYoutube,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Footer_Image from "../../img/Footer_Images.jpg";
 import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
 import "./Footer.css";
-import { useTranslation } from "react-i18next";
-
+import Dropdown from "./Dropdown";
 
 function Footer() {
   const { t } = useTranslation();
@@ -147,15 +141,12 @@ function Footer() {
               </Link>
             </div>
           </div>
-   
         </div>
         <div className="left"></div>
         <div className="Mno">
           <h1 className="sa">{t("Footer_right")}</h1>
           <br />
-          <h4 className="sd">
-            {t("Footer_right2")}
-          </h4>
+          <h4 className="sd">{t("Footer_right2")}</h4>
           <br />
           <button className="now">{t("Footer_button")}</button>
         </div>

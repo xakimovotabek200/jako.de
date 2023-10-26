@@ -789,10 +789,7 @@ function NavbarTop() {
           <Collapse in={linksOpened4}>{links4}</Collapse>
 
           <Divider my="sm" />
-          <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
+         
         </ScrollArea>
       </Drawer>
     </Box>
