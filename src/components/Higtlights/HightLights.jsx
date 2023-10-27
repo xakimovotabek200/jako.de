@@ -15,14 +15,13 @@ function HightLights() {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://api.abdullajonov.uz/legend-backend-api/api/products/get');
-        setProductData(response.data?.products?.data);
-        // console.log(response.data?.products?.data, "data product");
+        setProductData(response.data?.products?.data); // Update the state with product data
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchData();
+    fetchData(); // Fetch data when the component mounts
   }, []);
 
   return (
@@ -41,28 +40,27 @@ function HightLights() {
           align="center"
         >
           {Array.isArray(productData) && productData.map((item) => {
-            console.log(productData, "productData");
             return (
-              <Link key={item.id} to={`/HigtlightsId/${item.id}`}>
+              <Link key={item.id} to={`/https://api.abdullajonov.uz/legend-backend-api/api/products/get/{id}`}>
                 <Carousel.Slide>
                   <HoverCard shadow="md" closeDelay={300}>
                     <div className="box">
                       <HoverCard.Target>
-                        <img src={item.image} alt="" />
+                        <img className="h-[300px] object-cover" src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`} alt="" />
                       </HoverCard.Target>
                       <hr />
                       <div className="box_text">
                         <h4>Jako{item.name}</h4>
                         <div className="box_flex">
-                          <span className="price">from €{item.cost1}</span>
+                          <span className="price">from €{item.price}</span>
                           <h2 className="text-center">
-                            <del>€{item.costDel2}</del>
+                            <del>€{item.shipping_price}</del>
                           </h2>
                           <HoverCard.Dropdown>
-                            <Text size="sm">{item.brand}</Text>
+                            <Text size="sm">{item.category}</Text>
                           </HoverCard.Dropdown>
                           <p className="text_diskpunt">
-                            -{item.discount}% Diskount
+                            -{item.discount}% Discount
                           </p>
                         </div>
                       </div>
