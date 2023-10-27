@@ -42,7 +42,6 @@ function NavbarTop() {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <Box pb={20}>
       <header className={classes.header}>

@@ -1,6 +1,6 @@
 import { HoverCard } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Image } from 'antd';
+import { Image } from "antd";
 import { motion } from "framer-motion"; // import motion from framer-motion
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +11,7 @@ import {
   drecreaseQuantity,
   increaseQuantity,
 } from "../redux/slice";
+import "./Cart.css";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -32,7 +33,9 @@ function Cart() {
     <div>
       <div className="flex flex-col md:flex-row w-screen h-full px-14 py-7 container mx-auto">
         <div className="w-full flex flex-col h-fit gap-4 p-4">
-          <p className="text-blue-900 text-xl font-extrabold">My cart</p>
+          <p className="sm: text-center md:text-blue-900 text-xl  font-extrabold">
+            My cart
+          </p>
           {products.length > 0 ? (
             products.map((product, ind) => (
               <div
@@ -70,7 +73,8 @@ function Cart() {
                         <span className="font-normal">{product.color}</span>
                       </p>
                       <p className="text-xs text-gray-600 font-semibold">
-                        Size: <span className="font-normal">{product.size}</span>
+                        Size:{" "}
+                        <span className="font-normal">{product.size}</span>
                       </p>
                     </div>
                   </div>
@@ -155,9 +159,9 @@ function Cart() {
                   Savatingiz o'zini yolg'iz his qiladi.
                 </h1>
                 <p className="text-sm text-center px-10 -mt-2">
-                  Savatingiz xizmat qilish uchun xizmat qiladi. Maqsad bering - uni
-                  to'ldiring kitoblar, elektronika, videolar va boshqalar va uni
-                  xursand qiling.
+                  Savatingiz xizmat qilish uchun xizmat qiladi. Maqsad bering -
+                  uni to'ldiring kitoblar, elektronika, videolar va boshqalar va
+                  uni xursand qiling.
                 </p>
                 <Link to="/offer">
                   <button className="bg-primeColor rounded-md cursor-pointer  hover:bg-blue-600 active:bg-gray-900 px-8 py-2 font-titleFont font-semibold text-lg text-black border-2 border-solid border-black hover:text-white duration-300">
@@ -201,14 +205,14 @@ function Cart() {
                 <p className="text-end font-bold">${totalSum.toFixed(2)}</p>
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="sm:flex-wrap md:flex gap-2">
               <Link to="/order">
                 <button className="transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm w-[200px] text-white text-hover shadow-md">
                   FINISH
                 </button>
               </Link>
               <Link to="/offer">
-                <button className="transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm w-[200px] text-gray-700 text-hover shadow-md">
+                <button className="sm: mt-3 md:transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm w-[200px] text-gray-700 text-hover shadow-md">
                   ADD MORE PRODUCTS
                 </button>
               </Link>
