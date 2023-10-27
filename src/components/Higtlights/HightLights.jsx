@@ -1,15 +1,29 @@
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
 import { HoverCard, Text } from "@mantine/core";
-import React from "react";
+import React, { useEffect, useState } from "react"; // Import useState and useEffect
 import { Link } from "react-router-dom";
 import "./Hightlights.css";
-import { productData } from "./data";
 import { useTranslation } from "react-i18next";
-
+import axios from 'axios';
 
 function HightLights() {
   const { t } = useTranslation();
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://api.abdullajonov.uz/legend-backend-api/api/products/get');
+        setProductData(response.data?.products?.data);
+        // console.log(response.data?.products?.data, "data product");
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="container">
@@ -26,7 +40,8 @@ function HightLights() {
           controlSize={50}
           align="center"
         >
-          {productData.map((item) => {
+          {Array.isArray(productData) && productData.map((item) => {
+            console.log(productData, "productData");
             return (
               <Link key={item.id} to={`/HigtlightsId/${item.id}`}>
                 <Carousel.Slide>
@@ -65,4 +80,4 @@ function HightLights() {
     </div>
   );
 }
-export default HightLights  
+export default HightLights;

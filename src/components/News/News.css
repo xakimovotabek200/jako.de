@@ -1,0 +1,38 @@
+/* Add this CSS in your component's CSS file or a global CSS file */
+
+/* Style for the pagination container */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Style for the Previous button */
+.pagination button:first-child {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:first-child:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Style for the Next button */
+.pagination button:last-child {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:last-child:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
