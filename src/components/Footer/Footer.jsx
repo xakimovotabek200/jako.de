@@ -162,7 +162,7 @@ function Footer() {
             </div>
             <div className="link">
               {" "}
-              <Link className="" to="/">
+              <Link className="" to="/news">
                 Newsblog
               </Link>
             </div>

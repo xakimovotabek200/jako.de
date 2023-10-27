@@ -19,6 +19,7 @@ import Order from "./components/order/Order";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "./components/404/NotFound";
+import News from "./components/News/News";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/equitment" element={<Equitment />} />
         <Route path="/wishes" element={<Wishes />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/news" element={<News />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
