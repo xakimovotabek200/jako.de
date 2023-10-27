@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import localStorage from "redux-persist/es/storage";
 import { useForm } from "./useForm";
-import { toast } from "react-toastify";
 
 function Order() {
     const [items, setItems] = useState([]);
@@ -12,9 +12,12 @@ function Order() {
     const navigate = useNavigate();
 
     const objectApp = {
-        name: "",
+        user_name: "",
+        product_slud: "",
+        size: "",
         phone: "",
-        location: "",
+        location_number_product: "",
+        date: "",
         product: String(
             selectedProducts.map((item) => ` ${item.name} - ${item.quantity}`)
         ),

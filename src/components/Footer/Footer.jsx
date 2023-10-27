@@ -137,7 +137,7 @@ function Footer() {
             </div>
             <div className="link">
               {" "}
-              <Link className="" to="/">
+              <Link className="" to="/news">
                 Newsblog
               </Link>
             </div>
@@ -147,7 +147,7 @@ function Footer() {
               </Link>
             </div>
           </div>
-   
+
         </div>
         <div className="left"></div>
         <div className="Mno">
