@@ -270,7 +270,7 @@ ul .Mno h4 {
 
 .exit_one {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     gap: 5px;
     align-items: center;
     justify-content: center;
@@ -299,5 +299,5 @@ ul .Mno h4 {
         display: grid;
         grid-template-columns: auto auto auto;
         color: #5b5b5b;
-    }   
+    }
 }

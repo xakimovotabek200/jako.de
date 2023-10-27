@@ -185,7 +185,7 @@ function Footer() {
       <hr className="salom" />
       <div className="Quit">
         <div className="exit_one text-center ">
-          <h1>WE ARE TEAM</h1>
+          <h1 className="text-xs flex md:block">WE ARE TEAM</h1>
           {datas.map((item, index) => {
             return (
               <div key={index}>
