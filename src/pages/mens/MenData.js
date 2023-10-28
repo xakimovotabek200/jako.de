@@ -1,8 +1,8 @@
 export const MenData = [
     {
         id: 1,
-        image: "https://cdn.jako.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
-        title: "JAKO Cap function",
+        image: "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/6151_00.jpg",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -10,8 +10,8 @@ export const MenData = [
     {
         id: 2,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
-        title: "JAKO Cap function",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -19,8 +19,8 @@ export const MenData = [
     {
         id: 3,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
-        title: "JAKO Cap function",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -28,9 +28,9 @@ export const MenData = [
     {
         id: 4,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
 
-        title: "JAKO Cap function",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -38,8 +38,8 @@ export const MenData = [
     {
         id: 5,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
-        title: "JAKO Cap function",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -47,8 +47,8 @@ export const MenData = [
     {
         id: 6,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
-        title: "JAKO Cap function",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -56,9 +56,9 @@ export const MenData = [
     {
         id: 7,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
 
-        title: "JAKO Cap function",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,
@@ -66,9 +66,9 @@ export const MenData = [
     {
         id: 8,
         image:
-            "https://cdn.jako.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
+            "https://cdn.Legend.de/userdata/dcshop/images/thumb_4/8711_620_M01.jpg",
 
-        title: "JAKO Cap function",
+        title: "Legend Cap function",
         cost1: 41.99,
         costDel2: 59.99,
         discount: 30,

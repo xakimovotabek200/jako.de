@@ -17,7 +17,7 @@ function Offer() {
 
   return (
     <div className="container mx-auto">
-      <div className="text_hight" style={{marginTop:"80px"}}>
+      <div className="text_hight" style={{ marginTop: "80px" }}>
         <h1>Offer</h1>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-4">
@@ -59,7 +59,7 @@ function Offer() {
                       </HoverCard.Target>
                       <hr />
                       <div className="box_text">
-                        <h4>Jako{item.name}</h4>
+                        <h4>Legend{item.name}</h4>
                         <div className="box_flex">
                           <span className="price">from €{item.cost1}</span>
                           <h2 className="text-center">

@@ -241,6 +241,10 @@ ul .Mno h4 {
         display: none;
     }
 
+    .exit_one>h1 {
+        font-size: 10px;
+    }
+
     .flexONe {
         flex-wrap: wrap;
         display: flex;
@@ -250,8 +254,9 @@ ul .Mno h4 {
         flex-wrap: wrap-reverse;
     }
 
-    .exit_two>ul {
-        flex-wrap: wrap;
+    .exit_two {
+        display: grid;
+        grid-template-columns: auto;
     }
 
 }
@@ -264,8 +269,11 @@ ul .Mno h4 {
 }
 
 .exit_one {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     gap: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .exit_one h1 {
@@ -285,11 +293,11 @@ ul .Mno h4 {
     color: #337ab7;
 }
 
-.exit_two{
-    border: 1px solid red;
-    gap: 8px;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin: 5px;
-    color: #5b5b5b;
+@media only screen and (min-width:600px) {
+    .exit_two {
+        gap: 8px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        color: #5b5b5b;
+    }
 }

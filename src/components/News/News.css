@@ -1,6 +1,7 @@
 /* Add this CSS in your component's CSS file or a global CSS file */
 
 /* Style for the pagination container */
+
 .pagination {
     display: flex;
     justify-content: space-between;
