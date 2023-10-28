@@ -3,7 +3,6 @@ import "./Banner.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-
 function Banner() {
   const { t } = useTranslation();
 

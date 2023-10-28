@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HightLights from "../../components/Higtlights/HightLights";
-import Men1 from "./JAKOkids4.jpg";
-import Men2 from "./JAKOkids5.jpg";
-import Men3 from "./JAKOkids6.jpg";
+import Men1 from "./Legend1.jpg";
+import Men2 from "./Legend.jpg";
+import Men3 from "./Legendkids4.jpg";
 import "./Kids.css";
 function Mens() {
   return (
@@ -42,7 +42,7 @@ function Mens() {
         <div className="cardla">
           <img
             className="img"
-            src="https://cdn.jako.de/userdata/images/Einkaufswelten/Kinder/Einkaufswelten_Kinder_Trainingsjacken_900x674px.jpg"
+            src="https://cdn.Legend.de/userdata/images/Einkaufswelten/Kinder/Einkaufswelten_Kinder_Trainingsjacken_900x674px.jpg"
             alt=""
           />
           <li>
@@ -54,7 +54,7 @@ function Mens() {
         <div className="cardla">
           <img
             className="img"
-            src="https://cdn.jako.de/userdata/images/Einkaufswelten/Kinder/JAKO_2023_Bildzuschnitte_Homepage_900x674px_Kinder%20T-Shirts.jpg"
+            src="https://cdn.Legend.de/userdata/images/Einkaufswelten/Kinder/Legend_2023_Bildzuschnitte_Homepage_900x674px_Kinder%20T-Shirts.jpg"
             alt=""
           />
           <li>
@@ -66,7 +66,7 @@ function Mens() {
         <div className="cardla">
           <img
             className="img"
-            src="https://cdn.jako.de/userdata/images/Einkaufswelten/Kinder/JAKO_2023_Bildzuschnitte_Homepage_900x674px_Sporthosen%20Kinder.jpg"
+            src="https://cdn.Legend.de/userdata/images/Einkaufswelten/Kinder/Legend_2023_Bildzuschnitte_Homepage_900x674px_Sporthosen%20Kinder.jpg"
             alt=""
           />
           <li>

@@ -12,7 +12,7 @@ function News() {
           <div>
             <img
               className="w-full md:w-[990px] h-[554px] object-cover"
-              src="https://www.jako.de/userdata/collection/resize/2200_92_2023_08_jako_einlaufkinder_vfb_newsblog_1200x628px.jpg"
+              src="https://www.Legend.de/userdata/collection/resize/2200_92_2023_08_Legend_einlaufkinder_vfb_newsblog_1200x628px.jpg"
               alt=""
             />
           </div>
@@ -25,7 +25,7 @@ function News() {
                 Beaming children's eyes at the 5:0 victory of VfB Stuttgart
               </h3>
               <span className="mt-4">
-                JAKO player escorts with patients of the FORTEe study
+                Legend player escorts with patients of the FORTEe study
               </span>
               <button className="news_btn w-[200px] h-[50px] bg-[#5b5b5b] text-white mt-4 hover:bg-[#337ab7] duration-300 rounded-sm">
                 LEARN MORE
