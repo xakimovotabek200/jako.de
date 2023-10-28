@@ -28,7 +28,7 @@ function App() {
       <NavbarTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/higtlightsId/:id" element={<HightLightsId />} />
+        <Route path="/higtlightsId/:slug" element={<HightLightsId />} />
         <Route path="/men" element={<Mens />} />
         <Route path="/kids" element={<Kids />} />
         <Route path="/women" element={<Women />} />

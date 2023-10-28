@@ -34,14 +34,16 @@ function NavbarTop() {
       );
       const data = response.data.data;
       setData(data);
+      console.log(data, "navbar");
     } catch (error) {
-      toast("error", { type: "error" });
+      toast.error("Error", { type: "error" });
     }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <Box pb={20}>
       <header className={classes.header}>
@@ -84,16 +86,8 @@ function NavbarTop() {
                     </HoverCard.Target>
                     {item.child_categories.map((child) => {
                       return (
-                        <HoverCard.Dropdown
-                          key={child.id}
-                          style={{ overflow: "hidden" }}
-                        >
+                        <HoverCard.Dropdown key={child.id}>
                           <h1>{child.name}</h1>
-                          <div>
-                            {item.child_categories_type.map((cad_type) => {
-                              return <h1 key={cad_type.id}>{cad_type.name}</h1>;
-                            })}
-                          </div>
                         </HoverCard.Dropdown>
                       );
                     })}

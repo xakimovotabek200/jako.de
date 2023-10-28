@@ -14,20 +14,21 @@ function HightLights() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api.abdullajonov.uz/legend-backend-api/api/products/get');
-        setProductData(response.data?.products?.data); // Update the state with product data
+        const response = await axios.get(`https://api.abdullajonov.uz/legend-backend-api/api/products/get`);
+        setProductData(response.data?.products?.data);
+        console.log(response.data?.products?.data);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchData(); // Fetch data when the component mounts
+    fetchData();
   }, []);
 
   return (
     <div className="container">
       <div className="text_hight">
-        <h1>{t("Home_products")}</h1>
+        <h1>prodcut</h1>
       </div>
       <div className="">
         <Carousel
@@ -40,8 +41,9 @@ function HightLights() {
           align="center"
         >
           {Array.isArray(productData) && productData.map((item) => {
+            console.log(item.slug);
             return (
-              <Link key={item.id} to={`/https://api.abdullajonov.uz/legend-backend-api/api/products/get/{id}`}>
+              <Link key={item.id} to={`/higtlightsId/${item.slug}`}>
                 <Carousel.Slide>
                   <HoverCard shadow="md" closeDelay={300}>
                     <div className="box">
