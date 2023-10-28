@@ -3,20 +3,20 @@ import NewsCollection from "./NewsCollection";
 
 function News() {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-[#5b5b5b] mb-[2pc]">
+    <div className="respons container mx-auto">
+      <h1 className="text-xs mt-16 text-center md:text-3xl font-bold text-[#5b5b5b] mb-[2pc]">
         WELCOME TO THE LEGENGD NEWS BLOG
       </h1>
       <div className="hover_btn">
         <div className="md:flex justify-normal items-center">
           <div>
             <img
-              className="w-[990px] h-[554px] object-cover relative"
+              className="w-full md:w-[990px] h-[554px] object-cover"
               src="https://www.jako.de/userdata/collection/resize/2200_92_2023_08_jako_einlaufkinder_vfb_newsblog_1200x628px.jpg"
               alt=""
             />
           </div>
-          <div className="bg-[#fff]  shadow-2xl w-[545px] h-[285px] p-10 absolute mt-[10pc] left-[58pc]">
+          <div className="mt-[-500px] hidden md:block bg-[#fff] shadow-2xl w-[545px] h-[285px] ml-[-80px] p-10 md:mt-[10pc] left-[58pc]">
             <div className="text-[#5b5b5b] border-b-4  border-[#5b5b5b]">
               06.09.2023
             </div>

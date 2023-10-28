@@ -54,7 +54,7 @@ i18n.use(initReactI18next).init({
         Footer_right: "SAVE 30% ON YOUR FIRST ORDER",
         Footer_right2:
           "Excluded for fan articles, organic and doubletex articles and already reduced articles",
-        Footer_button: "BECOME A CLUB MEMBER NOW",
+        Footer_button: "Start Shop Now",
       },
     },
     Uzbek: {

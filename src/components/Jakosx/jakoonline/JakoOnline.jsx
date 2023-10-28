@@ -21,7 +21,6 @@ function JakoOnline() {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(data);
   return (
     <div className="">
       <div className="online">

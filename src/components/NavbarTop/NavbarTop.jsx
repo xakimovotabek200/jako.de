@@ -20,7 +20,7 @@ import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import Legend from "./Legend.png"
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure();
@@ -42,6 +42,7 @@ function NavbarTop() {
   useEffect(() => {
     fetchData();
   }, []);
+  console.log(data)
   return (
     <Box pb={20}>
       <header className={classes.header}>
@@ -49,7 +50,7 @@ function NavbarTop() {
           <Link to="/">
             <img
               style={{ width: "160px", height: "50px" }}
-              src="https://cdn.jako.de/userdata/images/Basics/logo-blue.svg"
+              src={Legend}
               alt=""
             />
           </Link>

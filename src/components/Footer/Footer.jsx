@@ -10,6 +10,7 @@ import "./Footer.css";
 
 function Footer() {
   const { t } = useTranslation();
+  const [datas, setDatas] = useState([]);
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
@@ -26,10 +27,25 @@ function Footer() {
   useEffect(() => {
     fetchData();
   }, []);
+  const fetchDatas = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.abdullajonov.uz/legend-backend-api/api/social-network/get"
+      );
+      const datas = response.data.data;
+      setDatas(datas);
+    } catch (error) {
+      console.error(error); // Properly handle and log the error
+    }
+  };
+  useEffect(() => {
+    fetchDatas();
+  }, []);
+  console.log(datas);
   return (
     <div className="br">
       <section className="HrOne">
-        <hr className="s" />
+        <hr className="salom" />
         <div className="Just_One">
           <div className="JustFlex">
             <img src={Footer_Image} alt="" />
@@ -45,7 +61,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <hr className="s" />
+        <hr className="salom" />
       </section>
       <div className="Js">
         <div className="section">
@@ -166,18 +182,27 @@ function Footer() {
           <button className="now">{t("Footer_button")}</button>
         </div>
       </div>
-      <hr className="s" />
+      <hr className="salom" />
       <div className="Quit">
-        <div className="exit_one">
-          <h1>WE ARE TEAM</h1>
-          <BsFacebook className="i" />
-          <BsInstagram className="i" />
-          <BsYoutube className="i" />
-          <BsTwitter className="i" />
+        <div className="exit_one text-center ">
+          <h1 className="text-xs flex md:block">WE ARE TEAM</h1>
+          {datas.map((item, index) => {
+            return (
+              <div key={index}>
+                <Link to={item.link}>
+                  <img
+                    className="w-12 h-6 object-cover"
+                    src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.icon}`}
+                    alt="Hozircha apida xatolik bor"
+                  />
+                </Link>
+              </div>
+            );
+          })}
         </div>
         <div className="exit_two">
           {data.map((item, index) => (
-            <ul key={index} className="flex">
+            <ul key={index} className="">
               <li>
                 <p>{item.text}</p>
               </li>
