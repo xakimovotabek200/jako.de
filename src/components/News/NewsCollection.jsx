@@ -24,7 +24,7 @@ const theme = createTheme({
 function NewsCollection() {
   const [newsData, setNewsData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Number of items to display per page
+  const itemsPerPage = 10; 
 
   useEffect(() => {
     async function fetchData() {

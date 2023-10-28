@@ -22,9 +22,11 @@
   width: 450px;
   height: 340px;
 }
-.Men{
+
+.Men {
   margin-top: 50px;
 }
+
 .aw {
   text-align: center;
   color: #5b5b5b;
@@ -47,4 +49,8 @@ li {
     width: 350px;
     height: 240px;
   }
-} 
+
+  .men {
+    margin-top: 50px;
+  }
+}
