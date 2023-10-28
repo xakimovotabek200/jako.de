@@ -34,7 +34,7 @@ function Cart() {
       <div className="flex flex-col md:flex-row w-screen h-full px-14 py-7 container mx-auto">
         <div className="w-full flex flex-col h-fit gap-4 p-4">
           <p className="sm: text-center md:text-blue-900 text-xl  font-extrabold">
-            My cart
+            My carts
           </p>
           {products.length > 0 ? (
             products.map((product, ind) => (
