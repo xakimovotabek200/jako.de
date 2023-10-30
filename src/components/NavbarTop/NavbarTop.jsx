@@ -34,7 +34,7 @@ function NavbarTop() {
       );
       const data = response.data.data;
       setData(data);
-      console.log(data, "navbar");
+      console.log(data, "navdata");
     } catch (error) {
       toast.error("Error", { type: "error" });
     }
@@ -43,14 +43,13 @@ function NavbarTop() {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(data)
   return (
     <Box pb={20}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Link to="/">
             <img
-              style={{ width: "160px", height: "50px" }}
+              style={{ width: "160px", height: "50px", objectFit: "contain" }}
               src={Legend}
               alt=""
             />
@@ -82,21 +81,34 @@ function NavbarTop() {
                             color={theme.colors.blue[6]}
                           />
                         </Center>
+                        {Array.isArray(item) && item.child_categories_type.map((child) => {
+                          console.log(item, "item");
+                          return (
+                            <HoverCard.Dropdown key={child.id}>
+                              <h1>{child.name}</h1>
+                              <hr />
+                              {item.child_categories.map((child) => {
+                                console.log(item, "item");
+                                return (
+                                  // <HoverCard.Dropdown key={child.id}>
+                                  <h1>{child.name}</h1>
+                                  // </HoverCard.Dropdown>
+                                );
+                              })}
+                            </HoverCard.Dropdown>
+                          );
+                        })}
                       </Link>
                     </HoverCard.Target>
-                    {item.child_categories.map((child) => {
-                      return (
-                        <HoverCard.Dropdown key={child.id}>
-                          <h1>{child.name}</h1>
-                        </HoverCard.Dropdown>
-                      );
-                    })}
+
                   </HoverCard>
                 </Link>
               </Group>
             );
           })}
+
           <div className={classes.navbartop_language}>
+
             <Modalsearch />
             <LanguagePicker />
             <Link to="/cart">

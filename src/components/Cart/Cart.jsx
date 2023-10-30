@@ -1,7 +1,6 @@
 import { HoverCard } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Image } from "antd";
-import { motion } from "framer-motion"; // import motion from framer-motion
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -22,12 +21,13 @@ function Cart() {
 
   function calculateTotal(products) {
     return products.reduce((total, product) => {
-      const productCost = parseFloat(product.cost1);
+      const productCost = parseFloat(product.price);
       return total + productCost * product.quantity;
     }, 0);
   }
 
   const totalSum = calculateTotal(products);
+  const formattedTotal = totalSum.toFixed(0, 2);
 
   return (
     <div>
@@ -58,7 +58,7 @@ function Cart() {
                               objectFit: "contain",
                               cursor: "pointer",
                             }}
-                            fallback={product.image}
+                            fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${product.image}`}
                             alt=""
                           />
                         </HoverCard.Target>
@@ -80,9 +80,9 @@ function Cart() {
                   </div>
                   <div className="self-center text-center">
                     <p className="text-gray-600 font-normal text-sm line-through">
-                      ${product.cost1}
+                      ${product.price}
                       <span className="text-red-500 ml-2">
-                        ${product.costDel2}
+                        ${product.shipping_price}
                       </span>
                     </p>
                     <p className="text-gray-800 font-normal text-xl">$49.99</p>
@@ -177,22 +177,19 @@ function Cart() {
             Purchase Resume
           </p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
-            <div className="flex flex-row justify-between">
-              <p className="text-gray-600">Subtotal (2 Items)</p>
-              <p className="text-end font-bold">$99.98</p>
-            </div>
+
             <hr className="bg-gray-200 h-0.5" />
             <div className="flex flex-row justify-between">
-              <p className="text-gray-600">Freight</p>
+              <p className="text-gray-600">Yetkazib berish</p>
               <div>
-                <p className="text-end font-bold">$3.90</p>
+                <p className="text-end font-bold">O'zbekiston bo'ylab bepul</p>
                 <p className="text-gray-600 text-sm font-normal">
-                  Arrives on Jul 16
+                  {""}
                 </p>
               </div>
             </div>
             <hr className="bg-gray-200 h-0.5" />
-            <div className="flex flex-row justifybetween">
+            <div className="flex flex-row items-center justify-between">
               <p className="text-gray-600">Discount Coupon</p>
               <Link className="text-gray-500 text-base underline" to={"/"}>
                 Add
@@ -202,10 +199,10 @@ function Cart() {
             <div className="flex flex-row justify-between">
               <p className="text-gray-600">Total</p>
               <div>
-                <p className="text-end font-bold">${totalSum.toFixed(2)}</p>
+                <p className="text-end font-bold">${formattedTotal}</p>
               </div>
             </div>
-            <div className="sm:flex-wrap md:flex gap-2">
+            <div className="sm:flex-wrap md:flex gap-2 md:items-center">
               <Link to="/order">
                 <button className="transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm w-[200px] text-white text-hover shadow-md">
                   FINISH

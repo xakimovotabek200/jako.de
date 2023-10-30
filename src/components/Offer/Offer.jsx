@@ -1,19 +1,44 @@
 import "@mantine/carousel/styles.css";
 import { HoverCard, Text } from "@mantine/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Offer.module.css";
-import { productData } from "../../components/Higtlights/data";
 
 function Offer() {
   const [selectedColor, setSelectedColor] = useState("");
-  const filteredProducts = productData.filter((item) => {
-    return selectedColor === "" || item.color === selectedColor;
-  });
+  const [productData, setProductData] = useState([]);
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+
+  useEffect(() => {
+    fetch(`https://api.abdullajonov.uz/legend-backend-api/api/products/get`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProductData(data.products.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
   };
+
+  const handleMinPriceChange = (e) => {
+    setMinPrice(e.target.value);
+  };
+
+  const handleMaxPriceChange = (e) => {
+    setMaxPrice(e.target.value);
+  };
+
+  const filterData = productData.filter((item) => {
+    const meetsMinPrice = minPrice === "" || item.price >= parseFloat(minPrice);
+    const meetsMaxPrice = maxPrice === "" || item.price <= parseFloat(maxPrice);
+
+    return meetsMinPrice && meetsMaxPrice && (selectedColor === "" || item.color === selectedColor);
+  });
 
   return (
     <div className="container mx-auto">
@@ -21,17 +46,8 @@ function Offer() {
         <h1>Offer</h1>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-4">
-        {/* <div>
-          <p className="lg:hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            dicta vero ex cumque commodi id similique iste sunt totam, eum quos
-            nisi non error eos quod quam, officia fuga porro consequuntur,
-            asperiores cum. Modi ullam quas quis quisquam rerum recusandae
-            dolores minus ipsum repudiandae placeat? Magni, nesciunt qui
-            corrupti impedit deserunt aliquam hic totam placeat.
-          </p>
-        </div> */}
-        <div className="col-span-2 md:col-span-3">
+        <div>
+
           <div className="w-1/2">
             <select
               name="Color"
@@ -46,30 +62,47 @@ function Offer() {
               <option value="orange">Orange</option>
             </select>
             <div className="w-[250px] mb-5 h-[1px] bg-black" />
+            <input
+              type="number"
+              placeholder="Min Price"
+              value={minPrice}
+              onChange={handleMinPriceChange}
+            />
+            <input
+              type="number"
+              placeholder="Max Price"
+              value={maxPrice}
+              onChange={handleMaxPriceChange}
+            />
           </div>
-
+        </div>
+        <div className="col-span-2 md:col-span-3">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {filteredProducts.map((item) => {
+            {filterData.map((item) => {
               return (
-                <Link key={item.id} to={`/HigtlightsId/${item.id}`}>
+                <Link key={item.id} to={`/HigtlightsId/${item.slug}`}>
                   <HoverCard shadow="md" closeDelay={300}>
                     <div className="box">
                       <HoverCard.Target>
-                        <img src={item.image} alt="" />
+                        <img
+                          className="w-[300px] h-[300px] object-contain"
+                          src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
+                          alt=""
+                        />
                       </HoverCard.Target>
                       <hr />
                       <div className="box_text">
                         <h4>Legend{item.name}</h4>
                         <div className="box_flex">
-                          <span className="price">from €{item.cost1}</span>
+                          <span className="price">from €{item.price}</span>
                           <h2 className="text-center">
-                            <del>€{item.costDel2}</del>
+                            <del>€{item.shipping_price}</del>
                           </h2>
                           <HoverCard.Dropdown>
-                            <Text size="sm">{item.brand}</Text>
+                            <Text size="sm">{item.slug}</Text>
                           </HoverCard.Dropdown>
                           <p className="text_diskpunt">
-                            -{item.discount}% Diskount
+                            -{item.discount}% Discount
                           </p>
                         </div>
                       </div>

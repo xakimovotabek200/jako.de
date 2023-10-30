@@ -1,7 +1,6 @@
-import { Carousel } from "@mantine/carousel";
-import { HoverCard, Image, Text, rem } from "@mantine/core";
+import { HoverCard, Text } from "@mantine/core";
+import { Image } from "antd"
 import { useDisclosure } from "@mantine/hooks";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -22,8 +21,8 @@ function HightLightsId() {
             try {
                 const response = await axios.get(`https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/${slug}`);
                 setHighlight(response.data.product);
-                // setSelectedImageIndex(response.data.image);
-                // setActive(response.data.size);
+                setSelectedImageIndex(response.data.image);
+                setActive(response.data.size);
                 console.log(response.data.product);
             } catch (error) {
                 setHighlight(null);
@@ -42,9 +41,9 @@ function HightLightsId() {
         dispatch(setSize(item));
     };
 
-    const selectImage = (item) => {
-        setSelectedImageIndex(item);
-        dispatch(setImage(item));
+    const selectImage = (hightlight) => {
+        setSelectedImageIndex(highlight.image);
+        dispatch(setImage(highlight.image));
     };
 
     return (
@@ -54,11 +53,12 @@ function HightLightsId() {
                     <HoverCard shadow="md" closeDelay={200}>
                         <Image
                             className="w-[500px] min-h-[500px] max-h-[500px] object-contain mt-24"
-                            fallback={selectedImageIndex}
+                            fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
                             onClick={open}
                             title={highlight.image}
                             style={{ cursor: "pointer" }}
                         />
+
                         <HoverCard.Dropdown>
                             <Text size="sm">{highlight.name}</Text>
                         </HoverCard.Dropdown>
@@ -68,7 +68,7 @@ function HightLightsId() {
                     <div>
                         <div className="mb-[30px]">
                             <h1 className="text-[#5b5b5b] text-2xl font-extrabold">
-                                {highlight.name2}
+                                {highlight.description}
                             </h1>
                         </div>
                         <div className="w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
@@ -80,7 +80,15 @@ function HightLightsId() {
                                 Become a member now
                             </Link>
                         </div>
-                        <div className="flex mr-7">
+                        <div className="flex">
+                            <img
+                                className="cursor-pointer w-[560] h-[60px] object-contain"
+                                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
+                                onClick={() => selectImage(highlight)}
+                                alt=""
+                            />
+                        </div>
+                        {/* <div className="flex mr-7">
                             {Array.isArray() && highlight.size.map((item) => (
                                 <div
                                     key={item}
@@ -91,7 +99,7 @@ function HightLightsId() {
                                     <p>{item}</p>
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                         <div></div>
                     </div>
                     <ContiuneHightleht highlight={highlight} />

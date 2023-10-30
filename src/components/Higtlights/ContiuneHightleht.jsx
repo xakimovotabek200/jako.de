@@ -1,15 +1,16 @@
 import { Accordion, Button } from "@mantine/core";
+import { IconRotate360 } from "@tabler/icons-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addWishes } from "../redux/slice";
-import { IconRotate360 } from "@tabler/icons-react";
 import "./Hightlights.css";
 import { groceries } from "./data";
+
 
 function ContiuneHightleht({ highlight }) {
     const [active, setActive] = useState(false);
 
-    let [quantity, setQuantity] = useState(highlight.quantity);
+    const [quantity, setQuantity] = useState(1);
     const [add, setAdd] = useState(1);
     const dispatch = useDispatch();
     const { selectedSize, selectedImage } = useSelector(
@@ -26,10 +27,8 @@ function ContiuneHightleht({ highlight }) {
         newData.quantity = quantity;
         newData.size = selectedSize;
         newData.image = selectedImage ? selectedImage : newData.image;
-        return (
-            dispatch(addToCart(newData)),
-            dispatch(addWishes(newData))
-        );
+        dispatch(addToCart(newData));
+        dispatch(addWishes(newData));
     }
 
     function handleAddToCart2(data) {
@@ -38,14 +37,18 @@ function ContiuneHightleht({ highlight }) {
         newData.quantity = quantity;
         newData.size = selectedSize;
         newData.image = selectedImage ? selectedImage : newData.image;
-        return (
-            dispatch(addWishes(newData))
-        );
+        dispatch(addWishes(newData));
     }
+
     const items = groceries.map((item) => (
         <Accordion.Item key={item.value} value={item.value}>
-            <Accordion.Control icon={item.emoji} className="hover:text-[#008ac9] duration-300">{item.value}</Accordion.Control>
-            <Accordion.Panel className="w-[500px] ">
+            <Accordion.Control
+                icon={item.emoji}
+                className="hover:text-[#008ac9] duration-300"
+            >
+                {item.value}
+            </Accordion.Control>
+            <Accordion.Panel className="w-[500px]">
                 {item.description}
             </Accordion.Panel>
         </Accordion.Item>
@@ -54,9 +57,9 @@ function ContiuneHightleht({ highlight }) {
     return (
         <div>
             <div className="flex gap-6 items-center">
-                <span className="price">from €{highlight.cost1}</span>
+                <span className="price">from €{highlight.price}</span>
                 <h2 className="">
-                    <del>€{highlight.costDel2}</del>
+                    <del>€{highlight.shipping_price}</del>
                 </h2>
                 <p className="text_diskpunt">-{highlight.discount}% Discount</p>
                 <p className="text_diskpunt">Additional Discounts</p>
@@ -76,9 +79,7 @@ function ContiuneHightleht({ highlight }) {
                             </button>
                             <br />
                             <button
-                                onClick={() =>
-                                    quantity ? setQuantity(quantity - 1) : setQuantity(0)
-                                }
+                                onClick={() => setQuantity(quantity > 0 ? quantity - 1 : 0)}
                                 className="w-[30px] h-[32px] border-2 border-solid border-[#5b5b5b] hover:bg-[#008ac9] hover:text-white"
                             >
                                 -
@@ -86,6 +87,7 @@ function ContiuneHightleht({ highlight }) {
                         </div>
                     </div>
                     <Button
+                        className="bg-[#008ac9]"
                         onClick={() => handleAddToCart(highlight)}
                         variant="filled"
                         style={{ width: "200px", height: "65px" }}
@@ -96,22 +98,24 @@ function ContiuneHightleht({ highlight }) {
                 <div className="flex items-center underline cursor-pointer">
                     Add
                     <div onClick={handleHeartClick}>
-                        <button
-                            onClick={() => handleAddToCart2(highlight)}
-                        >
+                        <button onClick={() => handleAddToCart2(highlight)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className={`icon icon-tabler icon-tabler-heart-filled ${active ? 'text-red' : ''}`}
+                                className={`icon icon-tabler icon-tabler-heart-filled ${active ? "text-red" : ""
+                                    }`}
                                 width="36"
                                 height="36"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
                                 stroke="#D0D4CA"
                                 fill="none"
-
                             >
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" stroke-width="0" fill={active ? "red" : "#D0D4CA"} />
+                                <path
+                                    d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"
+                                    stroke-width="0"
+                                    fill={active ? "red" : "#D0D4CA"}
+                                />
                             </svg>
                         </button>
                     </div>
@@ -122,7 +126,9 @@ function ContiuneHightleht({ highlight }) {
                     <IconRotate360 />
                 </div>
                 <div className="ml-5">
-                    <p className="font-semibold text-[18px] text-[#5b5b5b]">30 days right of return</p>
+                    <p className="font-semibold text-[18px] text-[#5b5b5b]">
+                        30 days right of return
+                    </p>
                     <p className="text-[#5b5b5b]">Fast processing</p>
                 </div>
             </div>
