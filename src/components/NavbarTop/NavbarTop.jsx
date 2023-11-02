@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
   Box,
   Burger,
@@ -14,18 +13,32 @@ import {
   IconHeart,
   IconShoppingCart,
 } from "@tabler/icons-react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { LanguagePicker } from "./Languages/Language";
+import Legend from "./Legend.png";
 import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
-import axios from "axios";
-import { toast } from "react-toastify";
-import Legend from "./Legend.png"
+
+const options = {
+  method: 'GET',
+  url: 'https://api.abdullajonov.uz/legend-backend-api/api/child-category/get',
+  headers: { Accept: 'application/json' }
+};
+const optionss = {
+  method: 'GET',
+  url: 'https://api.abdullajonov.uz/legend-backend-api/api/child-category/get',
+  headers: { Accept: 'application/json' }
+};
+
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure();
   const theme = useMantineTheme();
   const [data, setData] = useState([]);
+  const [childData, setChildData] = useState([])
 
   const fetchData = async () => {
     try {
@@ -38,11 +51,24 @@ function NavbarTop() {
     } catch (error) {
       toast.error("Error", { type: "error" });
     }
-  };
+  }
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const fetchDatas = async () => {
+      try {
+        const { data } = await axios.request(options);
+        setChildData(data.data)
+      } catch (error) {
+        toast.error("salom")
+      }
+    };
+    fetchDatas();
+  }, [])
+
   return (
     <Box pb={20}>
       <header className={classes.header}>
@@ -59,8 +85,8 @@ function NavbarTop() {
             onClick={toggleDrawer}
             hiddenFrom="sm"
           />
-          {data.map((item) => {
-            return (
+          {data.length > 0 &&
+            data.map((item) => (
               <Group key={item.id} h="100%" gap={0} visibleFrom="sm">
                 <Link to="/offer" className={classes.link}>
                   <HoverCard
@@ -75,40 +101,32 @@ function NavbarTop() {
                         <Center inline>
                           <Box component="span" mr={5}>
                             {item.name}
+                            <HoverCard.Dropdown>
+                              <div className="">
+                                {item.child_categories_type.map((child) => (
+                                  <Link
+                                    key={child.id}
+                                    to={`/${child.slug}`}
+                                  >
+                                    <h1>{child.name}</h1>
+                                    <hr />
+                                  </Link>
+                                ))}
+                              </div>
+                            </HoverCard.Dropdown>
                           </Box>
                           <IconChevronDown
                             style={{ width: rem(16), height: rem(16) }}
                             color={theme.colors.blue[6]}
                           />
                         </Center>
-                        {Array.isArray(item) && item.child_categories_type.map((child) => {
-                          console.log(item, "item");
-                          return (
-                            <HoverCard.Dropdown key={child.id}>
-                              <h1>{child.name}</h1>
-                              <hr />
-                              {item.child_categories.map((child) => {
-                                console.log(item, "item");
-                                return (
-                                  // <HoverCard.Dropdown key={child.id}>
-                                  <h1>{child.name}</h1>
-                                  // </HoverCard.Dropdown>
-                                );
-                              })}
-                            </HoverCard.Dropdown>
-                          );
-                        })}
                       </Link>
                     </HoverCard.Target>
-
                   </HoverCard>
                 </Link>
               </Group>
-            );
-          })}
-
+            ))}
           <div className={classes.navbartop_language}>
-
             <Modalsearch />
             <LanguagePicker />
             <Link to="/cart">

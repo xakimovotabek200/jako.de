@@ -41,7 +41,6 @@ function Footer() {
   useEffect(() => {
     fetchDatas();
   }, []);
-  console.log(datas);
   return (
     <div className="br">
       <section className="HrOne">

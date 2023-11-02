@@ -54,8 +54,9 @@ function Cart() {
                             }}
                             title="Open modal"
                             style={{
-                              width: "100%",
-                              objectFit: "contain",
+                              height: "120px",
+                              width: "120px",
+                              objectFit: "cover",
                               cursor: "pointer",
                             }}
                             fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${product.image}`}
@@ -85,7 +86,7 @@ function Cart() {
                         ${product.shipping_price}
                       </span>
                     </p>
-                    <p className="text-gray-800 font-normal text-xl">$49.99</p>
+                    <p className="text-gray-800 font-normal text-xl">${product.price}</p>
                   </div>
                   <div className="self-center">
                     <button

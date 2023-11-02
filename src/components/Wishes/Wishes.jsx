@@ -19,7 +19,10 @@ function Wishes() {
         <div className="flex justify-center items-center">
           {products.length > 0 ? (
             products.map((item, index) => (
-              <Link key={index} to={`/HigtlightsId/${item.id}`}>
+              <Link
+                key={index}
+                to={`https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/`}
+              >
                 <HoverCard shadow="md" closeDelay={300}>
                   <div className="box">
                     <HoverCard.Target>
@@ -29,12 +32,12 @@ function Wishes() {
                     <div className="box_text">
                       <h4>Legend{item.name}</h4>
                       <div className="box_flex">
-                        <span className="price">from €{item.cost1}</span>
+                        <span className="price">from €{item.price}</span>
                         <h2 className="text-center">
-                          <del>€{item.costDel2}</del>
+                          <del>€{item.shipping_price}</del>
                         </h2>
                         <HoverCard.Dropdown>
-                          <Text size="sm">{item.brand}</Text>
+                          <Text size="sm">{item.slug}</Text>
                         </HoverCard.Dropdown>
                         <p className="text_diskpunt">
                           -{item.discount}% Discount

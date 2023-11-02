@@ -23,12 +23,10 @@ function HightLightsId() {
                 setHighlight(response.data.product);
                 setSelectedImageIndex(response.data.image);
                 setActive(response.data.size);
-                console.log(response.data.product);
             } catch (error) {
                 setHighlight(null);
             }
         };
-
         fetchData();
     }, [slug]);
 

@@ -15,6 +15,7 @@ import News from "./components/News/News";
 import Offer from "./components/Offer/Offer";
 import OfferId from "./components/Offer/OfferId";
 import Wishes from "./components/Wishes/Wishes";
+import WishesId from "./components/Wishes/WishesId";
 import Order from "./components/order/Order";
 import Home from "./pages/Home/Home";
 import Mens from "./pages/mens/Mens";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/offer/:slug" element={<OfferId />} />
         <Route path="/equitment" element={<Equitment />} />
         <Route path="/wishes" element={<Wishes />} />
+        <Route path="/wishesId:slug" element={<WishesId />} />
         <Route path="/order" element={<Order />} />
         <Route path="/news" element={<News />} />
         <Route path="/*" element={<NotFound />} />

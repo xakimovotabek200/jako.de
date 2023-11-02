@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .text_hight {
   text-align: center;
   margin-bottom: 2pc;
@@ -130,7 +134,6 @@ ins:after {
   .btns {
     margin-left: 20pc;
   }
-  
 }
 
 @media screen and (max-width: 414px) {

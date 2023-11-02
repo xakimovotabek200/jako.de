@@ -30,7 +30,7 @@ function NewsCollection() {
     async function fetchData() {
       try {
         const response = await axios.request(options);
-        console.log(response.data.news.data);
+        // console.log(response.data.news.data);
         const data = response.data.news.data;
         setNewsData(data);
       } catch (error) {

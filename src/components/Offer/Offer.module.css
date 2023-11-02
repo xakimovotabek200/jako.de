@@ -21,7 +21,12 @@
   justify-content: space-between;
   padding: 0px 2%;
 }
-
+.active {
+  background-color: #007bff; /* Set your preferred background color for the active page */
+  color: white; /* Set the text color for the active page */
+  border: 1px solid #007bff; /* Set border styles if needed */
+  padding: 5px 10px; /* Adjust padding as needed */
+}
 .box:hover {
   border: 1px solid #5b5b5b;
   transition: all 0.5s;
