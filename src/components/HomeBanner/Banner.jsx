@@ -15,7 +15,6 @@ function Banner() {
           "https://api.abdullajonov.uz/legend-backend-api/api/main-page-news/get"
         );
         setBannerData(response.data.data);
-        console.log(response.data.data, "bannerData");
       } catch (error) {
         console.error(error);
       }

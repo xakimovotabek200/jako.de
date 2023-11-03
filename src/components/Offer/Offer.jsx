@@ -66,6 +66,7 @@ function Offer() {
                   className="w-[300px] h-[300px] object-contain"
                   src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                   alt=""
+                  safjaoihoghaughou
                 />
               </HoverCard.Target>
               <hr />
