@@ -26,11 +26,13 @@ function Wishes() {
                 <HoverCard shadow="md" closeDelay={300}>
                   <div className="box">
                     <HoverCard.Target>
-                      <img src={item.image} alt="" />
+                      <img
+                        src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
+                        alt="" />
                     </HoverCard.Target>
                     <hr />
                     <div className="box_text">
-                      <h4>Legend{item.name}</h4>
+                      <h4>{item.name}</h4>
                       <div className="box_flex">
                         <span className="price">from €{item.price}</span>
                         <h2 className="text-center">

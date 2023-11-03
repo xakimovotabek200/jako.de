@@ -108,7 +108,7 @@ function NavbarTop() {
                                     key={child.id}
                                     to={`/${child.slug}`}
                                   >
-                                    <h1>{child.name}</h1>
+                                    <h1 className="text-center font-semibold capitalize">{child.name}</h1>
                                     <hr />
                                   </Link>
                                 ))}

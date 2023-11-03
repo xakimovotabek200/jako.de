@@ -33,7 +33,6 @@ function HightLights() {
       </div>
       <div className="">
         <Carousel
-          withIndicators
           height={590}
           slideSize={{ base: "100%", sm: "50%", md: "25.333333%" }}
           slideGap={{ base: 0, sm: "md" }}

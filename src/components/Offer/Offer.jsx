@@ -3,6 +3,7 @@ import { HoverCard, Text } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Offer.module.css";
+import { InputNumber } from 'antd';
 
 
 function Offer() {
@@ -106,12 +107,14 @@ function Offer() {
             </select>
             <div className="w-[250px] mb-5 h-[1px] bg-black" />
             <input
+              className="outline-none w-[200px] h-[50px] rounded-md border-2 border-solid border-purple-600"
               type="number"
               placeholder="Min Price"
               value={minPrice}
               onChange={handleMinPriceChange}
             />
             <input
+              className="outline-none w-[200px] h-[50px] rounded-md border-2 border-solid border-purple-600"
               type="number"
               placeholder="Max Price"
               value={maxPrice}
@@ -123,7 +126,7 @@ function Offer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {displayedData}
           </div>
-          <div className="pagination">
+          <div className="pagination w-[300px] mx-auto">
             {Array.from({ length: pageCount }).map((_, index) => (
               <button
                 key={index}
