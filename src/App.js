@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Loading from "./components/Loading/Loading";
 import ProductByCategory from "./components/product/productByCategry";
+import Modalsearch from "./components/NavbarTop/Modalsearch";
 
 const NotFound = lazy(() => import("./components/404/NotFound"));
 const Cart = lazy(() => import("./components/Cart/Cart"));
@@ -26,7 +27,7 @@ const Sale = lazy(() => import("./pages/sale/Sale"));
 const Women = lazy(() => import("./pages/women/Women"));
 
 const loadingMessage = (
-  <div className="mx-auto">
+  <div>
     <Loading />
   </div>
 );
@@ -51,10 +52,11 @@ function App() {
             <Route path="/wishesId:slug" element={<WishesId />} />
             <Route path="/order" element={<Order />} />
             <Route path="/news" element={<News />} />
+            <Route path="/search" element={<Modalsearch />} />
+
             <Route path="/*" element={<NotFound />} />
           </Routes>
           <Footer />
-          <productByCategry />
         </BrowserRouter>
       </Suspense>
     </div>
