@@ -5,8 +5,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Loading from "./components/Loading/Loading";
-import ProductByCategory from "./components/product/productByCategry";
 import Modalsearch from "./components/NavbarTop/Modalsearch";
+import ProductByCategory from "./components/product/productByCategry";
 
 const NotFound = lazy(() => import("./components/404/NotFound"));
 const Cart = lazy(() => import("./components/Cart/Cart"));
@@ -22,9 +22,6 @@ const Wishes = lazy(() => import("./components/Wishes/Wishes"));
 const WishesId = lazy(() => import("./components/Wishes/WishesId"));
 const Order = lazy(() => import("./components/order/Order"));
 const Home = lazy(() => import("./pages/Home/Home"));
-const Mens = lazy(() => import("./pages/mens/Mens"));
-const Sale = lazy(() => import("./pages/sale/Sale"));
-const Women = lazy(() => import("./pages/women/Women"));
 
 const loadingMessage = (
   <div>
@@ -41,9 +38,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/higtlightsId/:slug" element={<HightLightsId />} />
-            <Route path="/men" element={<Mens />} />
-            <Route path="/women" element={<Women />} />
-            <Route path="/sale" element={<Sale />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/offer/" element={<Offer />} />
             <Route path="/offer/:slug" element={<OfferId />} />
