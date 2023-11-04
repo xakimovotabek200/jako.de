@@ -11,6 +11,7 @@ import { useDisclosure } from "@mantine/hooks";
 import {
   IconChevronDown,
   IconHeart,
+  IconSearch,
   IconShoppingCart,
 } from "@tabler/icons-react";
 import axios from "axios";
@@ -136,8 +137,10 @@ function NavbarTop() {
               </Group>
             ))}
           <div className={classes.navbartop_language}>
-            <Modalsearch />
             <LanguagePicker />
+            <Link to="/search">
+              <IconSearch />
+            </Link>
             <Link to="/cart">
               <div className="cursor-pointer">
                 <IconShoppingCart />

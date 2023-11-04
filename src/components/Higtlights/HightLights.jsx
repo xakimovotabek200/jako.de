@@ -4,14 +4,14 @@ import { HoverCard } from "@mantine/core";
 import axios from "axios";
 import React, { useEffect, useState } from "react"; // Import useState and useEffect
 import { useTranslation } from "react-i18next";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Hightlights.module.css";
-import { toast } from 'react-toastify';
 
-function HightLights() {
+function HightLights({ data }) {
   const { t } = useTranslation();
   const [productData, setProductData] = useState([]);
-  const [datas, setDatas] = useState([])
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,7 @@ function HightLights() {
         );
         setProductData(response.data?.products?.data);
       } catch (error) {
-        toast.error(error);
+        toast.error(error.message);
       }
     };
 
@@ -42,67 +42,75 @@ function HightLights() {
   useEffect(() => {
     fetchDatas();
   }, []);
+
   return (
     <div className="container">
-      <div
-        class="text-center text-neutral-600 mt-10 mb-10 text-[38px] font-bold leading-9"
-      >
+      <div className="text-center text-neutral-600 mt-10 mb-10 text-[38px] font-bold leading-9">
         Products
       </div>
       <div className="">
         <Carousel
-
           slideSize={{ base: "100%", sm: "50%", md: "25.333333%" }}
           slideGap={{ base: 0, sm: "md" }}
           loop
           controlSize={50}
           align="center"
         >
-          {Array.isArray(productData) &&
-            productData.map((item) => {
-              console.log(item);
-              return (
-                <Link key={item.id} to={`/higtlightsId/${item.slug}`}>
-                  <Carousel.Slide>
-                    <HoverCard shadow="md" closeDelay={300}>
-                      <div className="box p-[20px] w-[320px] h-[420px] hover:border-2 border-solid border-red-500">
-                        <HoverCard.Target>
+          {Array.isArray(productData) && productData.map((item) => (
+            <Link key={item.id} to={`/higtlightsId/${item.slug}`} className="min-w-[350px]">
+              <Carousel.Slide>
+                <HoverCard shadow="md" closeDelay={300}>
+                  <div className="">
+                    <div key={item.id}>
+                      <div className="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
+                        <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                           <img
-                            className="h-[265px] w-[265px] object-cover relative"
                             src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
-                            alt=""
+                            alt="product-image"
+                            className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md"
                           />
-                        </HoverCard.Target>
-                        <hr />
-                        <div className="flex text-center w-[265px] h-[120px] border-2 border-solid border-lime-500">
-                          <div>
-                            {datas.map((item, i) => {
-                              return (
-                                <div>
-                                  <h1 className="w-[78px] h-[21px] bg-[#7000FF] rounded-md absolute top-[265px] z-20 text-white">{item.amount}</h1>
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div>
-                            <h1 className="text-neutral-600 font-semibold">Legend {item.name}</h1>
-                            <p>from {item.price}</p>
+                          <div className="p-5">
+                            <div className="flex justify between">
+                              <div className="text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                                {item.category} &bull; {item.slug}
+                              </div>
+                              <del>
+                                <span className="text-red-600 text-sm flex items-center gap-1">
+                                  <svg
+                                    className="h-4 w-4 text-yellow-700"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                  >
+                                    <path d="M10 1l2.928 6.377 6.538.95-4.75 4.588 1.12 6.516L10 16.664l-5.836 3.767 1.12-6.516-4.75-4.588 6.538-.95L10 1z" />
+                                  </svg>
+                                  {item.shipping_price}
+                                </span>
+                              </del>
+                            </div>
+                            <h3 className="text-xl mb-2 mt-2">
+                              {item.title}
+                            </h3>
+                            <p className="font-medium mb-2 text-sm text-gray-700">
+                              {item.description}
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <span className="text-2xl font-bold text-gray-800">
+                                ${item.price}
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </HoverCard>
-                  </Carousel.Slide>
-                </Link>
-              );
-            })}
+                    </div>
+                  </div>
+                </HoverCard>
+              </Carousel.Slide>
+            </Link>
+          ))}
         </Carousel>
       </div>
-      <div>
-        <NavLink to={"/offer"} className="">
-          <button className="text-white bg-neutral-600 w-40 h-10 mx-auto hover:bg-blue-700 duration-300" >Salom</button>
-        </NavLink>
-      </div>
-    </div >
+    </div>
   );
 }
+
 export default HightLights;

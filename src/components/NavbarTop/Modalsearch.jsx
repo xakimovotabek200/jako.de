@@ -1,61 +1,142 @@
-import React, { useState } from 'react';
+import { HoverCard, Input } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Input, Flex, Space } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
+import { Button, Form } from "antd";
+import axios from "axios";
+import React, { useRef, useState } from 'react';
+import HightLights from '../Higtlights/HightLights';
+import { Carousel } from "@mantine/carousel";
+import { Link } from "react-router-dom";
 
-import axios from 'axios';
-
-function Modalsearch() {
-  const [opened, { open, close }] = useDisclosure(false);
+const Modalsearch = () => {
+  const searchModal = useRef();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [opened, { open, close }] = useDisclosure(false);
 
-  const search = async () => {
-    const options = {
-      method: 'GET',
-      url: `https://api.abdullajonov.uz/legend-backend-api/api/search?q=${searchQuery}`,
-      headers: { Accept: 'application/json' }
-    };
-
+  async function handleSearch(value) {
+    setLoading(true);
     try {
-      const response = await axios.request(options);
-      setSearchResults(response.data);
+      let response = await axios.get(
+        `https://api.abdullajonov.uz/legend-backend-api/api/search?query=${value?.q}`
+      );
+      setProducts(response?.data?.data?.data);
+      setLoading(false);
     } catch (error) {
-      console.error(error);
+      setLoading(false);
+      return;
     }
-  };
-
+  }
+  console.log(products, "prducts");
   return (
-    <>
-      <Modal
-        opened={opened}
-        onClose={close}
-        transitionProps={{ transition: "fade", duration: 200 }}
-      >
-        <Space fullScreen />
-        <Flex direction={{ base: "column", sm: "row" }} gap="sm" align="center">
-          <Input
-            className="mx-auto w-[500px]"
-            type="search"
-            icon={<IconSearch size={18} style={{ cursor: "pointer" }} />}
-            placeholder="Search"
-            radius="xl"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyPress={(e) => {
-              if (e.key === 'Enter') {
-                search();
-              }
-            }}
-          />
-        </Flex>
-        {searchResults.map((result, index) => (
-          <div key={index}>{result.name}</div>
+    <div>
+      <nav className="z-50 sticky top-0 bg-white">
+        <div className="grid grid-cols-2 sm:grid-cols-3 items-center sm:place-items-center p-2">
+          <div className="flex items-center gap-2">
+          </div>
+        </div>
+      </nav>
+      <dialog ref={searchModal} className="w-screen p-3 rounded-lg">
+        <Form onFinish={handleSearch}>
+          <h2>Mahsulorlarni izlash:</h2>
+          <Form.Item name="q" required>
+            <Input type="text" />
+          </Form.Item>
+          <Form.Item>
+            <Button
+              type="primary"
+              className="bg-blue-500"
+              htmlType="submit"
+              loading={loading}
+              icon={<span className="fa-solid fa-search" />}
+            >
+              Izlash
+            </Button>
+          </Form.Item>
+        </Form>
+      </dialog>
+      <Form onFinish={handleSearch}>
+        <h2>Mahsulorlarni izlash:</h2>
+        <Form.Item name="q" required>
+          <Input type="text" />
+        </Form.Item>
+        <Form.Item>
+          <Button
+            type="primary"
+            className="bg-blue-500"
+            htmlType="submit"
+            loading={loading}
+            icon={<span className="fa-solid fa-search" />}
+          >
+            Izlash
+          </Button>
+        </Form.Item>
+      </Form>
+      {/* <div className="grid min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 md:px-0">
+        {products.length > 0 ?
+          <HightLights data={products} /> :
+          (
+            <h3 className="uppercase font-bold opacity-50 text-2xl whitespace-nowrap">
+              Mahsulotlar yo'q
+            </h3>
+          )}
+      </div> */}
+
+      <div className="md:flex ">
+
+        {Array.isArray(products) && products.map((item) => (
+          <Link key={item.id} to={`/higtlightsId/${item.slug}`}>
+            <HoverCard shadow="md" closeDelay={300}>
+              <div className="">
+                <div key={item.id}>
+                  <div className="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
+                    <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                      <img
+                        src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
+                        alt="product-image"
+                        className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md"
+                      />
+                      <div className="p-5">
+                        <div className="flex justify between">
+                          <div className="text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                            {item.category} &bull; {item.slug}
+                          </div>
+                          <del>
+                            <span className="text-red-600 text-sm flex items-center gap-1">
+                              <svg
+                                className="h-4 w-4 text-yellow-700"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M10 1l2.928 6.377 6.538.95-4.75 4.588 1.12 6.516L10 16.664l-5.836 3.767 1.12-6.516-4.75-4.588 6.538-.95L10 1z" />
+                              </svg>
+                              {item.shipping_price}
+                            </span>
+                          </del>
+                        </div>
+                        <h3 className="text-xl mb-2 mt-2">
+                          {item.title}
+                        </h3>
+                        <p className="font-medium mb-2 text-sm text-gray-700">
+                          {item.description}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-2xl font-bold text-gray-800">
+                            ${item.price}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </HoverCard>
+          </Link>
         ))}
-      </Modal>
-      <IconSearch onClick={open} className="search cursor-pointer" />
-    </>
+      </div>
+    </div>
   );
-}
+};
 
 export default Modalsearch;
