@@ -69,6 +69,17 @@ function HightLights({ data }) {
                             alt="product-image"
                             className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md"
                           />
+                          {
+                            datas.map((item) => {
+                              return (
+                                <div className="inline-flex items-center justify-around text-white">
+                                  <p className="bg-[#7000FF] w-[100px] rounded-md text-center text-white h-[25px]">{item.amount}sum</p>
+                                  <span className="text-center bg-red-700 rounded-md">{item.end_time}</span>
+                                </div>
+
+                              )
+                            })
+                          }
                           <div className="p-5">
                             <div className="flex justify between">
                               <div className="text-gray-600 uppercase text-xs font-semibold tracking-wider">
@@ -76,13 +87,7 @@ function HightLights({ data }) {
                               </div>
                               <del>
                                 <span className="text-red-600 text-sm flex items-center gap-1">
-                                  <svg
-                                    className="h-4 w-4 text-yellow-700"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path d="M10 1l2.928 6.377 6.538.95-4.75 4.588 1.12 6.516L10 16.664l-5.836 3.767 1.12-6.516-4.75-4.588 6.538-.95L10 1z" />
-                                  </svg>
+                                  $
                                   {item.shipping_price}
                                 </span>
                               </del>
