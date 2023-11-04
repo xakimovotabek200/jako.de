@@ -3,7 +3,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Empty from "../../img/cart is empty.jpg";
-import "../Higtlights/Hightlights.css";
+import "../Higtlights/Hightlights.module.css";
+
 
 function Wishes() {
   const dispatch = useDispatch();

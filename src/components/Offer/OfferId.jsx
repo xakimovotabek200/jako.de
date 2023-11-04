@@ -1,9 +1,9 @@
 import React from 'react'
 
-function w() {
+const OfferId = () => {
     return (
-        <div>w</div>
+        <div>OfferId</div>
     )
 }
 
-export default w
+export default OfferId

@@ -1,9 +1,8 @@
 import "@mantine/carousel/styles.css";
-import { HoverCard, Text } from "@mantine/core";
+import { HoverCard } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Offer.module.css";
-import { InputNumber } from 'antd';
 
 
 function Offer() {

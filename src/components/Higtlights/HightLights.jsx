@@ -1,15 +1,17 @@
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
-import { HoverCard, Text } from "@mantine/core";
+import { HoverCard } from "@mantine/core";
 import axios from "axios";
 import React, { useEffect, useState } from "react"; // Import useState and useEffect
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
-import "./Hightlights.css";
+import "./Hightlights.module.css";
+import { toast } from 'react-toastify';
 
 function HightLights() {
   const { t } = useTranslation();
   const [productData, setProductData] = useState([]);
+  const [datas, setDatas] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,21 +21,37 @@ function HightLights() {
         );
         setProductData(response.data?.products?.data);
       } catch (error) {
-        console.error(error);
+        toast.error(error);
       }
     };
 
     fetchData();
   }, []);
 
+  const fetchDatas = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.abdullajonov.uz/legend-backend-api/api/discount/get"
+      );
+      const datas = response.data.data;
+      setDatas(datas);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    fetchDatas();
+  }, []);
   return (
     <div className="container">
-      <div className="text_hight">
-        <h1>prodcut</h1>
+      <div
+        class="text-center text-neutral-600 mt-10 mb-10 text-[38px] font-bold leading-9"
+      >
+        Products
       </div>
       <div className="">
         <Carousel
-          height={590}
+
           slideSize={{ base: "100%", sm: "50%", md: "25.333333%" }}
           slideGap={{ base: 0, sm: "md" }}
           loop
@@ -42,32 +60,33 @@ function HightLights() {
         >
           {Array.isArray(productData) &&
             productData.map((item) => {
+              console.log(item);
               return (
                 <Link key={item.id} to={`/higtlightsId/${item.slug}`}>
                   <Carousel.Slide>
                     <HoverCard shadow="md" closeDelay={300}>
-                      <div className="box">
+                      <div className="box p-[20px] w-[320px] h-[420px] hover:border-2 border-solid border-red-500">
                         <HoverCard.Target>
                           <img
-                            className="h-[300px] object-cover"
+                            className="h-[265px] w-[265px] object-cover relative"
                             src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                             alt=""
                           />
                         </HoverCard.Target>
                         <hr />
-                        <div className="box_text">
-                          <h4>Jako{item.name}</h4>
-                          <div className="box_flex">
-                            <span className="price">from €{item.price}</span>
-                            <h2 className="text-center">
-                              <del>€{item.shipping_price}</del>
-                            </h2>
-                            <HoverCard.Dropdown>
-                              <Text size="sm">{item.category}</Text>
-                            </HoverCard.Dropdown>
-                            <p className="text_diskpunt">
-                              -{item.discount}% Discount
-                            </p>
+                        <div className="flex text-center w-[265px] h-[120px] border-2 border-solid border-lime-500">
+                          <div>
+                            {datas.map((item, i) => {
+                              return (
+                                <div>
+                                  <h1 className="w-[78px] h-[21px] bg-[#7000FF] rounded-md absolute top-[265px] z-20 text-white">{item.amount}</h1>
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div>
+                            <h1 className="text-neutral-600 font-semibold">Legend {item.name}</h1>
+                            <p>from {item.price}</p>
                           </div>
                         </div>
                       </div>
@@ -79,8 +98,8 @@ function HightLights() {
         </Carousel>
       </div>
       <div>
-        <NavLink to={"/offer"}>
-          <button className="btns">{t("Home_button")}</button>
+        <NavLink to={"/offer"} className="">
+          <button className="text-white bg-neutral-600 w-40 h-10 mx-auto hover:bg-blue-700 duration-300" >Salom</button>
         </NavLink>
       </div>
     </div >

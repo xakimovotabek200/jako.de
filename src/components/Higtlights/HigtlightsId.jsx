@@ -1,7 +1,7 @@
 import { HoverCard, Text } from "@mantine/core";
-import { Image } from "antd"
+import { Image } from "antd";
 import { useDisclosure } from "@mantine/hooks";
-import axios from 'axios';
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -19,7 +19,9 @@ function HightLightsId() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/${slug}`);
+                const response = await axios.get(
+                    `https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/${slug}`
+                );
                 setHighlight(response.data.product);
                 setSelectedImageIndex(response.data.image);
                 setActive(response.data.size);
