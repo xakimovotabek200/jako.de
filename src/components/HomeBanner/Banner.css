@@ -50,9 +50,11 @@
   .banner-image {
     display: none;
   }
-  .res_z > img{
-width: 300px;
+
+  .res_z>img {
+    width: 300px;
   }
+
   .res_Zz {
     margin-top: 20px;
   }
@@ -68,7 +70,7 @@ width: 300px;
   }
 
   .btnz {
-    margin-left: 80px;
+    margin-left: 81px;
     margin-top: 10px;
     text-align: center;
     border: none;
