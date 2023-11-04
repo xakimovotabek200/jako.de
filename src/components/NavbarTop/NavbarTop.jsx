@@ -22,15 +22,10 @@ import Legend from "./Legend.png";
 import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
 
-const options = {
-  method: 'GET',
-  url: 'https://api.abdullajonov.uz/legend-backend-api/api/child-category/get',
-  headers: { Accept: 'application/json' }
-};
 const optionss = {
-  method: 'GET',
-  url: 'https://api.abdullajonov.uz/legend-backend-api/api/child-category/get',
-  headers: { Accept: 'application/json' }
+  method: "GET",
+  url: "https://api.abdullajonov.uz/legend-backend-api/api/child-category/get",
+  headers: { Accept: "application/json" },
 };
 
 function NavbarTop() {
@@ -38,7 +33,7 @@ function NavbarTop() {
     useDisclosure();
   const theme = useMantineTheme();
   const [data, setData] = useState([]);
-  const [childData, setChildData] = useState([])
+  const [childData, setChildData] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -47,11 +42,10 @@ function NavbarTop() {
       );
       const data = response.data.data;
       setData(data);
-      console.log(data, "navdata");
     } catch (error) {
       toast.error("Error", { type: "error" });
     }
-  }
+  };
 
   useEffect(() => {
     fetchData();
@@ -60,14 +54,15 @@ function NavbarTop() {
   useEffect(() => {
     const fetchDatas = async () => {
       try {
-        const { data } = await axios.request(options);
-        setChildData(data.data)
+        const { data } = await axios.request(optionss);
+        setChildData(data?.data);
+        console.log(childData, "salomF");
       } catch (error) {
-        toast.error("salom")
+        toast.error("salom");
       }
     };
     fetchDatas();
-  }, [])
+  }, []);
 
   return (
     <Box pb={20}>
@@ -99,18 +94,32 @@ function NavbarTop() {
                     <HoverCard.Target>
                       <Link to="/offer" className={classes.link}>
                         <Center inline>
-                          <Box component="span" mr={5}>
+                          <Box component="" mr={5}>
                             {item.name}
                             <HoverCard.Dropdown>
                               <div className="">
                                 {item.child_categories_type.map((child) => (
-                                  <Link
-                                    key={child.id}
-                                    to={`/${child.slug}`}
-                                  >
-                                    <h1 className="text-center font-semibold capitalize">{child.name}</h1>
+                                  <div key={child.id}>
+                                    <Link
+                                      to={`${child.slug}`}
+                                      className="text-center font-semibold capitalize"
+                                    >
+                                      <h1>{child.name}</h1>
+                                    </Link>
                                     <hr />
-                                  </Link>
+                                    {Array.isArray(childData) &&
+                                      childData.map((item) => {
+                                        return (
+                                          <Link
+                                            key={item.id}
+                                            to={`products/${item.slug}`}
+                                          >
+                                            <p>{item.name}</p>
+                                            <br />
+                                          </Link>
+                                        );
+                                      })}
+                                  </div>
                                 ))}
                               </div>
                             </HoverCard.Dropdown>

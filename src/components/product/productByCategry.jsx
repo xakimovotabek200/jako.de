@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const ProductByCategory = () => {
     const [products, setProducts] = useState([]);
-    const category = "your_category";
+    const { category } = useParams();
 
     useEffect(() => {
         const fetchData = async () => {

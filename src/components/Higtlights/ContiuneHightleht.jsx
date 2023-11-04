@@ -3,7 +3,7 @@ import { IconRotate360 } from "@tabler/icons-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addWishes } from "../redux/slice";
-import "./Hightlights.css";
+import "./Hightlights.module.css";
 import { groceries } from "./data";
 
 
