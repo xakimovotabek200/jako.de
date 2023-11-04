@@ -24,10 +24,10 @@ function JakoOnline() {
   return (
     <div className="">
       <div className="online">
-        <h1 className="onH1">{t("Home_jako_onlineshop")}</h1>
+        <h1 className="onH1">{t("Home jakoon lineshop")}</h1>
         {Array.isArray(data) &&
           data?.map((item, index) => (
-            <p className="lets" key={index}>
+            <p className="lets container mx-auto p-2" key={index}>
               {item.text}
             </p>
           ))}

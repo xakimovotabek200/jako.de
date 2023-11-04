@@ -50,7 +50,9 @@
   .banner-image {
     display: none;
   }
-
+  .res_z > img{
+width: 300px;
+  }
   .res_Zz {
     margin-top: 20px;
   }
@@ -58,6 +60,7 @@
   .res_z {
     display: block;
     margin-top: 50px;
+    width: 100%;
   }
 
   .g {
@@ -65,7 +68,7 @@
   }
 
   .btnz {
-    margin-left: 100px;
+    margin-left: 80px;
     margin-top: 10px;
     text-align: center;
     border: none;
@@ -89,8 +92,7 @@
   margin-top: 5px;
 }
 
-.res_z > img {
+.res_z>img {
   width: 380px;
-
   text-align: center;
 }
