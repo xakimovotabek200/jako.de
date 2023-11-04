@@ -27,7 +27,7 @@ const ProductByCategory = () => {
     }, [category]);
 
     return (
-        <div>
+        <div className="mt-12 md:block">
             <h1>Products By Category</h1>
             <ul>
                 <div className="flex flex-wrap justify-center items-center">
