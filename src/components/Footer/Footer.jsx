@@ -42,7 +42,7 @@ function Footer() {
     fetchDatas();
   }, []);
   return (
-    <div className="br">
+    <div className="br container mx-auto">
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">
@@ -68,7 +68,6 @@ function Footer() {
             <h1 className="h1">{t("Footer_title1")}</h1>
             <div className="link">
               <Link className="" to="/">
-                {" "}
                 {t("Footer_item1")}{" "}
               </Link>
             </div>
