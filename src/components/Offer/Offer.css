@@ -21,6 +21,7 @@
   justify-content: space-between;
   padding: 0px 2%;
 }
+
 .box:hover {
   border: 1px solid #5b5b5b;
   transition: all 0.5s;
@@ -77,6 +78,20 @@ ins:after {
 .price {
   color: red;
   font-weight: 700;
+}
+  .pagination-button {
+  background-color: #5b5b5b;
+  color: white;
+  border: 1px solid #007bff;
+  padding: 5px 10px; /* Padding o'lchami */
+  margin: 2px;
+  cursor: pointer;
+}
+
+/* Aktiv stil */
+.pagination-button.active {
+  background-color: #0044a0; /* Orqa fon rangi */
+  border: 1px solid #0044a0; /* Chegarani chizish */
 }
 
 @keyframes del {

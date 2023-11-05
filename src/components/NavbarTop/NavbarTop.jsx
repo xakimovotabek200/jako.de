@@ -18,7 +18,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LanguagePicker } from "./Languages/Language";
+import Language, { LanguagePicker } from "./Languages/Language";
 import Legend from "./Legend.png";
 import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
@@ -66,7 +66,7 @@ function NavbarTop() {
   }, []);
 
   return (
-    <Box pb={20}>
+    <Box pb={20} className="container mx-auto">
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Link to="/">

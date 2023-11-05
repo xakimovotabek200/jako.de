@@ -28,7 +28,6 @@ const ProductByCategory = () => {
 
     return (
         <div>
-            <h1>Products By Category</h1>
             <ul>
                 <div className="flex flex-wrap justify-center items-center">
                     {products.map((product) => (

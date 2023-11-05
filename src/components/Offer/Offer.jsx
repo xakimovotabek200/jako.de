@@ -2,7 +2,7 @@ import "@mantine/carousel/styles.css";
 import { HoverCard } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Offer.module.css";
+import "./Offer.css";
 
 
 function Offer() {
@@ -152,13 +152,13 @@ function Offer() {
             {Array.from({ length: pageCount }).map((_, index) => (
               <button
                 key={index}
-                className={`pagination-button ${currentPage === index + 1 ? 'active' : ''
-                  }`}
+                className={`pagination-button ${currentPage === index + 1 ? 'active' : ''}`}
                 onClick={() => setCurrentPage(index + 1)}
               >
                 {index + 1}
               </button>
             ))}
+
           </div>
         </div>
       </div>
