@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./JakoOnline.css";
 import { useTranslation } from "react-i18next";
-import axios from "axios"; // Import axios for making API requests
+import axios from "axios";
 
 function JakoOnline() {
   const { t } = useTranslation();
