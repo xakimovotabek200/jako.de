@@ -27,8 +27,12 @@ const ProductByCategory = () => {
     }, [category]);
 
     return (
+<<<<<<< HEAD
         <div className="mt-12 md:block">
             <h1>Products By Category</h1>
+=======
+        <div>
+>>>>>>> 6ae0c1a454ea00887fac80f0f5ae90f7e90f1793
             <ul>
                 <div className="flex flex-wrap justify-center items-center">
                     {products.map((product) => (

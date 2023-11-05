@@ -52,9 +52,10 @@ function HightLightsId() {
                 <div className="right-side">
                     <HoverCard shadow="md" closeDelay={200}>
                         <Image
-                            className="w-[500px] min-h-[500px] max-h-[500px] object-contain mt-24"
+                            className="w-[500px] min-h-[500px] max-h-[500px] border-2 border-solid border-red-600 object-contain mt-24"
                             fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
                             onClick={open}
+
                             title={highlight.image}
                             style={{ cursor: "pointer" }}
                         />
@@ -88,8 +89,8 @@ function HightLightsId() {
                                 alt=""
                             />
                         </div>
-                        {/* <div className="flex mr-7">
-                            {Array.isArray() && highlight.size.map((item) => (
+                        <div className="flex mr-7">
+                            {Array.isArray(highlight) && highlight.size.map((item) => (
                                 <div
                                     key={item}
                                     data-active={active === item || undefined}
@@ -99,7 +100,7 @@ function HightLightsId() {
                                     <p>{item}</p>
                                 </div>
                             ))}
-                        </div> */}
+                        </div>
                         <div></div>
                     </div>
                     <ContiuneHightleht highlight={highlight} />

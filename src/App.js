@@ -5,8 +5,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Loading from "./components/Loading/Loading";
-import Modalsearch from "./components/NavbarTop/Modalsearch";
 import ProductByCategory from "./components/product/productByCategry";
+
+const Modalsearch = lazy(() => import("./components/NavbarTop/Modalsearch"));
 
 const NotFound = lazy(() => import("./components/404/NotFound"));
 const Cart = lazy(() => import("./components/Cart/Cart"));

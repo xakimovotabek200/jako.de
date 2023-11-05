@@ -59,13 +59,13 @@ function Cart() {
                               objectFit: "cover",
                               cursor: "pointer",
                             }}
-                            fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${product.image}`}
+                            src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${product.image}`}
                             alt=""
                           />
                         </HoverCard.Target>
                       </HoverCard>
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <divw className="flex flex-col gap-1">
                       <p className="text-lg text-gray-800 font-semibold">
                         {product.name}
                       </p>
@@ -77,7 +77,7 @@ function Cart() {
                         Size:{" "}
                         <span className="font-normal">{product.size}</span>
                       </p>
-                    </div>
+                    </divw>
                   </div>
                   <div className="self-center text-center">
                     <p className="text-gray-600 font-normal text-sm line-through">
