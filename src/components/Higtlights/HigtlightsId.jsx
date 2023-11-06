@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { setImage, setSize } from "../redux/slice";
 import ContiuneHightleht from "./ContiuneHightleht";
+import Loading from './../Loading/Loading';
 
 function HightLightsId() {
     const { slug } = useParams();
@@ -33,7 +34,9 @@ function HightLightsId() {
     }, [slug]);
 
     if (!highlight) {
-        return <div>Data not found</div>;
+        return <div>
+            <Loading />
+        </div>;
     }
 
     const selectSize = (item) => {
@@ -52,7 +55,7 @@ function HightLightsId() {
                 <div className="right-side">
                     <HoverCard shadow="md" closeDelay={200}>
                         <Image
-                            className="w-[500px] min-h-[500px] max-h-[500px] border-2 border-solid border-red-600 object-contain mt-24"
+                            className="w-[500px] min-h-[500px] max-h-[500px] object-contain mt-24"
                             fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
                             onClick={open}
 

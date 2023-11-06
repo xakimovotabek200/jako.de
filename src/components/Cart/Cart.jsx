@@ -15,6 +15,7 @@ import "./Cart.css";
 function Cart() {
   const dispatch = useDispatch();
 
+  const [cartCount, setCartCount] = useState(0)
   const { products } = useSelector((state) => state.orebiReducer);
   const [opened, { open, close }] = useDisclosure(false);
   const [selectedProductImage, setSelectedProductImage] = useState(null);
@@ -31,7 +32,7 @@ function Cart() {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row w-screen h-full px-14 py-7 container mx-auto">
+      <div className="flex flex-col md:flex-row  h-full px-14 py-7 container mx-auto">
         <div className="w-full flex flex-col h-fit gap-4 p-4">
           <p className="sm: text-center md:text-blue-900 text-xl  font-extrabold">
             My carts

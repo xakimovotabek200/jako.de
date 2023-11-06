@@ -16,18 +16,13 @@ import {
 } from "@tabler/icons-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import Language, { LanguagePicker } from "./Languages/Language";
+import { LanguagePicker } from "./Languages/Language";
 import Legend from "./Legend.png";
-import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
-
-const optionss = {
-  method: "GET",
-  url: "https://api.abdullajonov.uz/legend-backend-api/api/child-category/get",
-  headers: { Accept: "application/json" },
-};
+import { addToCart } from "../redux/slice";
 
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
@@ -36,6 +31,9 @@ function NavbarTop() {
   const [data, setData] = useState([]);
   const [childData, setChildData] = useState([]);
 
+  const { products } = useSelector(
+    (state) => state.orebiReducer
+  );
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -55,9 +53,11 @@ function NavbarTop() {
   useEffect(() => {
     const fetchDatas = async () => {
       try {
-        const { data } = await axios.request(optionss);
-        setChildData(data?.data);
-        console.log(childData, "salomF");
+        const response = await axios.get(
+          "https://api.abdullajonov.uz/legend-backend-api/api/child-category/get"
+        );
+        const data = response.data.data;
+        setChildData(data);
       } catch (error) {
         toast.error("salom");
       }
@@ -102,7 +102,7 @@ function NavbarTop() {
                                 {item.child_categories_type.map((child) => (
                                   <div key={child.id}>
                                     <Link
-                                      to={`${child.slug}`}
+                                      to={`products/${item.slug}`}
                                       className="text-center font-semibold capitalize"
                                     >
                                       <h1>{child.name}</h1>
@@ -142,10 +142,12 @@ function NavbarTop() {
               <IconSearch />
             </Link>
             <Link to="/cart">
-              <div className="cursor-pointer">
+              <div className="cursor-pointer flex">
                 <IconShoppingCart />
+                <p> {products.length > 0 && products.length} </p>
               </div>
             </Link>
+
             <Link to="/wishes">
               <IconHeart />
             </Link>

@@ -5,6 +5,7 @@ const initialState = {
     products: [],
     selectedSize: "",
     selectedImage: "",
+    cartCount: 0,
 };
 
 export const Slice = createSlice({
@@ -17,6 +18,7 @@ export const Slice = createSlice({
                 products: [...state.products, action.payload],
             };
         },
+        
         addWishes: (state, action) => {
             return {
                 ...state,
@@ -26,6 +28,10 @@ export const Slice = createSlice({
         setSize: (state, action) => {
             state.selectedSize = action.payload
         },
+        setCartCount: (state, action) => {
+            state.cartCount = action.payload;
+        },
+
         setImage: (state, action) => {
             state.selectedImage = action.payload
         },
@@ -69,5 +75,6 @@ export const {
     deleteItem,
     resetCart,
     addWishes,
+    setCartCount,
 } = Slice.actions;
 export default Slice.reducer;

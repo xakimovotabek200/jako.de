@@ -28,7 +28,7 @@ const Modalsearch = () => {
       return;
     }
   }
-  console.log(products, "prducts");
+
   return (
     <div>
       <nav className="z-50 sticky top-0 bg-white">
