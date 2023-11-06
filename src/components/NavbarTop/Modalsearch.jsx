@@ -3,8 +3,6 @@ import { useDisclosure } from "@mantine/hooks";
 import { Button, Form } from "antd";
 import axios from "axios";
 import React, { useRef, useState } from 'react';
-import HightLights from '../Higtlights/HightLights';
-import { Carousel } from "@mantine/carousel";
 import { Link } from "react-router-dom";
 
 const Modalsearch = () => {

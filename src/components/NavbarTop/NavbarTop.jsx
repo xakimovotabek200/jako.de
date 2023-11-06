@@ -1,9 +1,16 @@
 import {
   Box,
   Burger,
+  Button,
+  ButtonGroup,
   Center,
+  Collapse,
+  Divider,
+  Drawer,
   Group,
   HoverCard,
+  ScrollArea,
+  UnstyledButton,
   rem,
   useMantineTheme,
 } from "@mantine/core";
@@ -18,11 +25,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import Language, { LanguagePicker } from "./Languages/Language";
+import { LanguagePicker } from "./Languages/Language";
 import Legend from "./Legend.png";
-import Modalsearch from "./Modalsearch";
 import classes from "./NavbarTop.module.css";
-
 const optionss = {
   method: "GET",
   url: "https://api.abdullajonov.uz/legend-backend-api/api/child-category/get",
@@ -35,7 +40,7 @@ function NavbarTop() {
   const theme = useMantineTheme();
   const [data, setData] = useState([]);
   const [childData, setChildData] = useState([]);
-
+  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -76,6 +81,7 @@ function NavbarTop() {
               alt=""
             />
           </Link>
+
           <Burger
             opened={drawerOpened}
             onClick={toggleDrawer}
@@ -152,6 +158,55 @@ function NavbarTop() {
           </div>
         </Group>
       </header>
+      <Drawer
+        opened={drawerOpened}
+        onClose={closeDrawer}
+        size="100%"
+        padding="md"
+        hiddenFrom="sm"
+        zIndex={1000000}
+      >
+        {/* <Drawer.Overlay /> */}
+        <Drawer.Content>
+          <Drawer.Header>
+            <Drawer.Title>
+              <div className="w-[100px]">
+                <img src={Legend} alt="" />
+              </div>{" "}
+            </Drawer.Title>
+            <Drawer.CloseButton className="mr-5" />
+          </Drawer.Header>
+          <Drawer.Body>
+            <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
+              <Divider my="sm" />
+
+              <a href="#" className={classes.link}>
+                Home
+              </a>
+              <UnstyledButton className={classes.link} onClick={toggleLinks}>
+                <Center inline>
+                  <Box component="span" mr={5}>
+                    Features
+                  </Box>
+                  <IconChevronDown
+                    style={{ width: rem(16), height: rem(16) }}
+                    color={theme.colors.blue[6]}
+                  />
+                </Center>
+              </UnstyledButton>
+              <Collapse in={linksOpened}>nima</Collapse>
+              <a href="#" className={classes.link}>
+                Learn
+              </a>
+              <a href="#" className={classes.link}>
+                Academy
+              </a>
+
+              <Divider my="sm" />
+            </ScrollArea>
+          </Drawer.Body>
+        </Drawer.Content>
+      </Drawer>
     </Box>
   );
 }
