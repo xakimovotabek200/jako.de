@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Offer.css";
 
-
 function Offer() {
   const [selectedColor, setSelectedColor] = useState("");
   const [productData, setProductData] = useState([]);
@@ -39,10 +38,8 @@ function Offer() {
   const offset = (currentPage - 1) * perPage;
 
   const filteredData = productData.filter((item) => {
-    const meetsMinPrice =
-      minPrice === "" || item.price >= parseFloat(minPrice);
-    const meetsMaxPrice =
-      maxPrice === "" || item.price <= parseFloat(maxPrice);
+    const meetsMinPrice = minPrice === "" || item.price >= parseFloat(minPrice);
+    const meetsMaxPrice = maxPrice === "" || item.price <= parseFloat(maxPrice);
 
     return (
       meetsMinPrice &&
@@ -86,9 +83,7 @@ function Offer() {
                           </span>
                         </del>
                       </div>
-                      <h3 className="text-xl mb-2 mt-2">
-                        {item.title}
-                      </h3>
+                      <h3 className="text-xl mb-2 mt-2">{item.title}</h3>
                       <p className="font-medium mb-2 text-sm text-gray-700">
                         {item.description}
                       </p>
@@ -110,10 +105,10 @@ function Offer() {
   return (
     <div className="container mx-auto">
       <div className="text_hight" style={{ marginTop: "80px" }}>
-        <h1 className="text-center text-3xl text-neutral-600">Offer</h1>
+        <h1 className="md:text-center text-3xl text-neutral-600">Offer</h1>
       </div>
-      <div className="grid grid-cols-3 md:grid-cols-4">
-        <div>
+      <div className="grid-cols-1 md:grid grid-cols-3 md:grid-cols-4">
+        <div className="ml-24  md:block">
           <div className="w-1/2">
             <select
               name="Color"
@@ -144,7 +139,7 @@ function Offer() {
             />
           </div>
         </div>
-        <div className="col-span-2 md:col-span-3">
+        <div className="mt-12 col-span-2 md:col-span-3">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {displayedData}
           </div>
@@ -152,13 +147,14 @@ function Offer() {
             {Array.from({ length: pageCount }).map((_, index) => (
               <button
                 key={index}
-                className={`pagination-button ${currentPage === index + 1 ? 'active' : ''}`}
+                className={`pagination-button ${
+                  currentPage === index + 1 ? "active" : ""
+                }`}
                 onClick={() => setCurrentPage(index + 1)}
               >
                 {index + 1}
               </button>
             ))}
-
           </div>
         </div>
       </div>

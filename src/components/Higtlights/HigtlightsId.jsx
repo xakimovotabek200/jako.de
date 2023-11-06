@@ -51,7 +51,7 @@ function HightLightsId() {
 
     return (
         <div>
-            <div className="container mx-auto w-[95%] md:flex justify-around">
+            <div className="mt-24 md:container mx-auto w-[95%] md:flex justify-around">
                 <div className="right-side">
                     <HoverCard shadow="md" closeDelay={200}>
                         <Image
