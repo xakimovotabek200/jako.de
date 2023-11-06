@@ -22,7 +22,6 @@ import { toast } from "react-toastify";
 import { LanguagePicker } from "./Languages/Language";
 import Legend from "./Legend.png";
 import classes from "./NavbarTop.module.css";
-import { addToCart } from "../redux/slice";
 
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
@@ -31,9 +30,7 @@ function NavbarTop() {
   const [data, setData] = useState([]);
   const [childData, setChildData] = useState([]);
 
-  const { products } = useSelector(
-    (state) => state.orebiReducer
-  );
+  const { products } = useSelector((state) => state.orebiReducer);
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -144,10 +141,12 @@ function NavbarTop() {
             <Link to="/cart">
               <div className="cursor-pointer flex">
                 <IconShoppingCart />
-                <p> {products.length > 0 && products.length} </p>
+                <p className={`absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${products.length > 0 ? 'bg-[#008ac9]' : ''} text-white`}>
+                  {products.length > 0 && products.length}
+                </p>
+
               </div>
             </Link>
-
             <Link to="/wishes">
               <IconHeart />
             </Link>
