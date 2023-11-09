@@ -166,7 +166,7 @@ function NavbarTop() {
         hiddenFrom="sm"
         zIndex={1000000}
       >
-        {/* <Drawer.Overlay /> */}
+        <Drawer.Overlay />
         <Drawer.Content>
           <Drawer.Header>
             <Drawer.Title>

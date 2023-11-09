@@ -43,11 +43,11 @@ function ContiuneHightleht({ highlight }) {
     <Accordion.Item key={item.value} value={item.value}>
       <Accordion.Control
         icon={item.emoji}
-        className="hover:text-[#008ac9] duration-300"
+        className="md:hover:text-[#008ac9] duration-300"
       >
         {item.value}
       </Accordion.Control>
-      <Accordion.Panel className="w-[500px]">
+      <Accordion.Panel className="text-sm md:w-[500px]">
         {item.description}
       </Accordion.Panel>
     </Accordion.Item>
