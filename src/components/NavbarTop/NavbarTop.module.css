@@ -8,9 +8,7 @@
 .link {
   display: flex;
   align-items: center;
-  height: 100%;
   padding-left: var(--mantine-spacing-md);
-  /* padding-right: var(--mantine-spacing-md); */
   text-decoration: none;
   color: #5b5b5b;
   font-weight: 700;

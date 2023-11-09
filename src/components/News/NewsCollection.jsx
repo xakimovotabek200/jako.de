@@ -41,20 +41,21 @@ function NewsCollection() {
   }, []);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
+  
   const displayedData = newsData.slice(startIndex, endIndex);
 
   return (
     <div className="container mx-auto">
-      <div className="md:flex flex-wrap mt-5 gap-5">
+      <div className="md:flex flex-wrap justify-around  mt-5 gap-5">
         {Array.isArray(displayedData) &&
           displayedData.map((item, index) => (
             <div
-            key={index}
+              key={index}
               class="w-[368px] h-[366px] flex-col justify-start items-center inline-flex"
             >
               <img
                 class="w-[368px] h-[286px] rounded-lg object-cover"
-                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}  
+                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
               />
               <div
                 class="p-4 bg-slate-50 rounded-lg shadow -mt-[5pc] flex-col justify-start items-center gap-4 flex"
@@ -79,22 +80,24 @@ function NewsCollection() {
 
           ))}
       </div>
-      <Button
-        type="outline"
-        className="pagination-button"
-        onClick={() => setCurrentPage(currentPage - 1)}
-        disabled={currentPage === 1}
-      >
-        Previous
-      </Button>
-      <Button
-        type="outline"
-        className="pagination-button ml-5"
-        onClick={() => setCurrentPage(currentPage + 1)}
-        disabled={endIndex >= newsData.length}
-      >
-        Next
-      </Button>
+      <div className=" w-[300px] mx-auto text-center">
+        <Button
+          type="outline"
+          className="pagination-button"
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </Button>
+        <Button
+          type="outline"
+          className="pagination-button ml-5"
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={endIndex >= newsData.length}
+        >
+          Next
+        </Button>
+      </div>
     </div>
   );
 }

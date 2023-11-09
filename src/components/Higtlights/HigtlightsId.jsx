@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { setImage, setSize } from "../redux/slice";
 import ContiuneHightleht from "./ContiuneHightleht";
+import Loading from "./../Loading/Loading";
 
 function HightLightsId() {
   const { slug } = useParams();
@@ -33,7 +34,11 @@ function HightLightsId() {
   }, [slug]);
 
   if (!highlight) {
-    return <div>Data not found</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   const selectSize = (item) => {
@@ -71,11 +76,11 @@ function HightLightsId() {
                 {highlight.description}
               </h1>
             </div>
-            <div className="w-full md:w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
-              <p className="text-sm md:font-medium">Want 30% off your next order?</p>
+            <div className="text-sm w-full md:w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
+              <p className="font-medium">Want 30% off your next order?</p>
               <Link
                 to={"/"}
-                className="text-sm md:text-[#008ac9] underline font-medium pl-4"
+                className="text-[#008ac9] underline font-medium pl-4"
               >
                 Become a member now
               </Link>
