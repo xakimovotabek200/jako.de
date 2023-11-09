@@ -43,6 +43,7 @@ function HightLights({ data }) {
     fetchDatas();
   }, []);
 
+  console.log(productData, "productsdata");
   return (
     <div className="container">
       <div className="text-center text-neutral-600 mt-10 mb-10 text-[38px] font-bold leading-9">
