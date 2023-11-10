@@ -63,7 +63,7 @@ function Order() {
         }
     };
     return (
-        <form onSubmit={addApplication} className="my-3">
+        <form onSubmit={addApplication} className="mt-12 md:my-3">
             <input
                 className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
                 type="text"
