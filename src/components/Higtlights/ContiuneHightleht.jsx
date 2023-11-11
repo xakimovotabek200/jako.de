@@ -45,7 +45,6 @@ function ContiuneHightleht({ highlight }) {
   }
 
 
-
   return (
     <div>
       <div className="flex gap-6 items-center">
