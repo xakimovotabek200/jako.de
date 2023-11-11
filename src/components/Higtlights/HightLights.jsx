@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react"; // Import useState and useEf
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+
 import "./Hightlights.module.css";
 
 function HightLights({ data }) {
@@ -43,10 +44,10 @@ function HightLights({ data }) {
     fetchDatas();
   }, []);
 
-  console.log(productData, "productsdata");
+  console.log(productData, "productData");
   return (
     <div className="container">
-      <div className="text-center text-neutral-600 mt-10 mb-10 text-[38px] font-bold leading-9">
+      <div className="text-center text-neutral-600  text-[38px] font-bold leading-9">
         Products
       </div>
       <div className="">
@@ -64,11 +65,11 @@ function HightLights({ data }) {
                   <div className="">
                     <div key={item.id}>
                       <div className="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
-                        <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                        <div className=" h-[500px] w-[400px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                           <img
                             src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                             alt="product-image"
-                            className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md"
+                            className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md "
                           />
                           {
                             datas.map((item) => {

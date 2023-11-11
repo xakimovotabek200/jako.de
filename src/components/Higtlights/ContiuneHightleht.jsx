@@ -1,10 +1,15 @@
-import { Accordion, Button } from "@mantine/core";
+import Accordion from "@mui/material/Accordion";
+import Typography from '@mui/material/Typography';
 import { IconRotate360 } from "@tabler/icons-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addWishes } from "../redux/slice";
 import "./Hightlights.module.css";
-import { groceries } from "./data";
+
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import { Button } from "@mantine/core";
 
 function ContiuneHightleht({ highlight }) {
   const [active, setActive] = useState(false);
@@ -39,19 +44,7 @@ function ContiuneHightleht({ highlight }) {
     dispatch(addWishes(newData));
   }
 
-  const items = groceries.map((item) => (
-    <Accordion.Item key={item.value} value={item.value}>
-      <Accordion.Control
-        icon={item.emoji}
-        className="hover:text-[#008ac9] duration-300"
-      >
-        {item.value}
-      </Accordion.Control>
-      <Accordion.Panel className="w-[500px]">
-        {item.description}
-      </Accordion.Panel>
-    </Accordion.Item>
-  ));
+
 
   return (
     <div>
@@ -100,9 +93,8 @@ function ContiuneHightleht({ highlight }) {
             <button onClick={() => handleAddToCart2(highlight)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`icon icon-tabler icon-tabler-heart-filled ${
-                  active ? "text-red" : ""
-                }`}
+                className={`icon icon-tabler icon-tabler-heart-filled ${active ? "text-red" : ""
+                  }`}
                 width="36"
                 height="36"
                 viewBox="0 0 24 24"
@@ -132,13 +124,19 @@ function ContiuneHightleht({ highlight }) {
         </div>
       </div>
       <div>
-        <Accordion
-          variant="separated"
-          radius="md"
-          disableChevronRotation
-          defaultValue="Apples"
-        >
-          {items}
+        <Accordion sx={{ width: '500px' }}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>Description</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              {highlight.description}
+            </Typography>
+          </AccordionDetails>
         </Accordion>
       </div>
     </div>

@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./News.css";
 import classes from "./NewsButton.css";
+import { Link } from "react-router-dom";
 
 const options = {
   method: "GET",
@@ -41,7 +42,7 @@ function NewsCollection() {
   }, []);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  
+
   const displayedData = newsData.slice(startIndex, endIndex);
 
   return (
@@ -51,36 +52,37 @@ function NewsCollection() {
           displayedData.map((item, index) => (
             <div
               key={index}
-              class="w-[368px] h-[366px] flex-col justify-start items-center inline-flex"
+              className="w-[368px] h-[366px] flex-col justify-start items-center inline-flex"
             >
               <img
-                class="w-[368px] h-[286px] rounded-lg object-cover"
+                className="w-[368px] h-[286px] rounded-lg object-cover"
                 src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
               />
               <div
-                class="p-4 bg-slate-50 rounded-lg shadow -mt-[5pc] flex-col justify-start items-center gap-4 flex"
+                className="p-4 bg-slate-50 rounded-lg shadow -mt-[5pc] flex-col justify-start items-center gap-4 flex"
               >
                 <div
-                  class="w-[285px] text-center text-neutral-500 text-xl font-semibold leading-7"
+                  className="w-[285px] text-center text-neutral-500 text-xl font-semibold leading-7"
                 >
                   {item.title}
                 </div>
                 <div
-                  class="w-[285px] text-center text-neutral-500 text-xl font-semibold leading-7"
+                  className="w-[285px] text-center text-neutral-500 text-xl font-semibold leading-7"
                 >
                   {item.text}
                 </div>
-                <div class="p-2 justify-center items-center gap-2 inline-flex">
-                  <button class="text-green-500 text-xl font-semibold leading-7">
-                    Readmore
-                  </button>
+                <div className="p-2 justify-center items-center gap-2 inline-flex">
+                  <Link to={`/newsId/${item.slug}`}>
+                    <button className="text-green-500 text-xl font-semibold leading-7 hover:bg-green-500 hover:text-white duration-300 p-2 rounded-md">
+                      Readmore
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
-
           ))}
       </div>
-      <div className=" w-[300px] mx-auto text-center">
+      <div className=" w-[300px] mx-auto mt-[5pc] text-center">
         <Button
           type="outline"
           className="pagination-button"
@@ -98,7 +100,7 @@ function NewsCollection() {
           Next
         </Button>
       </div>
-    </div>
+    </div >
   );
 }
 

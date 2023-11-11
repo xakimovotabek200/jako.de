@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Loading from "./components/Loading/Loading";
 import ProductByCategory from "./components/product/productByCategry";
+import NewsId from "./components/News/NewsId";
 
 const Modalsearch = lazy(() => import("./components/NavbarTop/Modalsearch"));
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/wishesId:slug" element={<WishesId />} />
             <Route path="/order" element={<Order />} />
             <Route path="/news" element={<News />} />
+            <Route path="/newsId/:slug" element={<NewsId />} />
             <Route path="/search" element={<Modalsearch />} />
 
             <Route path="/*" element={<NotFound />} />
