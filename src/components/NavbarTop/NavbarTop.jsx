@@ -7,6 +7,7 @@ import {
   Drawer,
   Group,
   HoverCard,
+  Modal,
   ScrollArea,
   UnstyledButton,
   rem,
@@ -31,6 +32,8 @@ import classes from "./NavbarTop.module.css";
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure();
+  const [modalOpened, { toggle: toggleModal, close: closeModal }] = useDisclosure();
+
   const theme = useMantineTheme();
   const [data, setData] = useState([]);
   const [childData, setChildData] = useState([]);
@@ -142,9 +145,9 @@ function NavbarTop() {
             ))}
           <div className={classes.navbartop_language}>
             <LanguagePicker />
-            <Link to="/search">
+            <Modal opened={modalOpened} onClose={closeModal} padding="md">
               <IconSearch />
-            </Link>
+            </Modal>
             <Link to="/cart">
               <div className="cursor-pointer flex">
                 <IconShoppingCart />
@@ -181,33 +184,61 @@ function NavbarTop() {
             <Drawer.CloseButton className="mr-5" />
           </Drawer.Header>
           <Drawer.Body>
-            <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-              <Divider my="sm" />
-
-              <a href="#" className={classes.link}>
-                Home
-              </a>
-              <UnstyledButton className={classes.link} onClick={toggleLinks}>
-                <Center inline>
-                  <Box component="span" mr={5}>
-                    Features
-                  </Box>
-                  <IconChevronDown
-                    style={{ width: rem(16), height: rem(16) }}
-                    color={theme.colors.blue[6]}
-                  />
-                </Center>
-              </UnstyledButton>
-              <Collapse in={linksOpened}>nima</Collapse>
-              <a href="#" className={classes.link}>
-                Learn
-              </a>
-              <a href="#" className={classes.link}>
-                Academy
-              </a>
-
-              <Divider my="sm" />
-            </ScrollArea>
+            {data.length > 0 &&
+              data.map((item) => (
+                <Group key={item.id} h="100%" gap={0} visibleFrom="">
+                  <Link to="/offer" className={classes.link}>
+                    <HoverCard
+                      width={600}
+                      position="bottom"
+                      radius="md"
+                      shadow="md"
+                      withinPortal
+                    >
+                      <HoverCard.Target>
+                        <Link to="/offer" className={classes.link}>
+                          <Center inline>
+                            <Box component="" mr={5}>
+                              {item.name}
+                              <HoverCard.Dropdown>
+                                <div className="capitalize">
+                                  {item.child_categories_type.map((child) => (
+                                    <div key={child.id}>
+                                      <Link
+                                        to={`products/${item.slug}`}
+                                        className="text-center font-semibold capitalize"
+                                      >
+                                        <h1>{child.name}</h1>
+                                      </Link>
+                                      <hr />
+                                      {Array.isArray(childData) &&
+                                        childData.map((item) => {
+                                          return (
+                                            <Link
+                                              key={item.id}
+                                              to={`products/${item.slug}`}
+                                            >
+                                              <p className="capitalize">{item.name}</p>
+                                              <br />
+                                            </Link>
+                                          );
+                                        })}
+                                    </div>
+                                  ))}
+                                </div>
+                              </HoverCard.Dropdown>
+                            </Box>
+                            <IconChevronDown
+                              style={{ width: rem(16), height: rem(16) }}
+                              color={theme.colors.blue[6]}
+                            />
+                          </Center>
+                        </Link>
+                      </HoverCard.Target>
+                    </HoverCard>
+                  </Link>
+                </Group>
+              ))}
           </Drawer.Body>
         </Drawer.Content>
       </Drawer>

@@ -15,12 +15,13 @@ function JakoOnline() {
       const data = response.data.histories;
       setData(data);
     } catch (error) {
-      console.error(error); 
+      console.error(error);
     }
   };
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="">
       <div className="online">

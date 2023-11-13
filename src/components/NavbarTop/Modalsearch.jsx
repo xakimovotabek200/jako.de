@@ -66,7 +66,6 @@ const Modalsearch = () => {
         </Form.Item>
       </Form>
       <div className="md:flex ">
-
         {Array.isArray(products) && products.map((item) => (
           <Link key={item.id} to={`/higtlightsId/${item.slug}`}>
             <HoverCard shadow="md" closeDelay={300}>

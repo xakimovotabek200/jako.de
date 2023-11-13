@@ -89,8 +89,7 @@ function HightLights({ data }) {
                               </div>
                               <del>
                                 <span className="text-red-600 text-sm flex items-center gap-1">
-                                  $
-                                  {item.shipping_price}
+                                  {item.shipping_price} сум
                                 </span>
                               </del>
                             </div>
@@ -102,7 +101,7 @@ function HightLights({ data }) {
                             </p>
                             <div className="flex items-center justify-between">
                               <span className="text-2xl font-bold text-gray-800">
-                                ${item.price}
+                                {item.price}сум
                               </span>
                             </div>
                           </div>

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 const Partners = () => {
     const [partners, setPartners] = useState([]);
@@ -23,15 +22,17 @@ const Partners = () => {
 
         fetchPartners();
     }, []);
+
+
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto w-[90%]'>
             {
                 Array.isArray(partners) && partners.map((item) => {
                     return (
                         <div key={item.id}>
                             <h1 className='text-center text-[55px] text-neutral-600 font-semibold'>Partners</h1>
                             <div className='border-[1px] border-solid border-neutral-600 w-full mb-5' />
-                            <div>
+                            <div className='mb-5'>
                                 <img
                                     className='w-[85px] h-[75px] object-cover cursor-pointer'
                                     src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.logo}`}
