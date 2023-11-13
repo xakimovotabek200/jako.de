@@ -30,3 +30,27 @@ code {
 .s {
   width: 380px;
 }
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+.skiptranslate > span {
+  display: none;
+}
+.skiptranslate {
+  color: white !important;
+}
+.skiptranslate > div select {
+  color: black !important;
+  transform: translateY(50%);
+}
+body {
+  top: 0px !important;
+}
+
+@media print {
+  #google_translate_element {
+    display: none;
+  }
+}

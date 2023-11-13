@@ -28,13 +28,7 @@ const Modalsearch = () => {
   }
 
   return (
-    <div>
-      <nav className="z-50 sticky top-0 bg-white">
-        <div className="grid grid-cols-2 sm:grid-cols-3 items-center sm:place-items-center p-2">
-          <div className="flex items-center gap-2">
-          </div>
-        </div>
-      </nav>
+    <div className="container mx-auto">
       <dialog ref={searchModal} className="w-screen p-3 rounded-lg">
         <Form onFinish={handleSearch}>
           <h2>Mahsulorlarni izlash:</h2>
@@ -71,16 +65,6 @@ const Modalsearch = () => {
           </Button>
         </Form.Item>
       </Form>
-      {/* <div className="grid min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 md:px-0">
-        {products.length > 0 ?
-          <HightLights data={products} /> :
-          (
-            <h3 className="uppercase font-bold opacity-50 text-2xl whitespace-nowrap">
-              Mahsulotlar yo'q
-            </h3>
-          )}
-      </div> */}
-
       <div className="md:flex ">
 
         {Array.isArray(products) && products.map((item) => (

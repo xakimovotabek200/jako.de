@@ -1868,9 +1868,9 @@
     type-fest "^3.13.1"
 
 "@mantine/ds@^7.1.7":
-  version "7.1.7"
-  resolved "https://registry.yarnpkg.com/@mantine/ds/-/ds-7.1.7.tgz#63cd5366922da3128e893960aa067559e6c0300c"
-  integrity sha512-PZeHGt9DWJfJ3w2C/gJEA0PN6Xk0JAQkJKnEgnX+TQOVfaHmH22dIQkm0IdQHOM4bE8rI7SbhPRtzItqX+MO9g==
+  version "7.2.1"
+  resolved "https://registry.npmjs.org/@mantine/ds/-/ds-7.2.1.tgz"
+  integrity sha512-HG92bhi/dFVom3VgsDY2m2nbQkjHW2Hx8noAR5A6utJzcWNvmPsw7pwnqDuqltb9StCbt+ZlJ7uI7rFGeD5nVQ==
   dependencies:
     clsx "2.0.0"
 

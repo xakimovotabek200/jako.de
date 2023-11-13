@@ -22,6 +22,7 @@ function Banner() {
     fetchData();
   }, []);
 
+  console.log(bannerdata, "bannerdata");
   return (
     <div className="container mx-auto">
       <div key={bannerdata.id}>
@@ -34,7 +35,7 @@ function Banner() {
             />
           </div>
           <div className="text absolute top-40">
-            <h3 className="w-[600px] text-white">{bannerdata.text}</h3>
+            <h3 className="w-[600px] text-black">{bannerdata.text}</h3>
             <Link to={"/offer"}>
               <button className="btn">Buy Now</button>
             </Link>

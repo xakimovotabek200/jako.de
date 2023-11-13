@@ -147,9 +147,8 @@ function Offer() {
             {Array.from({ length: pageCount }).map((_, index) => (
               <button
                 key={index}
-                className={`pagination-button ${
-                  currentPage === index + 1 ? "active" : ""
-                }`}
+                className={`pagination-button ${currentPage === index + 1 ? "active" : ""
+                  }`}
                 onClick={() => setCurrentPage(index + 1)}
               >
                 {index + 1}

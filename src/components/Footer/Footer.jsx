@@ -2,10 +2,8 @@ import axios from "axios"; // Import axios for making API requests
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AiFillStar } from "react-icons/ai";
-import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import Footer_Image from "../../img/Footer_Images.jpg";
-import Just_Photo from "../../img/photo_2023-10-09_14-55-13.jpg";
+import Partners from "../Partners/Partners";
 import "./Footer.css";
 
 function Footer() {
@@ -41,23 +39,15 @@ function Footer() {
   useEffect(() => {
     fetchDatas();
   }, []);
+
+
   return (
-    <div className="br container mx-auto p-2">
+    <div className=" p-2">
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">
           <div className="JustFlex">
-            <img src={Footer_Image} alt="" />
-            <img src={Just_Photo} alt="" />
-          </div>
-          <div className="JustFlex1">
-            <div className="icon">
-              <AiFillStar className="ai" />
-              <AiFillStar className="ai" />
-              <AiFillStar className="ai" />
-              <AiFillStar className="ai" />
-              <p className="p"> (4,52/5) Trusted Shop</p>
-            </div>
+            <Partners />
           </div>
         </div>
         <hr className="salom" />
@@ -211,6 +201,5 @@ function Footer() {
     </div>
   );
 }
-{
-}
+
 export default Footer;
