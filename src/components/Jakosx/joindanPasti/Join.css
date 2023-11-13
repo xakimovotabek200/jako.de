@@ -21,14 +21,13 @@
 .Harf {
   margin: 40px;
   text-align: center;
-  width: 100%;
 }
 
 .club {
-  color: #ffffff;
   font-size: 50px;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-weight: 900;
 }
 
@@ -36,7 +35,7 @@
   color: #fff;
   font-size: 26px;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 .all {
@@ -81,7 +80,6 @@
   width: 350px;
 }
 
-
 .w {
   color: #fff;
   text-align: center;
@@ -114,7 +112,7 @@
   color: #fff;
   border-color: #5b5b5b;
 }
-.bec:hover{
+.bec:hover {
   background: #008ac9;
 }
 @media only screen and (max-width: 600px) {
@@ -125,7 +123,7 @@
   .res {
     display: block;
   }
-  .bec{
+  .bec {
     margin-left: 40px;
     margin-top: 20px;
   }
