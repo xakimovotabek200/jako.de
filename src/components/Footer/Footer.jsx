@@ -42,7 +42,7 @@ function Footer() {
     fetchDatas();
   }, []);
   return (
-    <div className="br container mx-auto p-2">
+    <div className=" p-2">
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">

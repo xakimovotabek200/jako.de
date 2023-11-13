@@ -70,7 +70,7 @@ function NavbarTop() {
   }, []);
 
   return (
-    <Box pb={20} className="container mx-auto">
+    <Box pb={20} className="">
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Link to="/">

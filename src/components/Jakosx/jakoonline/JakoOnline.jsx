@@ -15,7 +15,7 @@ function JakoOnline() {
       const data = response.data.histories;
       setData(data);
     } catch (error) {
-      console.error(error); // Properly handle and log the error
+      console.error(error); 
     }
   };
   useEffect(() => {
