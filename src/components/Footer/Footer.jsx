@@ -5,6 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Partners from "../Partners/Partners";
 import "./Footer.css";
+import { HoverCard, Text } from "@mantine/core";
 
 function Footer() {
   const { t } = useTranslation();
@@ -40,7 +41,6 @@ function Footer() {
     fetchDatas();
   }, []);
 
-
   return (
     <div className=" p-2">
       <section className="HrOne">
@@ -54,7 +54,12 @@ function Footer() {
       </section>
       <div className="Js">
         <div className="section">
-          <div className="one">
+          <HoverCard.Dropdown>
+            <Text size="sm">
+              <h1 className="h1">sadfg</h1>
+            </Text>
+          </HoverCard.Dropdown>
+          <div className="hidden md:block one">
             <h1 className="h1">{t("Footer_title1")}</h1>
             <div className="link">
               <Link className="" to="/">
@@ -93,17 +98,15 @@ function Footer() {
             <h1 className="h1">{t("Footer_title2")}</h1>
             <div className="link">
               <Link className="" to="/">
-                {" "}
                 {t("Footer_title7")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item8")}{" "}
+                {t("Footer_item8")}
               </Link>
             </div>
             <div className="link">
-              {" "}
               <Link className="" to="/">
                 {t("Footer_item9")}
               </Link>

@@ -30,7 +30,7 @@ function Banner() {
           <div className="relative">
             <img
               style={{ width: "100%", height: "550px", objectFit: "cover" }}
-              src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${bannerdata.image}`}
+              src={`TGMXdEqISEKFyuoC1699691355.jpg${bannerdata.image}`}
               alt={bannerdata.image}
             />
           </div>
