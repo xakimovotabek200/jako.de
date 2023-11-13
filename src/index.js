@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import App from "./App";
 import { store } from "./components/redux/store";
 import "./index.css";
-
 import "./components/i18n/i18n";
 
 
