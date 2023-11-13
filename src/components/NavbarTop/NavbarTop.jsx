@@ -24,7 +24,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LanguagePicker } from "./Languages/Language";
+import LanguagePicker from "./Languages/Language";
 import Legend from "./Legend.png";
 import classes from "./NavbarTop.module.css";
 
