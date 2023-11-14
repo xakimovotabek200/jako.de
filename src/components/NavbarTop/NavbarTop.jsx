@@ -1,6 +1,7 @@
 import {
   Box,
   Burger,
+  Button,
   Center,
   Collapse,
   Divider,
@@ -28,6 +29,7 @@ import { toast } from "react-toastify";
 import LanguagePicker from "./Languages/Language";
 import Legend from "./Legend.png";
 import classes from "./NavbarTop.module.css";
+import Modalsearch from "./Modalsearch";
 
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
@@ -145,9 +147,12 @@ function NavbarTop() {
             ))}
           <div className={classes.navbartop_language}>
             <LanguagePicker />
-            <Modal opened={modalOpened} onClose={closeModal} padding="md">
-              <IconSearch />
+            <Modal size="calc(100vw - 3rem)" opened={modalOpened} onClose={closeModal} padding="md">
+              <Modalsearch />
             </Modal>
+            <Button onClick={toggleModal} className="text-black">
+              <IconSearch />
+            </Button>
             <Link to="/cart">
               <div className="cursor-pointer flex">
                 <IconShoppingCart />

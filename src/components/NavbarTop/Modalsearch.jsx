@@ -71,8 +71,8 @@ const Modalsearch = () => {
             <HoverCard shadow="md" closeDelay={300}>
               <div className="">
                 <div key={item.id}>
-                  <div className="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
-                    <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                  <div className="flex justify-center items-center flex-wrap gap-6 p-8">
+                    <div className="h-[500px] w-[300px] flex flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                       <img
                         src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                         alt="product-image"
