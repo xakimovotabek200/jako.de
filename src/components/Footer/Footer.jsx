@@ -1,4 +1,4 @@
-import axios from "axios"; // Import axios for making API requests
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AiFillStar } from "react-icons/ai";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Partners from "../Partners/Partners";
 import "./Footer.css";
 import { HoverCard, Text } from "@mantine/core";
+import { Dropdown } from "antd";
 
 function Footer() {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ function Footer() {
       const data = response.data.data;
       setData(data);
     } catch (error) {
-      console.error(error); // Properly handle and log the error
+      console.error(error);
     }
   };
   useEffect(() => {
@@ -34,7 +35,7 @@ function Footer() {
       const datas = response.data.data;
       setDatas(datas);
     } catch (error) {
-      console.error(error); // Properly handle and log the error
+      console.error(error);
     }
   };
   useEffect(() => {
@@ -42,7 +43,7 @@ function Footer() {
   }, []);
 
   return (
-    <div className=" p-2">
+    <div className="container mx-auto p-2">
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">
@@ -53,13 +54,8 @@ function Footer() {
         <hr className="salom" />
       </section>
       <div className="Js">
-        <div className="section">
-          <HoverCard.Dropdown>
-            <Text size="sm">
-              <h1 className="h1">sadfg</h1>
-            </Text>
-          </HoverCard.Dropdown>
-          <div className="hidden md:block one">
+        <div className="hidden md:block section">
+          <div className="one">
             <h1 className="h1">{t("Footer_title1")}</h1>
             <div className="link">
               <Link className="" to="/">

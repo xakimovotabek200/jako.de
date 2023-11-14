@@ -33,7 +33,7 @@ function HightLightsId() {
     fetchData();
   }, [slug]);
 
-  if (!highlight) {
+  if (!highlight){
     return (
       <div>
         <Loading />
