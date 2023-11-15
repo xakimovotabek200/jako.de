@@ -4,10 +4,10 @@ import { useDisclosure } from "@mantine/hooks";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, json, useParams } from "react-router-dom";
 import { setImage, setSize } from "../redux/slice";
 import ContiuneHightleht from "./ContiuneHightleht";
-import Loading from './../Loading/Loading';
+import Loading from "./../Loading/Loading";
 
 function HightLightsId() {
     const { slug } = useParams();
@@ -24,7 +24,7 @@ function HightLightsId() {
                     `https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/${slug}`
                 );
                 setHighlight(response.data.product);
-                setSelectedImageIndex(response.data.image);
+                setSelectedImageIndex(response.data.product.image);
                 setActive(response.data.size);
             } catch (error) {
                 setHighlight(null);
@@ -47,19 +47,22 @@ function HightLightsId() {
     };
 
     const selectImage = (hightlight) => {
-        console.log("highlight:", highlight);
-        setSelectedImageIndex(highlight.image);
-        dispatch(setImage(highlight.image));
+        setSelectedImageIndex(hightlight);
+        dispatch(setImage(hightlight));
     };
-
+    console.log(selectedImageIndex, "imageindex");
     return (
         <div>
             <div className="mt-24 md:container mx-auto w-[95%] md:flex justify-around">
                 <div className="right-side">
                     <HoverCard shadow="md" closeDelay={200}>
                         <Image
-                            className="w-[500px] min-h-[500px] max-h-[500px] object-contain mt-24"
-                            fallback={setSelectedImageIndex}
+                            className="max-w-[500px] max-h-[500px]"
+                            fallback={
+                                selectedImageIndex && selectedImageIndex.length > 0
+                                    ? selectedImageIndex
+                                    : `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`
+                            }
                             onClick={open}
                             title={highlight.image}
                             style={{ cursor: "pointer" }}
@@ -86,48 +89,55 @@ function HightLightsId() {
                                 Become a member now
                             </Link>
                         </div>
-                        <div className="flex">
+                        <div className="flex justify-between items-center w-[300px]">
                             <img
-                                className="cursor-pointer w-[560] h-[60px] object-contain"
+                                className="cursor-pointer w-[56px] h-[60px] object-cover"
                                 src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
-                                onClick={() => selectImage(
-                                    `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`
-                                )}
+                                onClick={() =>
+                                    selectImage(
+                                        `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`
+                                    )
+                                }
                                 alt=""
                             />
 
                             <img
-                                className="cursor-pointer w-[560] h-[60px] object-contain"
+                                className="cursor-pointer w-[56px] h-[60px] object-cover"
                                 src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_2}`}
-                                onClick={() => selectImage(
-                                    `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_2}`
-                                )}
+                                onClick={() =>
+                                    selectImage(
+                                        `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_2}`
+                                    )
+                                }
                                 alt=""
                             />
 
                             <img
-                                className="cursor-pointer w-[560] h-[60px] object-contain"
+                                className="cursor-pointer w-[56px] h-[60px] object-cover"
                                 src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_3}`}
-                                onClick={() => selectImage(
-                                    `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_3}`
-                                )}
+                                onClick={() =>
+                                    selectImage(
+                                        `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_3}`
+                                    )
+                                }
                                 alt=""
                             />
                         </div>
 
-                        <div className="flex mr-7">
-                            {Array.isArray(highlight) && highlight.map((item) => (
-                                <div
-                                    key={item.toString()}  // toString() qo'shib, har bir elementni stringga aylantiring
-                                    data-active={active === item || undefined}
-                                    onClick={() => selectSize(item)}
-                                    className={`border-2 h-[32px] w-[32px] text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""}`}
-                                >
-                                    <p>{item}</p>
-                                </div>
-                            ))}
+                        <div className="flex mr-7 gap-1 mt-5">
+                            {
+                                JSON.parse(highlight.size).split(",").map((item) => (
+                                    <div
+                                        key={item}
+                                        data-active={active === item || undefined}
+                                        onClick={() => selectSize(item)}
+                                        className={`border-2 h-[32px] w-[32px] empty:hidden text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""
+                                            }`}
+                                    >
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
                         </div>
-
                         <div></div>
                     </div>
                     <ContiuneHightleht highlight={highlight} />
@@ -138,4 +148,3 @@ function HightLightsId() {
 }
 
 export default HightLightsId;
-

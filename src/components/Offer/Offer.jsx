@@ -29,6 +29,8 @@ function Offer() {
       });
   }, []);
 
+  const uniqueColors = [...new Set(productData.flatMap((item) => item.color))];
+
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
   };
@@ -45,8 +47,10 @@ function Offer() {
   const offset = (currentPage - 1) * perPage;
 
   const filteredData = productData.filter((item) => {
-    const meetsMinPrice = minPrice === "" || item.price >= parseFloat(minPrice);
-    const meetsMaxPrice = maxPrice === "" || item.price <= parseFloat(maxPrice);
+    const meetsMinPrice =
+      minPrice === "" || item.price >= parseFloat(minPrice);
+    const meetsMaxPrice =
+      maxPrice === "" || item.price <= parseFloat(maxPrice);
 
     return (
       meetsMinPrice &&
@@ -62,7 +66,7 @@ function Offer() {
     .map((item) => {
       return (
         <Link key={item.id} to={`/HigtlightsId/${item.slug}`}>
-          <HoverCard shadow="md" closeDelay={300} >
+          <HoverCard shadow="md" closeDelay={300}>
             <div className="" data-aos="fade-up">
               <div key={item.id}>
                 <div className=" flex justify-center items-center flex-wrap gap-6 p-8">
@@ -94,7 +98,10 @@ function Offer() {
                       <p className="font-medium mb-2 text-sm text-gray-700">
                         {item.description}
                       </p>
-                      <div className="flex items-center justify-between" data-aos="fade-up">
+                      <div
+                        className="flex items-center justify-between"
+                        data-aos="fade-up"
+                      >
                         <span className="text-2xl font-bold text-gray-800">
                           ${item.price}
                         </span>
@@ -109,25 +116,27 @@ function Offer() {
       );
     });
 
+    console.log(uniqueColors);
   return (
     <div className="container mx-auto">
       <div className="text_hight" style={{ marginTop: "80px" }}>
         <h1 className="md:text-center text-3xl text-neutral-600">Offer</h1>
       </div>
       <div className="grid-cols-1 md:grid grid-cols-3 md:grid-cols-4">
-        <div className="ml-24  md:block">
+        <div className="ml-24 md:block">
           <div className="w-1/2">
             <select
               name="Color"
-              className="outline-none ml-[7pc]"
+              className="outline-none w-[200px]  ml-[2pc]"
               id=""
               onChange={handleColorChange}
             >
               <option value="">Color</option>
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-              <option value="grey">Grey</option>
-              <option value="orange">Orange</option>
+              {uniqueColors.map((color) => (
+                <option key={color} value={color}>
+                  {color}
+                </option>
+              ))}
             </select>
             <div className="w-[250px] mb-5 h-[1px] bg-black" />
             <input

@@ -66,7 +66,7 @@ function Cart() {
                         {product.name}
                       </p>
                       <p className="text-xs text-gray-600 font-semibold">
-                        Rang:{" "}
+                        Rang:
                         <span className="font-normal">{product.color}</span>
                       </p>
                       <p className="text-xs text-gray-600 font-semibold">

@@ -115,7 +115,7 @@ function Order() {
             <br />
             <input
                 className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
+                type="date"
                 placeholder="date"
                 onChange={pocketInfo}
                 name="date"
