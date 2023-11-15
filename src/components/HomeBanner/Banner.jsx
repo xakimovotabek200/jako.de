@@ -7,9 +7,12 @@ import "./Banner.css";
 
 const API_URL =
   "https://api.abdullajonov.uz/legend-backend-api/api/main-page-news/get";
+const API_URLS =
+  "https://api.abdullajonov.uz/legend-backend-api/api/main-page-news/get";
 
 function Banner() {
   const [bannerdata, setBannerData] = useState([]);
+  const [ResData, setResData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { t } = useTranslation();
@@ -27,6 +30,20 @@ function Banner() {
       }
     };
     fetchData();
+  }, []);
+  useEffect(() => {
+    const fetchDatas = async () => {
+      try {
+        const response = await axios.get(API_URLS);
+        setResData(response.data.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setError(error);
+        setLoading(false);
+      }
+    };
+    fetchDatas();
   }, []);
 
   if (loading) {
@@ -63,20 +80,26 @@ function Banner() {
         </div>
       ))}
       <div className="res_z container mx-auto p-5">
-        <img
-          src={`https://cdn.jako.de/userdata/images/Startseite/2023_JAKO_Mobile_TeamDays_2022_480x480px_EN.jpg`}
-          alt={bannerdata[0]?.text}
-        />
-        <div className="res_Zz">
-          <div className="g">
-            <h3 className="h">
-              {bannerdata[0]?.text} 30% OFF SELECTED AUTUMN ARTICLES <br />
-            </h3>
-          </div>
-          <Link to={"/offer"}>
-            <button className="btnz">Buy Now</button>
-          </Link>
-        </div>
+        {ResData.map((item) => {
+          return (
+            <div>
+              <img
+                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image_2}`}
+                alt={item[0]?.text}
+              />
+              <div className="res_Zz">
+                <div className="g">
+                  <h3 className="h">
+                    {ResData[0]?.text} 30% OFF SELECTED AUTUMN ARTICLES <br />
+                  </h3>
+                </div>
+                <Link to={"/offer"}>
+                  <button className="btnz">Buy Now</button>
+                </Link>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -72,8 +72,8 @@ const Modalsearch = () => {
               <HoverCard shadow="md" closeDelay={300}>
                 <div className="">
                   <div key={item.id}>
-                    <div className="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
-                      <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                    <div className="flex justify-center items-center flex-wrap gap-6 p-8">
+                      <div className="h-[500px] w-[300px] flex flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                         <img
                           src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                           alt="product-image"
@@ -84,27 +84,15 @@ const Modalsearch = () => {
                             <div className="text-gray-600 uppercase text-xs font-semibold tracking-wider">
                               {item.category} &bull; {item.slug}
                             </div>
-                            <del>
-                              <span className="text-red-600 text-sm flex items-center gap-1">
-                                <svg
-                                  className="h-4 w-4 text-yellow-700"
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                >
-                                  <path d="M10 1l2.928 6.377 6.538.95-4.75 4.588 1.12 6.516L10 16.664l-5.836 3.767 1.12-6.516-4.75-4.588 6.538-.95L10 1z" />
-                                </svg>
-                                {item.shipping_price}
+                            <h3 className="text-xl mb-2 mt-2">{item.title}</h3>
+                            <p className="font-medium mb-2 text-sm text-gray-700">
+                              {item.description}
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <span className="text-2xl font-bold text-gray-800">
+                                ${item.price}
                               </span>
-                            </del>
-                          </div>
-                          <h3 className="text-xl mb-2 mt-2">{item.title}</h3>
-                          <p className="font-medium mb-2 text-sm text-gray-700">
-                            {item.description}
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-2xl font-bold text-gray-800">
-                              ${item.price}
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </div>

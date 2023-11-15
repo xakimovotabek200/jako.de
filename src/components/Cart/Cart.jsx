@@ -35,7 +35,7 @@ function Cart() {
       <div className="flex flex-col md:flex-row  h-full px-14 py-7 container mx-auto">
         <div className="w-full flex flex-col h-fit gap-4 p-4">
           <p className="sm: text-center md:text-blue-900 text-xl  font-extrabold">
-            My carts
+            Mening savatim
           </p>
           {products.length > 0 ? (
             products.map((product, ind) => (
@@ -66,28 +66,27 @@ function Cart() {
                         </HoverCard.Target>
                       </HoverCard>
                     </div>
-                    <divw className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <p className="text-lg text-gray-800 font-semibold">
                         {product.name}
                       </p>
                       <p className="text-xs text-gray-600 font-semibold">
-                        Color:{" "}
+                        Rang:{" "}
                         <span className="font-normal">{product.color}</span>
                       </p>
                       <p className="text-xs text-gray-600 font-semibold">
-                        Size:{" "}
+                        Hajm:{" "}
                         <span className="font-normal">{product.size}</span>
                       </p>
-                    </divw>
+                    </div>
                   </div>
                   <div className="self-center text-center">
                     <p className="text-gray-600 font-normal text-sm line-through">
-                      ${product.price}
                       <span className="text-red-500 ml-2">
-                        ${product.shipping_price}
+                        {product.shipping_price}сум
                       </span>
                     </p>
-                    <p className="text-gray-800 font-normal text-xl">${product.price}</p>
+                    <p className="text-gray-800 font-normal text-xl">{product.price}сум</p>
                   </div>
                   <div className="self-center">
                     <button
@@ -199,20 +198,20 @@ function Cart() {
             </div>
             <hr className="bg-gray-200 h-0.5" />
             <div className="flex flex-row justify-between">
-              <p className="text-gray-600">Total</p>
+              <p className="text-gray-600">Xammasi</p>
               <div>
-                <p className="text-end font-bold">${formattedTotal}</p>
+                <p className="text-end font-bold">{formattedTotal}сум</p>
               </div>
             </div>
             <div className="sm:flex-wrap md:flex gap-2 md:items-center">
               <Link to="/order">
                 <button className="transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm w-[200px] text-white text-hover shadow-md">
-                  FINISH
+                  Buyurtmani Rasmiylashtirish
                 </button>
               </Link>
               <Link to="/offer">
                 <button className="sm: mt-3 md:transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm w-[200px] text-gray-700 text-hover shadow-md">
-                  ADD MORE PRODUCTS
+                  Boshqa mahsulotlarni qoshish
                 </button>
               </Link>
             </div>

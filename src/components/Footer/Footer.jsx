@@ -47,7 +47,7 @@ function Footer() {
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">
-          <div className="JustFlex">
+          <div className="">
             <Partners />
           </div>
         </div>
