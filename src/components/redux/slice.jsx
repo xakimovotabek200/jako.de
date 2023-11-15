@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
 
 const initialState = {
     userInfo: [],
@@ -18,7 +19,7 @@ export const Slice = createSlice({
                 products: [...state.products, action.payload],
             };
         },
-        
+
         addWishes: (state, action) => {
             return {
                 ...state,

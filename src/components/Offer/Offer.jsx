@@ -1,3 +1,5 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "@mantine/carousel/styles.css";
 import { HoverCard } from "@mantine/core";
 import React, { useEffect, useState } from "react";
@@ -5,6 +7,11 @@ import { Link } from "react-router-dom";
 import "./Offer.css";
 
 function Offer() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const [selectedColor, setSelectedColor] = useState("");
   const [productData, setProductData] = useState([]);
   const [minPrice, setMinPrice] = useState("");
@@ -55,11 +62,11 @@ function Offer() {
     .map((item) => {
       return (
         <Link key={item.id} to={`/HigtlightsId/${item.slug}`}>
-          <HoverCard shadow="md" closeDelay={300}>
-            <div className="">
+          <HoverCard shadow="md" closeDelay={300} >
+            <div className="" data-aos="fade-up">
               <div key={item.id}>
-                <div className="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8">
-                  <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                <div className=" flex justify-center items-center flex-wrap gap-6 p-8">
+                  <div className=" h-[500px] w-[300px] flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                     <img
                       src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                       alt="product-image"
@@ -87,7 +94,7 @@ function Offer() {
                       <p className="font-medium mb-2 text-sm text-gray-700">
                         {item.description}
                       </p>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between" data-aos="fade-up">
                         <span className="text-2xl font-bold text-gray-800">
                           ${item.price}
                         </span>
@@ -139,7 +146,7 @@ function Offer() {
             />
           </div>
         </div>
-        <div className="mt-12 col-span-2 md:col-span-3">
+        <div className="mt-12 col-span-2 md:col-span-3" data-aos="fade-right">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {displayedData}
           </div>

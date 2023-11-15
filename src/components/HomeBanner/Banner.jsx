@@ -53,7 +53,7 @@ function Banner() {
               />
             </div>
             <div className="text absolute top-40">
-              <h3 className="w-[600px] text-black">{banner.text}</h3>
+              <h3 className="w-[600px] text-white">{banner.text}</h3>
               <Link to={"/offer"}>
                 <button className="btn">Buy Now</button>
               </Link>

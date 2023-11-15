@@ -10,43 +10,44 @@ import ContiuneHightleht from "./ContiuneHightleht";
 import Loading from './../Loading/Loading';
 
 function HightLightsId() {
-  const { slug } = useParams();
-  const [highlight, setHighlight] = useState(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const [active, setActive] = useState(null);
-  const [, { open }] = useDisclosure();
-  const dispatch = useDispatch();
+    const { slug } = useParams();
+    const [highlight, setHighlight] = useState(null);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+    const [active, setActive] = useState(null);
+    const [, { open }] = useDisclosure();
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/${slug}`
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(
+                    `https://api.abdullajonov.uz/legend-backend-api/api/products/detailed/${slug}`
+                );
+                setHighlight(response.data.product);
+                setSelectedImageIndex(response.data.image);
+                setActive(response.data.size);
+            } catch (error) {
+                setHighlight(null);
+            }
+        };
+        fetchData();
+    }, [slug]);
+
+    if (!highlight) {
+        return (
+            <div>
+                <Loading />
+            </div>
         );
-        setHighlight(response.data.product);
-        setSelectedImageIndex(response.data.image);
-        setActive(response.data.size);
-      } catch (error) {
-        setHighlight(null);
-      }
+    }
+
+    const selectSize = (item) => {
+        setActive(item);
+        dispatch(setSize(item));
     };
-    fetchData();
-  }, [slug]);
-
-  if (!highlight) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
-  }
-
-  const selectSize = (item) => {
-    setActive(item);
-    dispatch(setSize(item));
-  };
 
     const selectImage = (hightlight) => {
+        console.log("highlight:", highlight);
         setSelectedImageIndex(highlight.image);
         dispatch(setImage(highlight.image));
     };
@@ -58,9 +59,8 @@ function HightLightsId() {
                     <HoverCard shadow="md" closeDelay={200}>
                         <Image
                             className="w-[500px] min-h-[500px] max-h-[500px] object-contain mt-24"
-                            fallback={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
+                            fallback={setSelectedImageIndex}
                             onClick={open}
-
                             title={highlight.image}
                             style={{ cursor: "pointer" }}
                         />
@@ -74,7 +74,7 @@ function HightLightsId() {
                     <div>
                         <div className="mb-[30px]">
                             <h1 className="text-[#5b5b5b] text-2xl font-extrabold">
-                                {highlight.description}
+                                {highlight.name}
                             </h1>
                         </div>
                         <div className="w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
@@ -90,14 +90,35 @@ function HightLightsId() {
                             <img
                                 className="cursor-pointer w-[560] h-[60px] object-contain"
                                 src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`}
-                                onClick={() => selectImage(highlight)}
+                                onClick={() => selectImage(
+                                    `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`
+                                )}
+                                alt=""
+                            />
+
+                            <img
+                                className="cursor-pointer w-[560] h-[60px] object-contain"
+                                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_2}`}
+                                onClick={() => selectImage(
+                                    `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_2}`
+                                )}
+                                alt=""
+                            />
+
+                            <img
+                                className="cursor-pointer w-[560] h-[60px] object-contain"
+                                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_3}`}
+                                onClick={() => selectImage(
+                                    `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image_3}`
+                                )}
                                 alt=""
                             />
                         </div>
+
                         <div className="flex mr-7">
-                            {Array.isArray(highlight) && highlight.size.map((item) => (
+                            {Array.isArray(highlight) && highlight.map((item) => (
                                 <div
-                                    key={item}
+                                    key={item.toString()}  // toString() qo'shib, har bir elementni stringga aylantiring
                                     data-active={active === item || undefined}
                                     onClick={() => selectSize(item)}
                                     className={`border-2 h-[32px] w-[32px] text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""}`}
@@ -106,6 +127,7 @@ function HightLightsId() {
                                 </div>
                             ))}
                         </div>
+
                         <div></div>
                     </div>
                     <ContiuneHightleht highlight={highlight} />

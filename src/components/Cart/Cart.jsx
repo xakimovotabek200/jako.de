@@ -34,7 +34,7 @@ function Cart() {
     <div>
       <div className="flex flex-col md:flex-row  h-full px-14 py-7 container mx-auto">
         <div className="w-full flex flex-col h-fit gap-4 p-4">
-          <p className="sm: text-center md:text-blue-900 text-xl  font-extrabold">
+          <p className="sm: text-center md:text-neutral-600 text-xl  font-extrabold">
             Mening savatim
           </p>
           {products.length > 0 ? (
@@ -48,12 +48,7 @@ function Cart() {
                     <div className="w-28 h-28">
                       <HoverCard shadow="md" closeDelay={200}>
                         <HoverCard.Target>
-                          <Image
-                            onClick={() => {
-                              setSelectedProductImage(product.image);
-                              open();
-                            }}
-                            title="Open modal"
+                          <img
                             style={{
                               height: "120px",
                               width: "120px",
@@ -174,8 +169,8 @@ function Cart() {
           )}
         </div>
         <div className="flex flex-col w-full md:w-2/3 h-fit gap-4 p-4">
-          <p className="text-blue-900 text-xl font-extrabold">
-            Purchase Resume
+          <p className="text-neutral-600 text-xl font-extrabold">
+            Resume
           </p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
 

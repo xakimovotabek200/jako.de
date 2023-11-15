@@ -10,6 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import { Button } from "@mantine/core";
+import { toast } from "react-toastify";
 
 function ContiuneHightleht({ highlight }) {
   const [active, setActive] = useState(false);
@@ -33,7 +34,9 @@ function ContiuneHightleht({ highlight }) {
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addToCart(newData));
     dispatch(addWishes(newData));
+    toast.success('Maxsulotingiz savatga qoshildi !');
   }
+
 
   function handleAddToCart2(data) {
     let newData = Object.assign({}, data);
@@ -47,6 +50,7 @@ function ContiuneHightleht({ highlight }) {
 
   return (
     <div>
+
       <div className="flex gap-6 items-center">
         <span className="price">from €{highlight.price}</span>
         <h2 className="">
@@ -85,6 +89,7 @@ function ContiuneHightleht({ highlight }) {
           >
             Add to cart
           </Button>
+
         </div>
         <div className="flex items-center underline cursor-pointer">
           Add
