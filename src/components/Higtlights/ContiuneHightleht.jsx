@@ -45,12 +45,12 @@ function ContiuneHightleht({ highlight }) {
     newData.size = selectedSize;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addWishes(newData));
+    toast.success('Maxsulotingiz saqlandi!');
   }
 
 
   return (
     <div>
-
       <div className="flex gap-6 items-center">
         <span className="price">from €{highlight.price}</span>
         <h2 className="">
