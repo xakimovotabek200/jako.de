@@ -35,8 +35,8 @@ const ProductByCategory = () => {
                             <HoverCard shadow="md" closeDelay={300}>
                                 <div className="">
                                     <div key={product.id}>
-                                        <div className="bg-gray-200 w-full flex justify-center items-center flex-wrap gap-6 p-8">
-                                            <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                                        <div className="w-full flex justify-center items-center flex-wrap gap-6 p-8">
+                                            <div className="h-[500px] w-[300px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                                                 <img
                                                     src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${product.image}`}
                                                     alt="product-image"

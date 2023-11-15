@@ -1,12 +1,16 @@
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Partners from "../Partners/Partners";
 import "./Footer.css";
-import { HoverCard, Text } from "@mantine/core";
-import { Dropdown } from "antd";
 
 function Footer() {
   const { t } = useTranslation();
@@ -53,6 +57,134 @@ function Footer() {
         </div>
         <hr className="salom" />
       </section>
+      <div className="block md:hidden">
+        <Accordion>
+          <AccordionSummary
+            sx={{ height: "50px", marginTop:"12px" }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{t("Footer_title1")}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item1")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item2")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item3")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item4")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item5")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item6")}{" "}
+              </Link>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            sx={{ height: "50px", marginTop:"12px" }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{t("Footer_title1")}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item1")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item2")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item3")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item4")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item5")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item6")}{" "}
+              </Link>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            sx={{ height: "50px", marginTop:"12px" }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{t("Footer_title1")}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item1")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item2")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item3")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item4")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item5")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item6")}{" "}
+              </Link>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+      </div>
       <div className="Js">
         <div className="hidden md:block section">
           <div className="one">

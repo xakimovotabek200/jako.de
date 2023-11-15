@@ -147,7 +147,7 @@ function NavbarTop() {
             ))}
           <div className={classes.navbartop_language}>
             <LanguagePicker />
-            <Modal size="calc(100vw - 3rem)" opened={modalOpened} onClose={closeModal} padding="md">
+            <Modal size="calc(100vw - 3 rem)" opened={modalOpened} onClose={closeModal} padding="md">
               <Modalsearch />
             </Modal>
             <Button onClick={toggleModal} className="text-black">
@@ -164,7 +164,7 @@ function NavbarTop() {
                 </p>
               </div>
             </Link>
-            <Link to="/wishes">
+            <Link className="-ml-4 md:block" to="/wishes">
               <IconHeart />
             </Link>
           </div>
