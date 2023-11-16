@@ -170,9 +170,11 @@ function NavbarTop() {
                 </p>
               </div>
             </Link>
-            <Link className="-ml-4 md:block" to="/wishes">
-              <IconHeart />
-            </Link>
+            <div className="">
+              <Link className="md:block" to="/wishes">
+                <IconHeart />
+              </Link>
+            </div>
           </div>
         </Group>
       </header>
