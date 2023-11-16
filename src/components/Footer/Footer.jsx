@@ -60,7 +60,7 @@ function Footer() {
       <div className="block md:hidden">
         <Accordion>
           <AccordionSummary
-            sx={{ height: "50px", marginTop:"12px" }}
+            sx={{ height: "50px", marginTop: "12px" }}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
@@ -102,49 +102,49 @@ function Footer() {
         </Accordion>
         <Accordion>
           <AccordionSummary
-            sx={{ height: "50px", marginTop:"12px" }}
+            sx={{ height: "50px", marginTop: "12px" }}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>{t("Footer_title1")}</Typography>
+            <Typography>{t("Footer_title2")}</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item1")}{" "}
+                {t("Footer_title7")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item2")}{" "}
+                {t("Footer_item8")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item3")}{" "}
+                {t("Footer_item9")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item4")}{" "}
+                {t("Footer_item10")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item5")}{" "}
+                {t("Footer_title11")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item6")}{" "}
+                {t("Footer_title12")}{" "}
               </Link>
             </div>
           </AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary
-            sx={{ height: "50px", marginTop:"12px" }}
+            sx={{ height: "50px", marginTop: "12px" }}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
@@ -154,12 +154,12 @@ function Footer() {
           <AccordionDetails>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item1")}{" "}
+                {t("Footer_title11")}{" "}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item2")}{" "}
+                {t("Footer_title12")}{" "}
               </Link>
             </div>
             <div className="link">

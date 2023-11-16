@@ -81,16 +81,17 @@ function Banner() {
       ))}
       <div className="res_z container mx-auto p-5">
         {ResData.map((item) => {
+          console.log(item);
           return (
             <div>
               <img
-                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image_2}`}
+                src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${bannerdata.image_2}`}
                 alt={item[0]?.text}
               />
               <div className="res_Zz">
                 <div className="g">
                   <h3 className="h">
-                    {ResData[0]?.text} 30% OFF SELECTED AUTUMN ARTICLES <br />
+                    {ResData[0]?.text} <br />
                   </h3>
                 </div>
                 <Link to={"/offer"}>
