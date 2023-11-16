@@ -145,7 +145,7 @@ function Offer() {
               type="number"
               placeholder="Max Price"
               value={maxPrice}
-              on  Change={handleMaxPriceChange}
+              onChange={handleMaxPriceChange}
             />
           </div>
         </div>
