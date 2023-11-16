@@ -1,16 +1,17 @@
 import Accordion from "@mui/material/Accordion";
 import Typography from "@mui/material/Typography";
-import { IconRotate360 } from "@tabler/icons-react";
+import { IconRotate360, IconHeart } from "@tabler/icons-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addWishes } from "../redux/slice";
 import "./Hightlights.module.css";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import { Button } from "@mantine/core";
 import { toast } from "react-toastify";
-import { IconHeart } from "@tabler/icons-react";
+
 function ContiuneHightleht({ highlight }) {
   const [active, setActive] = useState(false);
 
@@ -90,8 +91,26 @@ function ContiuneHightleht({ highlight }) {
         <div className="flex items-center underline cursor-pointer">
           Add
           <div onClick={handleHeartClick}>
-            <button className="" onClick={() => handleAddToCart2(highlight)}>
-              <IconHeart />
+            <button onClick={() => handleAddToCart2(highlight)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`hidden md: icon icon-tabler icon-tabler-heart-filled ${
+                  active ? "text-red" : ""
+                }`}
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#D0D4CA"
+                fill="none"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"
+                  fill={active ? "red" : "#D0D4CA"}
+                />
+              </svg>
+              <IconHeart className="block md:hidden" />
             </button>
           </div>
         </div>

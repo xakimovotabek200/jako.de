@@ -114,7 +114,7 @@ function Offer() {
       <div className="text_hight" style={{ marginTop: "80px" }}>
         <h1 className="md:text-center text-3xl text-neutral-600">Offer</h1>
       </div>
-      <div className="grid-cols-1 md:grid grid-cols-3 md:grid-cols-4">
+      <div className="grid-cols-1 md:grid-cols-4">
         <div className="ml-24  md:block">
           <div className="w-1/2">
             <select
