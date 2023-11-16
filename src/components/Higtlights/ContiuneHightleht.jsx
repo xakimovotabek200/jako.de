@@ -1,14 +1,14 @@
 import Accordion from "@mui/material/Accordion";
-import Typography from '@mui/material/Typography';
-import { IconRotate360 } from "@tabler/icons-react";
+import Typography from "@mui/material/Typography";
+import { IconHeart, IconRotate360 } from "@tabler/icons-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addWishes } from "../redux/slice";
 import "./Hightlights.module.css";
 
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
 import { Button } from "@mantine/core";
 import { toast } from "react-toastify";
 import { IconHeart } from "@tabler/icons-react";
@@ -35,9 +35,8 @@ function ContiuneHightleht({ highlight }) {
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addToCart(newData));
     dispatch(addWishes(newData));
-    toast.success('Maxsulotingiz savatga qoshildi !');
+    toast.success("Maxsulotingiz savatga qoshildi !");
   }
-
 
   function handleAddToCart2(data) {
     let newData = Object.assign({}, data);
@@ -46,9 +45,8 @@ function ContiuneHightleht({ highlight }) {
     newData.size = selectedSize;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addWishes(newData));
-    toast.success('Maxsulotingiz saqlandi!');
+    toast.success("Maxsulotingiz saqlandi!");
   }
-
 
   return (
     <div>
@@ -90,11 +88,10 @@ function ContiuneHightleht({ highlight }) {
           >
             Add to cart
           </Button>
-
         </div>
         <div className="flex items-center underline cursor-pointer">
           Add
-          <div onClick={handleHeartClick}>
+          <div className="" onClick={handleHeartClick}>
             <button onClick={() => handleAddToCart2(highlight)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +111,11 @@ function ContiuneHightleht({ highlight }) {
                   fill={active ? "red" : "#D0D4CA"}
                 />
               </svg>
-              <IconHeart className="block md:hidden" />
+
+              <IconHeart
+                className={`block md:hidden ${active ? "text-red" : ""} `}
+                fill={active ? "red" : "#D0D4CA"}
+              />
             </button>
           </div>
         </div>
@@ -131,7 +132,7 @@ function ContiuneHightleht({ highlight }) {
         </div>
       </div>
       <div>
-        <Accordion sx={{ width: '500px' }}>
+        <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -140,9 +141,7 @@ function ContiuneHightleht({ highlight }) {
             <Typography>Description</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              {highlight.description}
-            </Typography>
+            <Typography>{highlight.description}</Typography>
           </AccordionDetails>
         </Accordion>
       </div>
