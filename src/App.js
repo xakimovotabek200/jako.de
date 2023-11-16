@@ -38,6 +38,7 @@ function App() {
         <BrowserRouter>
           <ToastContainer />
           <NavbarTop />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/higtlightsId/:slug" element={<HightLightsId />} />
