@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from 'react-toastify';
 
 const initialState = {
     userInfo: [],
@@ -29,7 +28,7 @@ export const Slice = createSlice({
             state.selectedSize = action.payload
         },
         setColor: (state, action) => {
-            state.selectedSize = action.payload
+            state.selectedColor = action.payload
         },
         setCartCount: (state, action) => {
             state.cartCount = action.payload;

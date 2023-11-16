@@ -18,7 +18,7 @@ function ContiuneHightleht({ highlight }) {
   const [quantity, setQuantity] = useState(1);
   const [add, setAdd] = useState(1);
   const dispatch = useDispatch();
-  const { selectedSize, selectedImage } = useSelector(
+  const { selectedSize, selectedImage, selectedColor } = useSelector(
     (state) => state.orebiReducer
   );
 
@@ -31,6 +31,7 @@ function ContiuneHightleht({ highlight }) {
     newData.uuid = crypto.randomUUID();
     newData.quantity = quantity;
     newData.size = selectedSize;
+    newData.color = selectedColor;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addToCart(newData));
     dispatch(addWishes(newData));
@@ -42,10 +43,13 @@ function ContiuneHightleht({ highlight }) {
     newData.uuid = crypto.randomUUID();
     newData.quantity = quantity;
     newData.size = selectedSize;
+    newData.color = selectedColor;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addWishes(newData));
     toast.success("Maxsulotingiz saqlandi!");
   }
+
+  console.log(selectedColor, "color");
 
   return (
     <div>
@@ -54,8 +58,8 @@ function ContiuneHightleht({ highlight }) {
         <h2 className="">
           <del>€{highlight.shipping_price}</del>
         </h2>
-        <p className="text_diskpunt">-{highlight.discount}% Discount</p>
-        <p className="text_diskpunt">Additional Discounts</p>
+        {/* <p className="text_diskpunt">-{highlight.discount}% Discount</p>
+        <p className="text_diskpunt">Additional Discounts</p> */}
       </div>
       <div className={`flex justify-between items-center`}>
         <div className="flex items-center">
@@ -94,9 +98,8 @@ function ContiuneHightleht({ highlight }) {
             <button onClick={() => handleAddToCart2(highlight)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`hidden md: icon icon-tabler icon-tabler-heart-filled ${
-                  active ? "text-red" : ""
-                }`}
+                className={`hidden md: icon icon-tabler icon-tabler-heart-filled ${active ? "text-red" : ""
+                  }`}
                 width="36"
                 height="36"
                 viewBox="0 0 24 24"
