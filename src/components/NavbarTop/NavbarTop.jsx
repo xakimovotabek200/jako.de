@@ -148,7 +148,7 @@ function NavbarTop() {
           <div className={classes.navbartop_language}>
             <LanguagePicker />
             <Modal
-              size="calc(100vw - 3 rem)"
+              size="calc(100vw - 3rem)"
               opened={modalOpened}
               onClose={closeModal}
               padding="md"

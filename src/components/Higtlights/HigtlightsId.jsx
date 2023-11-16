@@ -5,7 +5,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, json, useParams } from "react-router-dom";
-import { setImage, setSize } from "../redux/slice";
+import { setImage, setSize, setColor } from "../redux/slice";
 import ContiuneHightleht from "./ContiuneHightleht";
 import Loading from "./../Loading/Loading";
 
@@ -14,6 +14,7 @@ function HightLightsId() {
   const [highlight, setHighlight] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [active, setActive] = useState(null);
+  const [activeColor, setActiveColor] = useState(null);
   const [, { open }] = useDisclosure();
   const dispatch = useDispatch();
 
@@ -44,6 +45,11 @@ function HightLightsId() {
   const selectSize = (item) => {
     setActive(item);
     dispatch(setSize(item));
+  };
+
+  const selectColor = (item) => {
+    setActiveColor(item);
+    dispatch(setColor(item));
   };
 
   const selectImage = (hightlight) => {
@@ -81,7 +87,9 @@ function HightLightsId() {
               </h1>
             </div>
             <div className="text-sm md:w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
-              <p className="text-sm md:font-medium">Want 30% off your next order?</p>
+              <p className="text-sm md:font-medium">
+                Want 30% off your next order?
+              </p>
               <Link
                 to={"/"}
                 className="text-sm text-[#008ac9] md:text-[#008ac9] underline font-medium pl-4"
@@ -132,9 +140,24 @@ function HightLightsId() {
                     key={item}
                     data-active={active === item || undefined}
                     onClick={() => selectSize(item)}
-                    className={`border-2 h-[32px] w-[32px] empty:hidden text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${
-                      active === item ? "bg-[#008ac9] text-white" : ""
-                    }`}
+                    className={`border-2 h-[32px] w-[32px] empty:hidden text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""
+                      }`}
+                  >
+                    <p>{item}</p>
+                  </div>
+                ))}
+            </div>
+
+            <div className="flex mr-7 gap-1 mt-5">
+              {JSON.parse(highlight.color)
+                .split(",")
+                .map((item) => (
+                  <div
+                    key={item}
+                    data-active={activeColor === item || undefined}
+                    onClick={() => selectColor(item)}
+                    className={`border-2 h-[32px] w-[52px] empty:hidden text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${activeColor === item ? "bg-[#008ac9] text-white" : ""
+                      }`}
                   >
                     <p>{item}</p>
                   </div>
