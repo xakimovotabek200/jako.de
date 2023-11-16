@@ -15,7 +15,7 @@ import "./Cart.css";
 function Cart() {
   const dispatch = useDispatch();
 
-  const [cartCount, setCartCount] = useState(0)
+  const [cartCount, setCartCount] = useState(0);
   const { products } = useSelector((state) => state.orebiReducer);
   const [opened, { open, close }] = useDisclosure(false);
   const [selectedProductImage, setSelectedProductImage] = useState(null);
@@ -81,7 +81,9 @@ function Cart() {
                         {product.shipping_price}сум
                       </span>
                     </p>
-                    <p className="text-gray-800 font-normal text-xl">{product.price}сум</p>
+                    <p className="text-gray-800 font-normal text-xl">
+                      {product.price}сум
+                    </p>
                   </div>
                   <div className="self-center">
                     <button
@@ -150,8 +152,8 @@ function Cart() {
                   alt="emptyCart"
                 />
               </div>
-              <div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
-                <h1 className="font-titleFont text-xl font-bold uppercase">
+              <div className=" min-w-[380px] md:max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
+                <h1 className="md:font-titleFont text-xl font-bold uppercase">
                   Savatingiz o'zini yolg'iz his qiladi.
                 </h1>
                 <p className="text-sm text-center px-10 -mt-2">
@@ -169,19 +171,14 @@ function Cart() {
           )}
         </div>
         <div className="flex flex-col w-full md:w-2/3 h-fit gap-4 p-4">
-          <p className="text-neutral-600 text-xl font-extrabold">
-            Resume
-          </p>
+          <p className="text-neutral-600 text-xl font-extrabold">Resume</p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
-
             <hr className="bg-gray-200 h-0.5" />
             <div className="flex flex-row justify-between">
               <p className="text-gray-600">Yetkazib berish</p>
               <div>
                 <p className="text-end font-bold">O'zbekiston bo'ylab bepul</p>
-                <p className="text-gray-600 text-sm font-normal">
-                  {""}
-                </p>
+                <p className="text-gray-600 text-sm font-normal">{""}</p>
               </div>
             </div>
             <hr className="bg-gray-200 h-0.5" />
