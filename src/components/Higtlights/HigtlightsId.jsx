@@ -85,6 +85,7 @@ function HightLightsId() {
                 {highlight.name}
               </h1>
             </div>
+            {/* da */}
             <div className="text-sm md:w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
               <p className="text-sm md:font-medium">
                 Want 30% off your next order?
