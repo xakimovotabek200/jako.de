@@ -26,12 +26,11 @@ const NewsId = () => {
         fetchNewsData();
     }, [slug]);
 
-    console.log(newsData, "newsData");
     return (
         <div className="container mx-auto">
             <span>{newsData.time}</span>
             <div className="w-full border-2 border-solid border-neutral-600 mb-5"></div>
-            <div className="md:flex justify-between items-center flex-wrap flex-row-reverse ">
+            <div className="md:flex justify-around items-center flex-wrap flex-row-reverse ">
                 <div className="h-[500px] w-[500px]">
                     <img
                         className="h-full w-full max-h-full object-cover cursor-pointer"

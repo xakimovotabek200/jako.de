@@ -26,7 +26,6 @@ function Cart() {
 
   const totalSum = calculateTotal(products);
   const formattedTotal = totalSum.toFixed(0, 2);
-  console.log(products, "product");
   
   return (
     <div>

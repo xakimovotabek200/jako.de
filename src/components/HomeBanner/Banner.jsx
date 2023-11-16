@@ -81,7 +81,6 @@ function Banner() {
       ))}
       <div className="res_z container mx-auto p-5">
         {ResData.map((item) => {
-          console.log(item);
           return (
             <div>
               <img

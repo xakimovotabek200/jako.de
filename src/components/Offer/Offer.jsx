@@ -66,7 +66,7 @@ function Offer() {
             <div className="" data-aos="fade-up">
               <div key={item.id}>
                 <div className=" flex justify-center items-center flex-wrap gap-6 p-8">
-                  <div className=" h-[500px] w-[300px] flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                  <div className="h-[500px] w-[300px] flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                     <img
                       src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                       alt="product-image"
@@ -114,7 +114,7 @@ function Offer() {
       <div className="text_hight" style={{ marginTop: "80px" }}>
         <h1 className="md:text-center text-3xl text-neutral-600">Offer</h1>
       </div>
-      <div className="grid-cols-1 md:grid-cols-4">
+      <div className="grid-cols-2 md:grid-cols-3 ">
         <div className="ml-24  md:block">
           <div className="w-1/2">
             <select
