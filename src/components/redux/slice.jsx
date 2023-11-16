@@ -28,6 +28,9 @@ export const Slice = createSlice({
         setSize: (state, action) => {
             state.selectedSize = action.payload
         },
+        setColor: (state, action) => {
+            state.selectedSize = action.payload
+        },
         setCartCount: (state, action) => {
             state.cartCount = action.payload;
         },
@@ -75,6 +78,7 @@ export const {
     deleteItem,
     resetCart,
     addWishes,
+    setColor,
     setCartCount,
 } = Slice.actions;
 export default Slice.reducer;

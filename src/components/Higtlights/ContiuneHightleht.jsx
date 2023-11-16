@@ -11,6 +11,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import { Button } from "@mantine/core";
 import { toast } from "react-toastify";
+import { IconHeart } from "@tabler/icons-react";
 
 function ContiuneHightleht({ highlight }) {
   const [active, setActive] = useState(false);
