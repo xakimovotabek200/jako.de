@@ -30,6 +30,7 @@ const loadingMessage = (
     <Loading />
   </div>
 );
+
 function App() {
   return (
     <div>

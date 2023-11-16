@@ -56,7 +56,6 @@ function HightLightsId() {
     setSelectedImageIndex(hightlight);
     dispatch(setImage(hightlight));
   };
-  console.log(selectedImageIndex, "imageindex");
   return (
     <div>
       <div className="mt-24 md:container mx-auto w-[95%] md:flex justify-around">

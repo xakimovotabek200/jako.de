@@ -44,7 +44,6 @@ function HightLights({ data }) {
     fetchDatas();
   }, []);
 
-  console.log(productData, "productData");
   return (
     <div className="container mx-auto">
       <div className="text-center text-neutral-600  text-[38px] font-bold leading-9">

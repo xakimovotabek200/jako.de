@@ -10,7 +10,6 @@ function Wishes() {
   const dispatch = useDispatch();
 
   const { products } = useSelector((state) => state.orebiReducer);
-  console.log(products, "wishe");
   return (
     <div className="container mx-auto">
       <p className="text-neutral-600 text-3xl mt-16 text-center font-extrabold">

@@ -10,16 +10,15 @@ function Order() {
     const [selectedItemsLength, setSelectedItemsLength] = useState([]);
     const selectedProducts = useSelector((state) => state.orebiReducer.products);
     const navigate = useNavigate();
-    
 
     const objectApp = {
         user_name: "",
         product_slug: "",
-        size: 0,
         phone: "",
         location_number_product: "",
         date: "",
     };
+
     const [value, pocketInfo] = useForm(objectApp);
 
     useEffect(() => {
@@ -50,100 +49,117 @@ function Order() {
         };
 
         try {
-            const response = await axios.post("https://api.abdullajonov.uz/legend-backend-api/api/order/store", requestData);
+            const response = await axios.post(
+                "https://api.abdullajonov.uz/legend-backend-api/api/order/store",
+                requestData
+            );
 
             if (response.data && response.data.message) {
                 toast.success(response.data.message);
                 navigate("/");
             } else {
-                console.log(response.data);
+                toast.error(response.data);
             }
         } catch (error) {
             console.error(error);
             toast.error("An error occurred. Please try again.");
         }
     };
-    return (
-        <form onSubmit={addApplication} className="mt-12 md:my-3">
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
-                placeholder="Ismingiz"
-                onChange={pocketInfo}
-                name="user_name"
-                value={value.user_name}
-                required
-            />
-            <br />
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
-                placeholder="Telefon raqam"
-                onChange={pocketInfo}
-                name="product_slug"
-                value={value.product_slug}
-                required
-            />
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
-                placeholder="Telefon raqam"
-                onChange={pocketInfo}
-                name="size"
-                value={value.size}
-                required
-            />
-            <br />
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
-                placeholder="Manzil"
-                onChange={pocketInfo}
-                name="location"
-                value={value.location}
-                required
-            />
-            <br />
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
-                placeholder="Telefon raqam"
-                onChange={pocketInfo}
-                name="phone"
 
-                value={value.phone}
-                required
-            />
-            <br />
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="date"
-                placeholder="date"
-                onChange={pocketInfo}
-                name="date"
-                value={value.date}
-                required
-            />
-            <br />
-            <input
-                className="w-full py-1 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
-                type="text"
-                placeholder="Mahsulot"
-                name="product"
-                value={selectedProducts.map(
-                    (item) => `${item.name} - ${item.quantity} - ${item.price}`
-                )}
-                required
-                disabled
-            />
-            <br />
-            <button
-                className="w-52 h-10 bg-[blue] text-white text-lg mt-4 duration-300 my-3"
-                type="submit"
-            >
-                Arizani jonatish
-            </button>
-        </form>
+    return (
+        <div className="container mx-auto">
+            <form onSubmit={addApplication} className="mt-12 md:my-3">
+                <div className="flex items-center ">
+                    <h1 className="text-neutral-600 text-2xl font-semibold">Ismingiz *</h1>
+                    <input
+                        className="w-[810px] border-2 ml-[110px] border-solid border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                        type="text"
+                        onChange={pocketInfo}
+                        name="user_name"
+                        value={value.user_name}
+                        required
+                    />
+                </div>
+                <br />
+                <div className="flex items-center ">
+                    <h1 className="text-neutral-600 text-2xl font-semibold">
+                        Telefon raqam *
+                    </h1>
+                    <input
+                        className="w-[810px] border-2 ml-10 border-solid border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                        type="text"
+                        onChange={pocketInfo}
+                        name="phone"
+                        value={value.phone}
+                        required
+                    />
+                </div>
+                <br />
+
+                <div className="flex items-center ">
+                    <h1 className="text-neutral-600 text-2xl font-semibold">Manzil *</h1>
+                    <input
+                        className="w-[810px] border-2 ml-[120px] border-solid border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                        type="text"
+                        onChange={pocketInfo}
+                        name="location"
+                        value={value.location}
+                        required
+                    />
+                </div>
+
+                <div className="flex items-center ">
+                    <h1 className="text-neutral-600 text-2xl font-semibold">Tavsif *</h1>
+                    <input
+                        className="w-[810px] border-2 ml-[130px] border-solid border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                        type="text"
+                        onChange={pocketInfo}
+                        name="phone"
+                        value={value.product_slug}
+                        required
+                    />
+                </div>
+                <br />
+
+                <div className="flex items-center ">
+                    <h1 className="text-neutral-600 text-2xl font-semibold">
+                        Yetkazib Berish *
+                    </h1>
+                    <input
+                        className="w-[810px] border-2 border-solid ml-5 border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                        type="date"
+                        placeholder="date"
+                        onChange={pocketInfo}
+                        name="date"
+                        value={value.date}
+                        required
+                    />
+                </div>
+                <br />
+
+                <div className="flex items-center ">
+                    <h1 className="text-neutral-600 text-2xl font-semibold"> Maxsulot *</h1>
+                    <input
+                        className="w-[810px] border-2 border-solid ml-[80px] border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
+                        type="text"
+                        name="product"
+                        value={selectedProducts.map(
+                            (item) => `${item.name} - ${item.quantity} - ${item.price}`
+                        )}
+                        required
+                        disabled
+                    />
+                </div>
+
+                <br />
+                <button
+                    className="w-52 h-10 bg-[blue] mx-auto text-white text-lg mt-4 duration-300 my-3"
+                    type="submit"
+                >
+                    Arizani jonatish
+                </button>
+            </form>
+        </div>
     );
 }
 

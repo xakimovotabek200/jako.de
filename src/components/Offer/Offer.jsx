@@ -66,7 +66,7 @@ function Offer() {
             <div className="" data-aos="fade-up">
               <div key={item.id}>
                 <div className=" flex justify-center items-center flex-wrap gap-6 p-8">
-                  <div className=" h-[500px] w-[300px] flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                  <div className="h-[500px] w-[300px] flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                     <img
                       src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                       alt="product-image"

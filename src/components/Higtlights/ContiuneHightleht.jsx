@@ -49,7 +49,6 @@ function ContiuneHightleht({ highlight }) {
     toast.success("Maxsulotingiz saqlandi!");
   }
 
-  console.log(selectedColor, "color");
 
   return (
     <div>
