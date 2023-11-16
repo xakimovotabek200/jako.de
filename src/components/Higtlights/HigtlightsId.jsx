@@ -48,10 +48,9 @@ function HightLightsId() {
   };
 
   const selectColor = (item) => {
-    setActive(item);
+    setActiveColor(item);
     dispatch(setColor(item));
   };
-
 
   const selectImage = (hightlight) => {
     setSelectedImageIndex(hightlight);
@@ -88,7 +87,9 @@ function HightLightsId() {
               </h1>
             </div>
             <div className="text-sm md:w-[500px] h-[58px] bg-[#c9eeff] flex justify-center items-center text-[#5b5b5b] mb-[50px]">
-              <p className="text-sm md:font-medium">Want 30% off your next order?</p>
+              <p className="text-sm md:font-medium">
+                Want 30% off your next order?
+              </p>
               <Link
                 to={"/"}
                 className="text-sm text-[#008ac9] md:text-[#008ac9] underline font-medium pl-4"
@@ -146,7 +147,6 @@ function HightLightsId() {
                   </div>
                 ))}
             </div>
-
 
             <div className="flex mr-7 gap-1 mt-5">
               {JSON.parse(highlight.color)
