@@ -3,9 +3,8 @@ import "./Loading.css";
 
 function Loading() {
     return (
-        <div className="sudo">
-            <div className="pac-man"></div>
-        </div>
+        <div class="loader"></div> 
+
     );
 }
 

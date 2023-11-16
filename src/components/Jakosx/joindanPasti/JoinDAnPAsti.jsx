@@ -9,7 +9,8 @@ function JoinDAnPAsti() {
     <div className="nom">
       <div className="all">
         <div className="Harf">
-          <h2 className="club">{t("Home_join_pasti")}</h2>
+          <h2 className="club">JOIN THE JAKO CLUB!</h2>
+          <p className="text-2xl text-white">EXCLUSIVE DROPS AND SURPRISES AWAIT <br /> YOU.</p>
           <button className="become">{t("Home_join_button")}</button>
         </div>
       </div>

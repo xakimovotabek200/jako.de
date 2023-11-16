@@ -93,7 +93,7 @@ function ContiuneHightleht({ highlight }) {
           </Button>
         </div>
         <div className="flex items-center underline cursor-pointer">
-          Adds
+          Add
           <div className="" onClick={handleHeartClick}>
             <button onClick={() => handleAddToCart2(highlight)}>
               <svg
