@@ -62,7 +62,7 @@ function Offer() {
     .map((item) => {
       return (
         <Link key={item.id} to={`/HigtlightsId/${item.slug}`}>
-          <HoverCard shadow="md" closeDelay={300} >
+          <HoverCard shadow="md" closeDelay={300}>
             <div className="" data-aos="fade-up">
               <div key={item.id}>
                 <div className=" flex justify-center items-center flex-wrap gap-6 p-8">
@@ -94,7 +94,10 @@ function Offer() {
                       <p className="font-medium mb-2 text-sm text-gray-700">
                         {item.description}
                       </p>
-                      <div className="flex items-center justify-between" data-aos="fade-up">
+                      <div
+                        className="flex items-center justify-between"
+                        data-aos="fade-up"
+                      >
                         <span className="text-2xl font-bold text-gray-800">
                           ${item.price}
                         </span>
@@ -114,7 +117,7 @@ function Offer() {
       <div className="text_hight" style={{ marginTop: "80px" }}>
         <h1 className="md:text-center text-3xl text-neutral-600">Offer</h1>
       </div>
-      <div className="grid-cols-1 md:grid-cols-4">
+      <div className="grid-cols-1 md:grid grid-cols-3 md:grid-cols-4">
         <div className="ml-24  md:block">
           <div className="w-1/2">
             <select
@@ -154,8 +157,9 @@ function Offer() {
             {Array.from({ length: pageCount }).map((_, index) => (
               <button
                 key={index}
-                className={`pagination-button ${currentPage === index + 1 ? "active" : ""
-                  }`}
+                className={`pagination-button ${
+                  currentPage === index + 1 ? "active" : ""
+                }`}
                 onClick={() => setCurrentPage(index + 1)}
               >
                 {index + 1}
