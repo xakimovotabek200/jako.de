@@ -1,4 +1,13 @@
+body {
+  position: relative;
+}
+
 .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
   width: 15px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -7,22 +16,22 @@
 
 @keyframes l5 {
   0% {
-    box-shadow: 20px 0 #000, -20px 0 #0002;
-    background: #000
+    box-shadow: 20px 0 #2092e8, -20px rgb(82 82 82);
+    background: #2092e8;
   }
 
   33% {
-    box-shadow: 20px 0 #000, -20px 0 #0002;
-    background: #0002
+    box-shadow: 20px 0 #000, -20px 0 rgb(82 82 82);
+    background: #2092e8;
   }
 
   66% {
-    box-shadow: 20px 0 #0002, -20px 0 #000;
-    background: #0002
+    box-shadow: 20px 0 #0002, -20px 0 rgb(82 82 82);
+    background: #2092e8;
   }
 
   100% {
-    box-shadow: 20px 0 #0002, -20px 0 #000;
-    background: #000
+    box-shadow: 20px 0 #0002, -20px 0 rgb(82 82 82);
+    background: #2092e8;
   }
 }

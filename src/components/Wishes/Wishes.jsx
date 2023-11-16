@@ -30,14 +30,12 @@ function Wishes() {
                       <div className="h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                         <img
                           src={
-                            products.image
+                            item.image
                           }
-                          alt={
-                            products.image
-                          }
+                          alt=""
                           className="h-[65%] w-[80%] object-cover mt-4  rounded-md"
                         />
-                        <div className="p-5">
+                        <div className="">
                           <div className="flex justify between">
                             <div className="text-gray-600 uppercase text-xs font-semibold tracking-wider">
                               {item.category} &bull; {item.slug}
