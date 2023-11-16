@@ -19,7 +19,6 @@ export const Slice = createSlice({
                 products: [...state.products, action.payload],
             };
         },
-
         addWishes: (state, action) => {
             return {
                 ...state,

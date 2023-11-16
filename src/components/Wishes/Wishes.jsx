@@ -13,11 +13,11 @@ function Wishes() {
 
   return (
     <div className="container mx-auto">
-      <p className="text-blue-900 text-3xl mt-16 text-center font-extrabold">
+      <p className="text-neutral-600 text-3xl mt-16 text-center font-extrabold">
         COLLECTION
       </p>
       <div>
-        <div className="flex justify-center items-center">
+        <div className="flex flex-wrap justify-center items-center">
           {products.length > 0 ? (
             products.map((item, index) => (
               <Link
@@ -26,12 +26,12 @@ function Wishes() {
               >
                 <HoverCard shadow="md" closeDelay={300}>
                   <div key={item.id}>
-                    <div className="bg-gray-200 w-[350px] flex justify-center items-center flex-wrap gap-6 p-8">
+                    <div className=" w-[350px] flex justify-center  items-center flex-wrap gap-6 p-8">
                       <div className=" h-[500px] bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                         <img
                           src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                           alt="product-image"
-                          className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md"
+                          className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto border-2 border-solid border-red-600 bg-slate-100 rounded-md"
                         />
                         <div className="p-5">
                           <div className="flex justify between">
