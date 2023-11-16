@@ -117,11 +117,7 @@ function Offer() {
       <div className="text_hight" style={{ marginTop: "80px" }}>
         <h1 className="md:text-center text-3xl text-neutral-600">Offer</h1>
       </div>
-<<<<<<< HEAD
-      <div className="grid-cols-2 md:grid-cols-3 ">
-=======
       <div className="grid-cols-1 md:grid grid-cols-3 md:grid-cols-4">
->>>>>>> 2c447606aaefa2206cb685edfd29806ca53b247e
         <div className="ml-24  md:block">
           <div className="w-1/2">
             <select
@@ -149,7 +145,7 @@ function Offer() {
               type="number"
               placeholder="Max Price"
               value={maxPrice}
-              onChange={handleMaxPriceChange}
+              on  Change={handleMaxPriceChange}
             />
           </div>
         </div>
