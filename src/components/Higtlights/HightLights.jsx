@@ -45,7 +45,7 @@ function HightLights({ data }) {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <div className="text-center text-neutral-600  text-[38px] font-bold leading-9">
         Products
       </div>

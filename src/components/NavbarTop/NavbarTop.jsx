@@ -145,7 +145,7 @@ function NavbarTop() {
                 </Link>
               </Group>
             ))}
-          <div className={classes.navbartop_language}>
+          <div className={`-ml-[10px] md:salom ${classes.navbartop_language}`}>
             <LanguagePicker />
             <Modal
               size="calc(100vw - 3rem)"
@@ -162,8 +162,9 @@ function NavbarTop() {
               <div className="cursor-pointer flex">
                 <IconShoppingCart />
                 <p
-                  className={`md:absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${products.length > 0 ? "bg-[#008ac9]" : ""
-                    } text-white`}
+                  className={`md:absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${
+                    products.length > 0 ? "bg-[#008ac9]" : ""
+                  } text-white`}
                 >
                   {products.length > 0 && products.length}
                 </p>
