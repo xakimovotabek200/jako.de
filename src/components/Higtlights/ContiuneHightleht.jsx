@@ -33,12 +33,10 @@ function ContiuneHightleht({ highlight }) {
     newData.size = selectedSize;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addToCart(newData));
-    dispatch(addWishes(newData));
     toast.success('Maxsulotingiz savatga qoshildi !');
   }
 
-
-  function handleAddToCart2(data) {
+  function handleAddToWishlist(data) {
     let newData = Object.assign({}, data);
     newData.uuid = crypto.randomUUID();
     newData.quantity = quantity;
@@ -47,7 +45,6 @@ function ContiuneHightleht({ highlight }) {
     dispatch(addWishes(newData));
     toast.success('Maxsulotingiz saqlandi!');
   }
-
 
   return (
     <div>
@@ -94,7 +91,7 @@ function ContiuneHightleht({ highlight }) {
         <div className="flex items-center underline cursor-pointer">
           Add
           <div onClick={handleHeartClick}>
-            <button onClick={() => handleAddToCart2(highlight)}>
+            <button onClick={() => handleAddToWishlist(highlight)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`icon icon-tabler icon-tabler-heart-filled ${active ? "text-red" : ""
