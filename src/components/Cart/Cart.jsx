@@ -1,6 +1,5 @@
 import { HoverCard } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Image } from "antd";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -14,12 +13,10 @@ import "./Cart.css";
 
 function Cart() {
   const dispatch = useDispatch();
-
-  const [cartCount, setCartCount] = useState(0)
+  const [cartCount, setCartCount] = useState(0);
   const { products } = useSelector((state) => state.orebiReducer);
   const [opened, { open, close }] = useDisclosure(false);
   const [selectedProductImage, setSelectedProductImage] = useState(null);
-
   function calculateTotal(products) {
     return products.reduce((total, product) => {
       const productCost = parseFloat(product.price);
@@ -29,7 +26,8 @@ function Cart() {
 
   const totalSum = calculateTotal(products);
   const formattedTotal = totalSum.toFixed(0, 2);
-
+  console.log(products, "product");
+  
   return (
     <div>
       <div className="flex flex-col md:flex-row  h-full px-14 py-7 container mx-auto">
@@ -55,7 +53,7 @@ function Cart() {
                               objectFit: "cover",
                               cursor: "pointer",
                             }}
-                            src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${product.image}`}
+                            src={product.image}
                             alt=""
                           />
                         </HoverCard.Target>
@@ -81,7 +79,9 @@ function Cart() {
                         {product.shipping_price}сум
                       </span>
                     </p>
-                    <p className="text-gray-800 font-normal text-xl">{product.price}сум</p>
+                    <p className="text-gray-800 font-normal text-xl">
+                      {product.price}сум
+                    </p>
                   </div>
                   <div className="self-center">
                     <button
@@ -89,10 +89,10 @@ function Cart() {
                       onClick={() => dispatch(deleteItem(product.uuid))}
                     >
                       <svg
+                        fill="red"
                         height="24px"
                         width="24px"
                         id="Layer_1"
-                        style={{ enableBackground: "new 0 0 512 512" }}
                         version="1.1"
                         viewBox="0 0 512 512"
                         xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +101,8 @@ function Cart() {
                         <g>
                           <path
                             d="M400,113.3h-80v-20c0-16.2-13.1-29.3-29.3-29.3h-69.5C205.1,64,192,77.1,192,93.3v20h-80V128h21.1l23.6,290.7
-                    c0,16.2,13.1,29.3,29.3,29.3h141c16.2,0,29.3-13.1,29.3-29.3L379.6,128H400V113.3z M206.6,93.3c0-8.1,6.6-14.7,14.6-14.7h69.5c8.1,0,14.6,6.6,14.6,14.7v20h-98.7V93.3z M341.6,417.9l0,0.4v0.4c0,8.1-6.6,14.7-14.6,14.7H186c-8.1,0-14.6-6.6-14.6-14.7v-0.4
-                    l0-0.4L147.7,128h217.2L341.6,417.9z"
+                             c0,16.2,13.1,29.3,29.3,29.3h141c16.2,0,29.3-13.1,29.3-29.3L379.6,128H400V113.3z M206.6,93.3c0-8.1,6.6-14.7,14.6-14.7h69.5c8.1,0,14.6,6.6,14.6,14.7v20h-98.7V93.3z M341.6,417.9l0,0.4v0.4c0,8.1-6.6,14.7-14.6,14.7H186c-8.1,0-14.6-6.6-14.6-14.7v-0.4
+                            l0-0.4L147.7,128h217.2L341.6,417.9z"
                           />
                           <g>
                             <rect height="241" width="14" x="249" y="160" />
@@ -169,19 +169,14 @@ function Cart() {
           )}
         </div>
         <div className="flex flex-col w-full md:w-2/3 h-fit gap-4 p-4">
-          <p className="text-neutral-600 text-xl font-extrabold">
-            Resume
-          </p>
+          <p className="text-neutral-600 text-xl font-extrabold">Resume</p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
-
             <hr className="bg-gray-200 h-0.5" />
             <div className="flex flex-row justify-between">
               <p className="text-gray-600">Yetkazib berish</p>
               <div>
                 <p className="text-end font-bold">O'zbekiston bo'ylab bepul</p>
-                <p className="text-gray-600 text-sm font-normal">
-                  {""}
-                </p>
+                <p className="text-gray-600 text-sm font-normal">{""}</p>
               </div>
             </div>
             <hr className="bg-gray-200 h-0.5" />
