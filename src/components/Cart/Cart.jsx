@@ -150,8 +150,8 @@ function Cart() {
                   alt="emptyCart"
                 />
               </div>
-              <div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
-                <h1 className="font-titleFont text-xl font-bold uppercase">
+              <div className=" min-w-[380px] md:max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
+                <h1 className="md:font-titleFont text-xl font-bold uppercase">
                   Savatingiz o'zini yolg'iz his qiladi.
                 </h1>
                 <p className="text-sm text-center px-10 -mt-2">
