@@ -31,7 +31,7 @@ function Wishes() {
                         <img
                           src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                           alt="product-image"
-                          className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md"
+                          className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto border-2 border-solid border-red-600 bg-slate-100 rounded-md"
                         />
                         <div className="p-5">
                           <div className="flex justify between">

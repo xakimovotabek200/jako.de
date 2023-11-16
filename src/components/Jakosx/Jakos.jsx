@@ -4,7 +4,7 @@ import JoinDAnPAsti from "./joindanPasti/JoinDAnPAsti";
 
 function Jakos() {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <JoinDAnPAsti />
       <JakoOnline />
     </div>

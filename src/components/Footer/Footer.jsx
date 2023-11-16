@@ -1,7 +1,13 @@
-import axios from "axios"; // Import axios for making API requests
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Partners from "../Partners/Partners";
 import "./Footer.css";
@@ -19,7 +25,7 @@ function Footer() {
       const data = response.data.data;
       setData(data);
     } catch (error) {
-      console.error(error); // Properly handle and log the error
+      console.error(error);
     }
   };
   useEffect(() => {
@@ -33,27 +39,154 @@ function Footer() {
       const datas = response.data.data;
       setDatas(datas);
     } catch (error) {
-      console.error(error); // Properly handle and log the error
+      console.error(error);
     }
   };
   useEffect(() => {
     fetchDatas();
   }, []);
 
-
   return (
-    <div className=" p-2">
+    <div className="container mx-auto p-2">
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">
-          <div className="JustFlex">
+          <div className="">
             <Partners />
           </div>
         </div>
         <hr className="salom" />
       </section>
+      <div className="block md:hidden">
+        <Accordion>
+          <AccordionSummary
+            sx={{ height: "50px", marginTop: "12px" }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{t("Footer_title1")}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item1")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item2")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item3")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item4")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item5")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item6")}{" "}
+              </Link>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            sx={{ height: "50px", marginTop: "12px" }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{t("Footer_title2")}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_title7")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item8")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item9")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item10")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_title11")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_title12")}{" "}
+              </Link>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            sx={{ height: "50px", marginTop: "12px" }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{t("Footer_title1")}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_title11")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_title12")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item3")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item4")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item5")}{" "}
+              </Link>
+            </div>
+            <div className="link">
+              <Link className="" to="/">
+                {t("Footer_item6")}{" "}
+              </Link>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+      </div>
       <div className="Js">
-        <div className="section">
+        <div className="hidden md:block section">
           <div className="one">
             <h1 className="h1">{t("Footer_title1")}</h1>
             <div className="link">
@@ -93,17 +226,15 @@ function Footer() {
             <h1 className="h1">{t("Footer_title2")}</h1>
             <div className="link">
               <Link className="" to="/">
-                {" "}
                 {t("Footer_title7")}
               </Link>
             </div>
             <div className="link">
               <Link className="" to="/">
-                {t("Footer_item8")}{" "}
+                {t("Footer_item8")}
               </Link>
             </div>
             <div className="link">
-              {" "}
               <Link className="" to="/">
                 {t("Footer_item9")}
               </Link>

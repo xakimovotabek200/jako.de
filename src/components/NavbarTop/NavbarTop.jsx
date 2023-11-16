@@ -34,12 +34,12 @@ import Modalsearch from "./Modalsearch";
 function NavbarTop() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure();
-  const [modalOpened, { toggle: toggleModal, close: closeModal }] = useDisclosure();
+  const [modalOpened, { toggle: toggleModal, close: closeModal }] =
+    useDisclosure();
 
   const theme = useMantineTheme();
   const [data, setData] = useState([]);
   const [childData, setChildData] = useState([]);
-
 
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const { products } = useSelector((state) => state.orebiReducer);
@@ -147,7 +147,12 @@ function NavbarTop() {
             ))}
           <div className={classes.navbartop_language}>
             <LanguagePicker />
-            <Modal size="calc(100vw - 3 rem)" opened={modalOpened} onClose={closeModal} padding="md">
+            <Modal
+              size="calc(100vw - 3 rem)"
+              opened={modalOpened}
+              onClose={closeModal}
+              padding="md"
+            >
               <Modalsearch />
             </Modal>
             <Button onClick={toggleModal} className="text-black">
@@ -157,14 +162,15 @@ function NavbarTop() {
               <div className="cursor-pointer flex">
                 <IconShoppingCart />
                 <p
-                  className={`md:absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${products.length > 0 ? "bg-[#008ac9]" : ""
-                    } text-white`}
+                  className={`md:absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${
+                    products.length > 0 ? "bg-[#008ac9]" : ""
+                  } text-white`}
                 >
                   {products.length > 0 && products.length}
                 </p>
               </div>
             </Link>
-            <Link to="/wishes">
+            <Link className="-ml-4 md:block" to="/wishes">
               <IconHeart />
             </Link>
           </div>
@@ -223,7 +229,9 @@ function NavbarTop() {
                                               key={item.id}
                                               to={`products/${item.slug}`}
                                             >
-                                              <p className="capitalize">{item.name}</p>
+                                              <p className="capitalize">
+                                                {item.name}
+                                              </p>
                                               <br />
                                             </Link>
                                           );

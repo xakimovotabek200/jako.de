@@ -52,7 +52,7 @@ function NewsCollection() {
           displayedData.map((item, index) => (
             <div
               key={index}
-              className="w-[368px] h-[366px] flex-col justify-start items-center inline-flex"
+              className="mt-12 md:w-[368px] h-[366px] flex-col justify-start items-center inline-flex"
             >
               <img
                 className="w-[368px] h-[286px] rounded-lg object-cover"

@@ -33,10 +33,12 @@ function ContiuneHightleht({ highlight }) {
     newData.size = selectedSize;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addToCart(newData));
+    dispatch(addWishes(newData));
     toast.success('Maxsulotingiz savatga qoshildi !');
   }
 
-  function handleAddToWishlist(data) {
+
+  function handleAddToCart2(data) {
     let newData = Object.assign({}, data);
     newData.uuid = crypto.randomUUID();
     newData.quantity = quantity;
@@ -45,6 +47,7 @@ function ContiuneHightleht({ highlight }) {
     dispatch(addWishes(newData));
     toast.success('Maxsulotingiz saqlandi!');
   }
+
 
   return (
     <div>
@@ -91,7 +94,7 @@ function ContiuneHightleht({ highlight }) {
         <div className="flex items-center underline cursor-pointer">
           Add
           <div onClick={handleHeartClick}>
-            <button onClick={() => handleAddToWishlist(highlight)}>
+            <button onClick={() => handleAddToCart2(highlight)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`icon icon-tabler icon-tabler-heart-filled ${active ? "text-red" : ""
@@ -106,7 +109,7 @@ function ContiuneHightleht({ highlight }) {
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path
                   d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"
-                  fill={active ? "red" : "#D0D4CA"}
+                  fill={active ? "#D0D4CA" : "red"}
                 />
               </svg>
             </button>

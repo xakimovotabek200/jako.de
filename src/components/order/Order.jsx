@@ -109,6 +109,7 @@ function Order() {
                 placeholder="Telefon raqam"
                 onChange={pocketInfo}
                 name="phone"
+
                 value={value.phone}
                 required
             />
