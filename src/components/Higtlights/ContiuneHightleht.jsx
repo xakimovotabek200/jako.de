@@ -14,7 +14,6 @@ import { toast } from "react-toastify";
 
 function ContiuneHightleht({ highlight }) {
   const [active, setActive] = useState(false);
-
   const [quantity, setQuantity] = useState(1);
   const [add, setAdd] = useState(1);
   const dispatch = useDispatch();
@@ -38,13 +37,13 @@ function ContiuneHightleht({ highlight }) {
   }
 
   function handleAddToCart2(salom) {
-    let newData = Object.assign({}, salom);
-    newData.uuid = crypto.randomUUID();
-    newData.quantity = quantity;
-    newData.size = selectedSize;
-    newData.color = selectedColor;
-    newData.image = selectedImage ? selectedImage : newData.image;
-    dispatch(addWishes(newData));
+    let newDataWishes = Object.assign({}, salom);
+    newDataWishes.uuid = crypto.randomUUID();
+    newDataWishes.quantity = quantity;
+    newDataWishes.size = selectedSize;
+    newDataWishes.color = selectedColor;
+    newDataWishes.image = selectedImage ? selectedImage : newDataWishes.image;
+    dispatch(addWishes(newDataWishes));
     toast.success("Maxsulotingiz saqlandi!");
   }
 
@@ -101,7 +100,6 @@ function ContiuneHightleht({ highlight }) {
                 width="36"
                 height="36"
                 viewBox="0 0 24 24"
-
                 fill="none"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -110,7 +108,6 @@ function ContiuneHightleht({ highlight }) {
                   fill={active ? "red" : "#D0D4CA"}
                 />
               </svg>
-
               <IconHeart
                 className={`block md:hidden ${active ? "text-red" : ""} `}
                 fill={active ? "red" : "#D0D4CA"}
