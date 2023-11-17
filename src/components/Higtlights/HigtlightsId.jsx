@@ -65,16 +65,14 @@ function HightLightsId() {
             <Image
               className="max-w-[500px] max-h-[500px]"
               fallback={
-                selectedImageIndex && selectedImageIndex.length > 0
+                selectedImageIndex && selectedImageIndex.startsWith('http')
                   ? selectedImageIndex
                   : `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`
               }
-
               onClick={open}
               title={highlight.image}
               style={{ cursor: "pointer" }}
             />
-
             <HoverCard.Dropdown>
               <Text size="sm">{highlight.name}</Text>
             </HoverCard.Dropdown>
@@ -93,7 +91,7 @@ function HightLightsId() {
               </p>
 
               <Link to={"/"} className="text-sm text-[#008ac9] md:text-[#008ac9] underline font-medium pl-4">
-                <a>Become a member now</a>
+                Become a member now
               </Link>
 
             </div>
@@ -135,9 +133,9 @@ function HightLightsId() {
             <div className="flex mr-7 gap-1 mt-5">
               {JSON.parse(highlight.size)
                 .split(",")
-                .map((item) => (
+                .map((item, index) => (
                   <div
-                    key={item}
+                    key={index}
                     data-active={active === item || undefined}
                     onClick={() => selectSize(item)}
                     className={`border-2 h-[32px] w-[32px] empty:hidden text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${active === item ? "bg-[#008ac9] text-white" : ""
@@ -151,9 +149,9 @@ function HightLightsId() {
             <div className="flex mr-7 gap-1 mt-5">
               {JSON.parse(highlight.color)
                 .split(",")
-                .map((item) => (
+                .map((item, index) => (
                   <div
-                    key={item}
+                    key={index}
                     data-active={activeColor === item || undefined}
                     onClick={() => selectColor(item)}
                     className={`border-2 h-[32px] w-[52px] empty:hidden text-center cursor-pointer hover-bg-[#5b5b5b] hover-text-white duration-300 ${activeColor === item ? "bg-[#008ac9] text-white" : ""
