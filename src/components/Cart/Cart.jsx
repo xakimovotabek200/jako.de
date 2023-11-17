@@ -37,7 +37,7 @@ function Cart() {
           {products.length > 0 ? (
             products.map((product, ind) => (
               <div
-                className="w-[340px] flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm md:w-[540px] -ml-11 md:block"
+                className="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm -ml-11 md:block"
                 key={ind}
               >
                 <div className="flex flex-col md:flex-row gap-3 justify-between">
@@ -198,7 +198,7 @@ function Cart() {
             </div>
           )}
         </div>
-        <div className="flex flex-col w-[380px] -ml-12 md:w-2/3 h-fit gap-4 p-4">
+        <div className="flex flex-col w-[380px] md:w-2/3 h-fit gap-4 p-4">
           <p className="text-neutral-600 text-xl font-extrabold">Resume</p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
             <hr className="bg-gray-200 h-0.5" />
