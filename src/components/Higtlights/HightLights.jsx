@@ -64,13 +64,13 @@ function HightLights({ data }) {
                   <div className="">
                     <div key={item.id}>
                       <div className="flex justify-center items-center flex-wrap gap-6 p-8">
-                        <div className="h-[500px] w-[300px] hover:border-2 border-solid border-neutral-600 duration-300 bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
+                        <div className="h-[500px] w-[300px] hover:border-2 border-solid border-neutral-600 bg-white flex  flex-col justify-between rounded-md overflow-hidden shadow-sm relative">
                           <img
                             src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.image}`}
                             alt="product-image"
                             className="h-[65%] w-[80%] object-cover mt-4 mr-auto ml-auto bg-slate-100 rounded-md "
                           />
-                          {
+                          {/* {
                             datas.map((item) => {
                               return (
                                 <div
@@ -82,7 +82,7 @@ function HightLights({ data }) {
 
                               )
                             })
-                          }
+                          } */}
                           <div className="p-5">
                             <div className="flex justify between">
                               <div className="text-gray-600 uppercase text-xs font-semibold tracking-wider">

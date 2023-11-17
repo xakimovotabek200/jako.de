@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useForm } from "./useForm";
 import axios from "axios";
+import { Button } from "antd";
 
 function Order() {
     const [items, setItems] = useState([]);
@@ -114,7 +115,7 @@ function Order() {
                         className="w-[810px] border-2 ml-[130px] border-solid border-neutral-600 py-2 my-3 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
                         type="text"
                         onChange={pocketInfo}
-                        name="phone"
+                        name="product_slug"
                         value={value.product_slug}
                         required
                     />
@@ -152,12 +153,12 @@ function Order() {
                 </div>
 
                 <br />
-                <button
-                    className="w-52 h-10 bg-[blue] mx-auto text-white text-lg mt-4 duration-300 my-3"
+                <Button
+                    className="w-52 h-10 bg-[#008ac9] mx-auto text-white text-lg mt-4 duration-300 my-3 hover:bg-neutral-600"
                     type="submit"
                 >
                     Arizani jonatish
-                </button>
+                </Button>
             </form>
         </div>
     );

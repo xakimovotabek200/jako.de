@@ -34,7 +34,6 @@ function ContiuneHightleht({ highlight }) {
     newData.color = selectedColor;
     newData.image = selectedImage ? selectedImage : newData.image;
     dispatch(addToCart(newData));
-    dispatch(addWishes(newData));
     toast.success("Maxsulotingiz savatga qoshildi !");
   }
 

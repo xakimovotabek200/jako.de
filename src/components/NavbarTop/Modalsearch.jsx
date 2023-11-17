@@ -65,7 +65,7 @@ const Modalsearch = () => {
           </Button>
         </Form.Item>
       </Form>
-      <div className="md:flex ">
+      <div className="md:flex flex-wrap justify-around items-center ">
         {Array.isArray(products) &&
           products.map((item) => (
             <Link key={item.id} to={`/higtlightsId/${item.slug}`}>
