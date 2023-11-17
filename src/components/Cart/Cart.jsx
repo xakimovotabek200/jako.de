@@ -37,7 +37,7 @@ function Cart() {
           {products.length > 0 ? (
             products.map((product, ind) => (
               <div
-                className="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm w-[340px] -ml-11 md:block"
+                className="w-[340px] flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm md:w-[540px] -ml-11 md:block"
                 key={ind}
               >
                 <div className="flex flex-col md:flex-row gap-3 justify-between">
@@ -174,13 +174,14 @@ function Cart() {
             >
               <div>
                 <img
-                  className="w-[800px] h-[500px] object-cover rounded-lg p-4 mx-auto"
+                  className="hidden md:w-[800px] h-[500px] object-cover rounded-lg p-4 mx-auto"
                   src={Empty}
                   alt="emptyCart"
                 />
+                <img className="block md:hidden" src={Empty} alt="" />
               </div>
-              <div className=" min-w-[380px] md:max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
-                <h1 className="md:font-titleFont text-xl font-bold uppercase">
+              <div className="min-w-[380px] md:max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
+                <h1 className="text-lg md:font-titleFont md:text-xl font-bold uppercase">
                   Savatingiz o'zini yolg'iz his qiladi.
                 </h1>
                 <p className="text-sm text-center px-10 -mt-2">
