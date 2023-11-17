@@ -31,7 +31,7 @@ const ProductByCategory = () => {
             <ul>
                 <div className="flex flex-wrap justify-center items-center">
                     {products.map((product) => (
-                        <Link to={`/higtlightsId/${product.slug}`} className="min-w-[350px]">
+                        <Link to={`/higtlightsId/${product.slug}`} key={product.id} className="min-w-[350px]">
                             <HoverCard shadow="md" closeDelay={300}>
                                 <div className="">
                                     <div key={product.id}>

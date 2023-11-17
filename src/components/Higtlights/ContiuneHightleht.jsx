@@ -102,8 +102,7 @@ function ContiuneHightleht({ highlight }) {
                 width="36"
                 height="36"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="#D0D4CA"
+
                 fill="none"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />

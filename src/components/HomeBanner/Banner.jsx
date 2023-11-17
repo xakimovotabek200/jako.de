@@ -82,7 +82,9 @@ function Banner() {
       <div className="res_z container mx-auto p-5">
         {ResData.map((item) => {
           return (
-            <div>
+            <div
+            key={item.id}
+            >
               <img
                 src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${bannerdata.image_2}`}
                 alt={item[0]?.text}
