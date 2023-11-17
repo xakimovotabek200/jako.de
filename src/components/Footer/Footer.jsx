@@ -47,7 +47,7 @@ function Footer() {
   }, []);
 
   return (
-    <div className="container mx-auto p-2">
+    <div className="p-2 container mx-auto">
       <section className="HrOne">
         <hr className="salom" />
         <div className="Just_One">
@@ -308,7 +308,7 @@ function Footer() {
           {datas.map((item, index) => {
             return (
               <div key={index}>
-                <Link to={item.link}>
+                <Link>
                   <img
                     className="w-12 h-6 object-cover"
                     src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.icon}`}

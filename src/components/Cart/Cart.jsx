@@ -26,18 +26,18 @@ function Cart() {
 
   const totalSum = calculateTotal(products);
   const formattedTotal = totalSum.toFixed(0, 2);
-  
+
   return (
     <div>
-      <div className="flex flex-col md:flex-row  h-full px-14 py-7 container mx-auto">
+      <div className="mt-8 flex flex-col md:flex-row  h-full px-14 py-7 container mx-auto">
         <div className="w-full flex flex-col h-fit gap-4 p-4">
-          <p className="sm: text-center md:text-neutral-600 text-xl  font-extrabold">
+          <p className="text-center md:text-neutral-600 text-xl  font-extrabold">
             Mening savatim
           </p>
           {products.length > 0 ? (
             products.map((product, ind) => (
               <div
-                className="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm"
+                className="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm w-[340px] -ml-11 md:block"
                 key={ind}
               >
                 <div className="flex flex-col md:flex-row gap-3 justify-between">
@@ -82,7 +82,7 @@ function Cart() {
                       {product.price}сум
                     </p>
                   </div>
-                  <div className="self-center">
+                  <div className="hidden md:block self-center">
                     <button
                       className="hover:text-red-700"
                       onClick={() => dispatch(deleteItem(product.uuid))}
@@ -113,7 +113,7 @@ function Cart() {
                     </button>
                   </div>
                 </div>
-                <div className="flex flex-row self-center gap-1">
+                <div className="mt-2 md:flex flex-row self-center gap-1">
                   <button
                     onClick={() => dispatch(drecreaseQuantity(product))}
                     className="w-5 h-5 self-center rounded-full inline-flex items-center justify-center  border border-gray-300"
@@ -131,6 +131,36 @@ function Cart() {
                     className="w-5 h-5 self-center inline-flex justify-center items-center rounded-full border border-gray-300"
                   >
                     +
+                  </button>
+                </div>
+                <div className="block mt-2  md:hidden self-center">
+                  <button
+                    className="hover:text-red-700"
+                    onClick={() => dispatch(deleteItem(product.uuid))}
+                  >
+                    <svg
+                      fill="red"
+                      height="24px"
+                      width="24px"
+                      id="Layer_1"
+                      version="1.1"
+                      viewBox="0 0 512 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <g>
+                        <path
+                          d="M400,113.3h-80v-20c0-16.2-13.1-29.3-29.3-29.3h-69.5C205.1,64,192,77.1,192,93.3v20h-80V128h21.1l23.6,290.7
+                             c0,16.2,13.1,29.3,29.3,29.3h141c16.2,0,29.3-13.1,29.3-29.3L379.6,128H400V113.3z M206.6,93.3c0-8.1,6.6-14.7,14.6-14.7h69.5c8.1,0,14.6,6.6,14.6,14.7v20h-98.7V93.3z M341.6,417.9l0,0.4v0.4c0,8.1-6.6,14.7-14.6,14.7H186c-8.1,0-14.6-6.6-14.6-14.7v-0.4
+                            l0-0.4L147.7,128h217.2L341.6,417.9z"
+                        />
+                        <g>
+                          <rect height="241" width="14" x="249" y="160" />
+                          <polygon points="320,160 305.4,160 294.7,401 309.3,401" />
+                          <polygon points="206.5,160 192,160 202.7,401 217.3,401" />
+                        </g>
+                      </g>
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -167,14 +197,18 @@ function Cart() {
             </div>
           )}
         </div>
-        <div className="flex flex-col w-full md:w-2/3 h-fit gap-4 p-4">
+        <div className="flex flex-col w-[380px] -ml-12 md:w-2/3 h-fit gap-4 p-4">
           <p className="text-neutral-600 text-xl font-extrabold">Resume</p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
             <hr className="bg-gray-200 h-0.5" />
             <div className="flex flex-row justify-between">
-              <p className="text-gray-600">Yetkazib berish</p>
+              <p className="text-base text-gray-600 md:text-gray-600">
+                Yetkazib berish
+              </p>
               <div>
-                <p className="text-end font-bold">O'zbekiston bo'ylab bepul</p>
+                <p className="text-sm md:text-end font-bold">
+                  O'zbekiston bo'ylab bepul
+                </p>
                 <p className="text-gray-600 text-sm font-normal">{""}</p>
               </div>
             </div>
@@ -194,12 +228,12 @@ function Cart() {
             </div>
             <div className="sm:flex-wrap md:flex gap-2 md:items-center">
               <Link to="/order">
-                <button className="transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm w-[200px] text-white text-hover shadow-md">
+                <button className="w-[320px] transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm md:w-[200px] text-white text-hover shadow-md">
                   Buyurtmani Rasmiylashtirish
                 </button>
               </Link>
               <Link to="/offer">
-                <button className="sm: mt-3 md:transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm w-[200px] text-gray-700 text-hover shadow-md">
+                <button className="w-[320px] mt-3 md:transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm md:w-[200px] text-gray-700 text-hover shadow-md">
                   Boshqa mahsulotlarni qoshish
                 </button>
               </Link>
