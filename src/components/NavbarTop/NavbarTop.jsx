@@ -93,56 +93,57 @@ function NavbarTop() {
           {data.length > 0 &&
             data.map((item) => (
               <Group key={item.id} h="100%" gap={0} visibleFrom="sm">
-                <Link to="/offer" className={classes.link}>
-                  <HoverCard
-                    width={600}
-                    position="bottom"
-                    radius="md"
-                    shadow="md"
-                    withinPortal
-                  >
-                    <HoverCard.Target>
-                      <Link to="/offer" className={classes.link}>
-                        <Center inline>
-                          <Box component="" mr={5}>
-                            {item.name}
-                            <HoverCard.Dropdown>
-                              <div className="">
-                                {item.child_categories_type.map((child) => (
-                                  <div key={child.id}>
-                                    <Link
-                                      to={`products/${item.slug}`}
-                                      className="text-center font-semibold capitalize"
-                                    >
-                                      <h1>{child.name}</h1>
-                                    </Link>
-                                    <hr />
-                                    {Array.isArray(childData) &&
-                                      childData.map((item) => {
-                                        return (
-                                          <Link
-                                            key={item.id}
-                                            to={`products/${item.slug}`}
-                                          >
-                                            <p>{item.name}</p>
-                                            <br />
-                                          </Link>
-                                        );
-                                      })}
-                                  </div>
-                                ))}
-                              </div>
-                            </HoverCard.Dropdown>
-                          </Box>
-                          <IconChevronDown
-                            style={{ width: rem(16), height: rem(16) }}
-                            color={theme.colors.blue[6]}
-                          />
-                        </Center>
-                      </Link>
-                    </HoverCard.Target>
-                  </HoverCard>
-                </Link>
+                {/* Removed unnecessary Link */}
+                <HoverCard
+                  width={600}
+                  position="bottom"
+                  radius="md"
+                  shadow="md"
+                  withinPortal
+                >
+                  <HoverCard.Target>
+                    <Link to="/offer" className={classes.link}>
+                      <Center inline>
+                        <Box component="" mr={5}>
+                          {item.name}
+                          <HoverCard.Dropdown>
+                            <div className="capitalize">
+                              {item.child_categories_type.map((child) => (
+                                <div key={child.id}>
+                                  <Link
+                                    to={`products/${item.slug}`}
+                                    className="text-center font-semibold capitalize"
+                                  >
+                                    <h1>{child.name}</h1>
+                                  </Link>
+                                  <hr />
+                                  {Array.isArray(childData) &&
+                                    childData.map((item) => {
+                                      return (
+                                        <Link
+                                          key={item.id}
+                                          to={`products/${item.slug}`}
+                                        >
+                                          <p className="capitalize">
+                                            {item.name}
+                                          </p>
+                                          <br />
+                                        </Link>
+                                      );
+                                    })}
+                                </div>
+                              ))}
+                            </div>
+                          </HoverCard.Dropdown>
+                        </Box>
+                        <IconChevronDown
+                          style={{ width: rem(16), height: rem(16) }}
+                          color={theme.colors.blue[6]}
+                        />
+                      </Center>
+                    </Link>
+                  </HoverCard.Target>
+                </HoverCard>
               </Group>
             ))}
           <div className={`-ml-[10px] md:salom ${classes.navbartop_language}`}>
@@ -162,9 +163,8 @@ function NavbarTop() {
               <div className="cursor-pointer flex">
                 <IconShoppingCart />
                 <p
-                  className={`md:absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${
-                    products.length > 0 ? "bg-[#008ac9]" : ""
-                  } text-white`}
+                  className={`md:absolute font-titleFont top-3 right-14 text-xs w-4 h-4 flex items-center justify-center rounded-full ${products.length > 0 ? "bg-[#008ac9]" : ""
+                    } text-white`}
                 >
                   {products.length > 0 && products.length}
                 </p>

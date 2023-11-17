@@ -56,6 +56,7 @@ function HightLightsId() {
     setSelectedImageIndex(hightlight);
     dispatch(setImage(hightlight));
   };
+
   return (
     <div>
       <div className="mt-24 md:container mx-auto w-[95%] md:flex justify-around">
@@ -68,6 +69,7 @@ function HightLightsId() {
                   ? selectedImageIndex
                   : `https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${highlight.image}`
               }
+
               onClick={open}
               title={highlight.image}
               style={{ cursor: "pointer" }}
@@ -90,12 +92,11 @@ function HightLightsId() {
               <p className="text-sm md:font-medium">
                 Want 30% off your next order?
               </p>
-              <Link
-                to={"/"}
-                className="text-sm text-[#008ac9] md:text-[#008ac9] underline font-medium pl-4"
-              >
-                Become a member now
+
+              <Link to={"/"} className="text-sm text-[#008ac9] md:text-[#008ac9] underline font-medium pl-4">
+                <a>Become a member now</a>
               </Link>
+
             </div>
             <div className="flex justify-between items-center w-[300px]">
               <img
@@ -167,8 +168,8 @@ function HightLightsId() {
           </div>
           <ContiuneHightleht highlight={highlight} />
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 
