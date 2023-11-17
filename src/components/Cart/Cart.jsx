@@ -37,7 +37,7 @@ function Cart() {
           {products.length > 0 ? (
             products.map((product, ind) => (
               <div
-                className="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm -ml-11 md:block"
+                className="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm"
                 key={ind}
               >
                 <div className="flex flex-col md:flex-row gap-3 justify-between">
@@ -67,7 +67,7 @@ function Cart() {
                         <span className="font-normal">{product.color}</span>
                       </p>
                       <p className="text-xs text-gray-600 font-semibold">
-                        Hajm:{" "}
+                        Hajm:
                         <span className="font-normal">{product.size}</span>
                       </p>
                     </div>
@@ -113,7 +113,7 @@ function Cart() {
                     </button>
                   </div>
                 </div>
-                <div className="mt-2 md:flex flex-row self-center gap-1">
+                <div className="mt-2  md:flex flex-row self-center gap-1">
                   <button
                     onClick={() => dispatch(drecreaseQuantity(product))}
                     className="w-5 h-5 self-center rounded-full inline-flex items-center justify-center  border border-gray-300"
