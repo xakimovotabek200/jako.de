@@ -198,7 +198,7 @@ function Cart() {
             </div>
           )}
         </div>
-        <div className="flex flex-col w-[380px] md:w-2/3 h-fit gap-4 p-4">
+        <div className="-ml-12 md:ml-0 flex flex-col w-[380px] md:w-2/3 h-fit gap-4 p-4">
           <p className="text-neutral-600 text-xl font-extrabold">Resume</p>
           <div className="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
             <hr className="bg-gray-200 h-0.5" />
