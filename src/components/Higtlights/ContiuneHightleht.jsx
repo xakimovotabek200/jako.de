@@ -38,8 +38,8 @@ function ContiuneHightleht({ highlight }) {
     toast.success("Maxsulotingiz savatga qoshildi !");
   }
 
-  function handleAddToCart2(data) {
-    let newData = Object.assign({}, data);
+  function handleAddToCart2(salom) {
+    let newData = Object.assign({}, salom);
     newData.uuid = crypto.randomUUID();
     newData.quantity = quantity;
     newData.size = selectedSize;
