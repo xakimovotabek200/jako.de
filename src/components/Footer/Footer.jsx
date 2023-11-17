@@ -308,7 +308,7 @@ function Footer() {
           {datas.map((item, index) => {
             return (
               <div key={index}>
-                <Link to={item.link}>
+                <Link>
                   <img
                     className="w-12 h-6 object-cover"
                     src={`https://api.abdullajonov.uz/legend-backend-api/public/storage/images/${item.icon}`}
