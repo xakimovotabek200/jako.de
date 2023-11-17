@@ -154,7 +154,7 @@ function Order() {
 
                 <br />
                 <Button
-                    className="w-52 h-10 bg-[#008ac9] mx-auto text-white text-lg mt-4 duration-300 my-3 hover:bg-neutral-600"
+                    className="w-52 h-10  bg-[#008ac9] mx-auto text-white text-lg mt-4 duration-300 my-3 hover:bg-neutral-600"
                     type="submit"
                 >
                     Arizani jonatish

@@ -14,6 +14,7 @@ function Offer() {
 
   const [selectedColor, setSelectedColor] = useState("");
   const [productData, setProductData] = useState([]);
+  const [colors, setColors] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,6 +29,13 @@ function Offer() {
         console.error(error);
       });
   }, []);
+
+  // useEffect(() => { 
+  //   productData.forEach((i)=>{
+  //     colors.push(i.color)
+  //   })
+  //   console.log(colors);
+  //  }, [productData])
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
@@ -120,7 +128,7 @@ function Offer() {
       <div className="grid-cols-1 md:grid grid-cols-3 md:grid-cols-4">
         <div className="ml-24  md:block">
           <div className="w-1/2">
-            <select
+            {/* <select
               name="Color"
               className="outline-none ml-[7pc]"
               id=""
@@ -131,8 +139,8 @@ function Offer() {
               <option value="blue">Blue</option>
               <option value="grey">Grey</option>
               <option value="orange">Orange</option>
-            </select>
-            <div className="w-[250px] mb-5 h-[1px] bg-black" />
+            </select> */}
+            {/* <div className="w-[250px] mb-5 h-[1px] bg-black" /> */}
             <input
               className="outline-none w-[200px] h-[50px] rounded-md border-2 border-solid border-purple-600"
               type="number"
@@ -157,9 +165,8 @@ function Offer() {
             {Array.from({ length: pageCount }).map((_, index) => (
               <button
                 key={index}
-                className={`pagination-button ${
-                  currentPage === index + 1 ? "active" : ""
-                }`}
+                className={`pagination-button ${currentPage === index + 1 ? "active" : ""
+                  }`}
                 onClick={() => setCurrentPage(index + 1)}
               >
                 {index + 1}
